@@ -19,6 +19,8 @@ Every page is filled in and ready to deploy. The values live at the top of
 | `COUNTRY` / `JURISDICTION` | India — the governing-law clause |
 | `AI_PROVIDER` | Google Gemini — **must match what the backend actually uses** |
 | `DATA_REGION` | ap-northeast-1 (Tokyo) — where Supabase actually stores the data |
+| `PADDLE_CLIENT_TOKEN` | Paddle → Developer tools → Authentication → **Client-side tokens**. Public by design; it authorises nothing on its own |
+| `PADDLE_ENVIRONMENT` | `sandbox` while testing, `production` when live |
 
 No postal address and no domain appear anywhere on the site, by choice. Note that Google
 Play separately requires a public developer address on the store listing itself — that is a
@@ -44,6 +46,30 @@ and sets the security headers.
 | `/terms` | `terms.html` |
 | `/privacy` | `privacy.html` |
 | `/refund` | `refund.html` |
+| `/checkout` | `checkout.html` — Paddle's default payment link points here |
+| `/thanks` | `thanks.html` — where Paddle sends the browser after payment |
+
+## How checkout works
+
+The app never renders a payment form. It asks the server for a checkout URL, and opens
+**this site** in the system browser:
+
+```
+app → billing-checkout function → Paddle API creates a transaction
+                                → returns  https://<site>/checkout?_ptxn=txn_…
+app opens that in the SYSTEM BROWSER (never a WebView)
+/checkout loads Paddle.js and opens Paddle's own checkout
+card details are entered inside Paddle's iframe — never on this origin
+Paddle → /thanks, and separately → billing-webhook, which is what actually
+         moves the subscription state
+```
+
+In Paddle, set **Checkout → Checkout settings → Default payment link** to
+`https://<your-site>/checkout`. Without it Paddle returns no checkout URL at all, and the
+server function will tell you so in as many words.
+
+`/thanks` changes no billing state. Only a signature-verified webhook, or the app reading
+Paddle's API directly, can do that — so landing on it without paying grants nothing.
 
 ## Keeping it honest
 

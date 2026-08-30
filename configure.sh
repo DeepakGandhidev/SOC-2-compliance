@@ -18,6 +18,12 @@ CONTACT_EMAIL="deepakgandhi2007@gmail.com"
 COUNTRY="India"
 JURISDICTION="the courts of India"
 
+# Paddle. The CLIENT token is public — it authorises nothing on its own, and is meant to
+# ship in a web page. The API key that can create charges lives only in Supabase secrets.
+# Paddle → Developer tools → Authentication → Client-side tokens.
+PADDLE_CLIENT_TOKEN="__PADDLE_CLIENT_TOKEN__"
+PADDLE_ENVIRONMENT="sandbox"          # "sandbox" while testing, "production" when live
+
 # These match how the product is deployed today. Change them if that changes.
 AI_PROVIDER="Google Gemini"
 DATA_REGION="ap-northeast-1 (Tokyo)"
@@ -41,10 +47,21 @@ replace "__AI_PROVIDER__"    "$AI_PROVIDER"
 replace "__DATA_REGION__"    "$DATA_REGION"
 replace "__EFFECTIVE_DATE__" "$EFFECTIVE_DATE"
 
-remaining=$(grep -l '__[A-Z_]*__' ./*.html ./*.txt 2>/dev/null || true)
-if [ -n "$remaining" ]; then
+if [ "$PADDLE_CLIENT_TOKEN" != "__PADDLE_CLIENT_TOKEN__" ]; then
+  replace "__PADDLE_CLIENT_TOKEN__" "$PADDLE_CLIENT_TOKEN"
+  awk -v e="$PADDLE_ENVIRONMENT" \
+      '{gsub(/var PADDLE_ENVIRONMENT = "[a-z]*"/, "var PADDLE_ENVIRONMENT = \"" e "\""); print}' \
+      checkout.html > checkout.html.tmp && mv checkout.html.tmp checkout.html
+else
+  echo "note: PADDLE_CLIENT_TOKEN is not set yet, so /checkout will say so rather than fail silently."
+fi
+
+# The Paddle token is the one placeholder that is allowed to remain: the rest of the site
+# is publishable without it, and /checkout says so plainly rather than failing silently.
+left=$(grep -oh '__[A-Z_]*__' ./*.html ./*.txt 2>/dev/null | sort -u | grep -v '__PADDLE_CLIENT_TOKEN__' || true)
+if [ -n "$left" ]; then
   echo "Still contains placeholders:"
-  grep -oh '__[A-Z_]*__' ./*.html ./*.txt 2>/dev/null | sort -u | sed 's/^/  /'
+  echo "$left" | sed 's/^/  /'
   exit 1
 fi
-echo "Done. Every placeholder is filled."
+echo "Done. Every required placeholder is filled."

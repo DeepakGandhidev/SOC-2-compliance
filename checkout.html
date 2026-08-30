@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout · SOC2Starter</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">S2</span> SOC2Starter</a>
+  </div>
+</header>
+
+<!--
+  Paddle's default payment link points here.
+
+  The app never renders a payment form itself — it asks the server for a checkout URL and
+  opens THIS page in the system browser. Paddle appends ?_ptxn=txn_… and this page hands
+  that transaction to Paddle's own checkout. Card details are entered inside Paddle's
+  iframe and never touch this origin.
+
+  Doing it on the website rather than inside the app is also what keeps the app on the
+  right side of Google Play's billing policy: the purchase visibly happens on the web.
+-->
+
+<section class="tight" style="padding:64px 0;min-height:60vh">
+  <div class="wrap narrow" id="shell">
+    <p class="eyebrow">Checkout</p>
+    <h1 id="heading">Opening secure checkout…</h1>
+    <p class="lede" id="detail">
+      Paddle handles the payment. Your card details are never sent to SOC2Starter.
+    </p>
+    <div id="fallback" hidden>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="retry" type="button">Open checkout</button>
+        <a class="btn btn-secondary" href="/pricing">Back to pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  // Both values below are PUBLIC by design — the client-side token authorises nothing on
+  // its own. The API key that can create charges lives only in server secrets.
+  var PADDLE_ENVIRONMENT = "sandbox";            // "sandbox" or "production"
+  var PADDLE_CLIENT_TOKEN = "__PADDLE_CLIENT_TOKEN__";
+
+  (function () {
+    var heading = document.getElementById("heading");
+    var detail = document.getElementById("detail");
+    var fallback = document.getElementById("fallback");
+
+    function fail(title, message) {
+      heading.textContent = title;
+      detail.textContent = message;
+      fallback.hidden = false;
+    }
+
+    var txn = new URLSearchParams(location.search).get("_ptxn");
+    if (!txn) {
+      fail(
+        "Nothing to pay for",
+        "This page opens a checkout that was started in the SOC2Starter app. Open the app, " +
+        "go to Billing and tap Subscribe."
+      );
+      document.getElementById("retry").hidden = true;
+      return;
+    }
+
+    if (typeof Paddle === "undefined") {
+      fail(
+        "Could not reach the payment provider",
+        "Check your connection, or an ad blocker, and try again."
+      );
+      return;
+    }
+
+    if (PADDLE_CLIENT_TOKEN.indexOf("__") === 0) {
+      fail(
+        "Checkout is not configured yet",
+        "PADDLE_CLIENT_TOKEN has not been set on this site."
+      );
+      document.getElementById("retry").hidden = true;
+      return;
+    }
+
+    function open() {
+      Paddle.Checkout.open({
+        transactionId: txn,
+        settings: {
+          displayMode: "overlay",
+          theme: "light",
+          successUrl: location.origin + "/thanks"
+        }
+      });
+    }
+
+    try {
+      if (PADDLE_ENVIRONMENT === "sandbox") Paddle.Environment.set("sandbox");
+      Paddle.Initialize({ token: PADDLE_CLIENT_TOKEN });
+      open();
+      heading.textContent = "Complete your payment";
+      detail.textContent =
+        "If the checkout did not appear, use the button below. Return to the app and tap " +
+        "“Refresh status” once you are done.";
+      fallback.hidden = false;
+      document.getElementById("retry").addEventListener("click", open);
+    } catch (e) {
+      fail("Could not start checkout", String(e && e.message ? e.message : e));
+      document.getElementById("retry").addEventListener("click", open);
+    }
+  })();
+</script>
+</body>
+</html>
