@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Email confirmed · SOC2Starter</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">S2</span> SOC2Starter</a>
+  </div>
+</header>
+
+<!--
+  Where Supabase sends the browser after someone clicks the confirmation link in their
+  email. Before this existed, site_url pointed at localhost:3000 and every confirmed user
+  landed on a dead page.
+
+  The link is opened in whatever browser the mail app uses, which is often not where the
+  app is — so the job of this page is simply to say "you're done, go back to the app".
+-->
+
+<section class="tight" style="padding:72px 0;min-height:60vh">
+  <div class="wrap narrow">
+    <p class="eyebrow">Email confirmed</p>
+    <h1 id="heading">You're all set.</h1>
+    <p class="lede" id="detail">
+      Your email address is confirmed. Open the SOC2Starter app and sign in — you can start
+      the questionnaire straight away.
+    </p>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="soc2starter://" id="open">Open the app</a>
+      <a class="btn btn-secondary" href="/">Back to the site</a>
+    </div>
+
+    <p><small>Nothing happens when you tap “Open the app”? Just switch to it manually — the
+    confirmation is already done.</small></p>
+  </div>
+</section>
+
+<script>
+  // Supabase reports a failure in the URL fragment, not the query string.
+  (function () {
+    var params = new URLSearchParams(location.hash.replace(/^#/, ""));
+    var error = params.get("error_description") || params.get("error");
+    if (!error) return;
+
+    document.getElementById("heading").textContent = "That link did not work";
+    document.getElementById("detail").textContent =
+      decodeURIComponent(error).replace(/\+/g, " ") +
+      " Confirmation links expire — request a new one from the app's sign-in screen.";
+    document.getElementById("open").hidden = true;
+  })();
+</script>
+</body>
+</html>
