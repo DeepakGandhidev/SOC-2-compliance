@@ -18,6 +18,10 @@ CONTACT_EMAIL="deepakgandhi2007@gmail.com"
 COUNTRY="India"
 JURISDICTION="the courts of India"
 
+# Every canonical tag, Open Graph URL, sitemap entry and JSON-LD id is built from this.
+# Move to a real domain and this is the ONLY line that changes — then 301 the old host.
+SITE_URL="https://soc-2-compliance.vercel.app"
+
 # Paddle. The CLIENT token is public — it authorises nothing on its own, and is meant to
 # ship in a web page. The API key that can create charges lives only in Supabase secrets.
 # Paddle → Developer tools → Authentication → Client-side tokens.
@@ -33,7 +37,7 @@ EFFECTIVE_DATE="$(date '+%d %B %Y')"
 replace() {
   local token="$1" value="$2"
   # macOS and GNU sed disagree about -i, so write through a temp file instead.
-  for f in *.html *.txt; do
+  for f in *.html *.txt *.xml; do
     [ -f "$f" ] || continue
     awk -v t="$token" -v v="$value" '{gsub(t, v); print}' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
   done
@@ -42,6 +46,7 @@ replace() {
 replace "__LEGAL_NAME__"     "$LEGAL_NAME"
 replace "__CONTACT_EMAIL__"  "$CONTACT_EMAIL"
 replace "__COUNTRY__"        "$COUNTRY"
+replace "__SITE_URL__"       "$SITE_URL"
 replace "__JURISDICTION__"   "$JURISDICTION"
 replace "__AI_PROVIDER__"    "$AI_PROVIDER"
 replace "__DATA_REGION__"    "$DATA_REGION"
@@ -58,7 +63,7 @@ fi
 
 # The Paddle token is the one placeholder that is allowed to remain: the rest of the site
 # is publishable without it, and /checkout says so plainly rather than failing silently.
-left=$(grep -oh '__[A-Z_]*__' ./*.html ./*.txt 2>/dev/null | sort -u | grep -v '__PADDLE_CLIENT_TOKEN__' || true)
+left=$(grep -oh '__[A-Z_]*__' ./*.html ./*.txt ./*.xml 2>/dev/null | sort -u | grep -v '__PADDLE_CLIENT_TOKEN__' || true)
 if [ -n "$left" ]; then
   echo "Still contains placeholders:"
   echo "$left" | sed 's/^/  /'

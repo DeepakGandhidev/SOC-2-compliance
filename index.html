@@ -11,6 +11,14 @@
 <meta property="og:title" content="SOC2Starter — SOC 2 readiness for startups">
 <meta property="og:description" content="Answer 19 questions and get a personalised SOC 2 readiness plan: requirements, policy drafts, an evidence library and the recurring tasks that keep you ready.">
 <meta property="og:type" content="website">
+<link rel="canonical" href="https://soc-2-compliance.vercel.app/">
+<meta property="og:url" content="https://soc-2-compliance.vercel.app/">
+<meta property="og:site_name" content="SOC2Starter">
+<meta property="og:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
 </head>
 <body>
 <header class="site">
@@ -216,5 +224,36 @@
   </div>
   <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://soc-2-compliance.vercel.app/#organization",
+      "name": "SOC2Starter",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "logo": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "email": "deepakgandhi2007@gmail.com",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SOC2Starter",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android, iOS, Web",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "publisher": { "@id": "https://soc-2-compliance.vercel.app/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "199.00",
+        "priceCurrency": "USD",
+        "description": "Starter plan, billed monthly. 14-day free trial, no card required."
+      }
+    }
+  ]
+}
+</script>
 </body>
 </html>

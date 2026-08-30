@@ -21,6 +21,7 @@ Every page is filled in and ready to deploy. The values live at the top of
 | `DATA_REGION` | ap-northeast-1 (Tokyo) — where Supabase actually stores the data |
 | `PADDLE_CLIENT_TOKEN` | Paddle → Developer tools → Authentication → **Client-side tokens**. Public by design; it authorises nothing on its own |
 | `PADDLE_ENVIRONMENT` | `sandbox` while testing, `production` when live |
+| `SITE_URL` | Drives every canonical tag, Open Graph URL, sitemap entry and JSON-LD id. **Moving to a real domain is this one line**, then a 301 from the old host |
 
 No postal address and no domain appear anywhere on the site, by choice. Note that Google
 Play separately requires a public developer address on the store listing itself — that is a
@@ -70,6 +71,25 @@ server function will tell you so in as many words.
 
 `/thanks` changes no billing state. Only a signature-verified webhook, or the app reading
 Paddle's API directly, can do that — so landing on it without paying grants nothing.
+
+## SEO
+
+What is in place, and why each piece is here rather than being cargo-culted:
+
+| | Why |
+| --- | --- |
+| `<title>` + `description` per page | The two lines a search result actually shows |
+| **Canonical tags** | Names the real URL. Do this *before* moving domains — it makes the later 301 unambiguous and stops the vercel.app and the real domain competing |
+| Open Graph + Twitter card + `og-image.png` | A link pasted into Slack or LinkedIn renders as a card instead of a bare URL |
+| **JSON-LD**: Organization, SoftwareApplication, FAQPage | Only claims that are visibly on the page. The FAQ schema is generated *from* the pricing page's real Q&A, so the two can never drift |
+| `sitemap.xml`, `robots.txt` | Checkout/thanks/confirmed are disallowed — they are per-visitor, not content |
+| Static HTML, no JS bundle | The one ranking factor this site is genuinely excellent at |
+
+**What none of this does is bring traffic.** Seven pages and zero backlinks rank for
+nothing. The things that would actually move it: writing what the audience searches for
+("what evidence does a SOC 2 auditor ask for", "SOC 2 cost for a startup", "SOC 2 vs ISO
+27001 for a 12-person company"), and getting cited from somewhere real. Meta tags decide
+how you appear once you rank; they do not get you there.
 
 ## Keeping it honest
 

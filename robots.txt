@@ -1,2 +1,9 @@
 User-agent: *
 Allow: /
+
+# Checkout and confirmation pages are per-visitor, not content.
+Disallow: /checkout
+Disallow: /thanks
+Disallow: /confirmed
+
+Sitemap: https://soc-2-compliance.vercel.app/sitemap.xml
