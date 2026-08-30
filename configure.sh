@@ -21,8 +21,8 @@ JURISDICTION="the courts of India"
 # Paddle. The CLIENT token is public — it authorises nothing on its own, and is meant to
 # ship in a web page. The API key that can create charges lives only in Supabase secrets.
 # Paddle → Developer tools → Authentication → Client-side tokens.
-PADDLE_CLIENT_TOKEN="__PADDLE_CLIENT_TOKEN__"
-PADDLE_ENVIRONMENT="sandbox"          # "sandbox" while testing, "production" when live
+PADDLE_CLIENT_TOKEN="live_9ea4953bdc1df9ff839bd57a98f"
+PADDLE_ENVIRONMENT="production"       # "sandbox" while testing, "production" when live
 
 # These match how the product is deployed today. Change them if that changes.
 AI_PROVIDER="Google Gemini"
