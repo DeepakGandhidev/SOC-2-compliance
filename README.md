@@ -3,26 +3,26 @@
 The marketing and legal site for SOC2Starter. Plain HTML and one stylesheet: no build
 step, no dependencies, nothing to keep patched.
 
-## Before it goes live
+## Company details
 
-The legal pages contain placeholders that cannot be guessed. **Fill them in before you
-point a domain at this** — a privacy policy with the wrong entity name is worse than no
-privacy policy, and Google Play will read this page as part of your app review.
+Every page is filled in and ready to deploy. The values live at the top of
+`configure.sh`; change them there and re-run it rather than editing seven HTML files.
 
 ```bash
-./configure.sh        # edit the values at the top of the file first
+./configure.sh
 ```
 
-| Placeholder | What it needs |
+| Value | Currently |
 | --- | --- |
-| `__LEGAL_NAME__` | Your **registered** entity name, not the trading name |
-| `__CONTACT_EMAIL__` | A mailbox you actually read — it is the contact of record for privacy requests |
-| `__ADDRESS__` | Registered address, one line |
-| `__DOMAIN__` | The domain, no scheme, no trailing slash |
-| `__COUNTRY__` | Governing law country |
-| `__JURISDICTION__` | Courts named in the terms, e.g. "the courts of Bengaluru, India" |
-| `__AI_PROVIDER__` | The model provider actually configured on the backend |
-| `__DATA_REGION__` | The Supabase region the data actually sits in |
+| `LEGAL_NAME` | Deepak Gandhi (trading as SOC2Starter) — **change this the moment a company is registered**; the terms name the party to the contract |
+| `CONTACT_EMAIL` | deepakgandhi2007@gmail.com |
+| `COUNTRY` / `JURISDICTION` | India — the governing-law clause |
+| `AI_PROVIDER` | Google Gemini — **must match what the backend actually uses** |
+| `DATA_REGION` | ap-northeast-1 (Tokyo) — where Supabase actually stores the data |
+
+No postal address and no domain appear anywhere on the site, by choice. Note that Google
+Play separately requires a public developer address on the store listing itself — that is a
+Play Console field, not a website one.
 
 `configure.sh` exits non-zero if any placeholder is still unfilled, so it is safe to wire
 into CI as a pre-deploy check.
@@ -65,8 +65,8 @@ terms.html privacy.html refund.html
 assets/style.css        one stylesheet, same palette as the app
 assets/favicon.svg
 vercel.json             clean URLs + security headers
-robots.txt sitemap.xml
-configure.sh            fills the placeholders
+robots.txt
+configure.sh            fills in the company details
 ```
 
 Header and footer are duplicated in each page rather than templated. With seven pages and
