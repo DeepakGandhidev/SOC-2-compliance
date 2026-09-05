@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>SOC 2 vs ISO 27001: Which Should a Startup Do First?</title>
+<meta name="description" content="SOC 2 and ISO 27001 compared for startups: what each actually is, what they cost, how much work carries over between them, and how to decide which to do first.">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="canonical" href="https://soc-2-compliance.vercel.app/blog/soc-2-vs-iso-27001">
+<meta property="og:title" content="SOC 2 vs ISO 27001: Which Should a Startup Do First?">
+<meta property="og:description" content="SOC 2 and ISO 27001 compared for startups: what each actually is, what they cost, how much work carries over between them, and how to decide which to do first.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://soc-2-compliance.vercel.app/blog/soc-2-vs-iso-27001">
+<meta property="og:site_name" content="SOC2Starter">
+<meta property="og:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">S2</span> SOC2Starter</a>
+    <nav class="site">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog" aria-current="page">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/app/auth/login">Sign in</a>
+      <a class="btn btn-primary" href="/app/auth/signup" style="padding:9px 16px">Start free trial</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/blog">Guides</a> &rsaquo; Comparison</p>
+    <h1>SOC 2 vs ISO 27001: which one does your startup need?</h1>
+    <p class="post-meta">Updated 2026-09-06 &middot; 7 min read &middot; by Deepak Gandhi, who builds
+    <a href="/features">SOC2Starter</a></p>
+
+    <div class="answer">
+      <span class="label">The short answer</span>
+      <p><strong>SOC 2</strong> is an attestation report from a licensed CPA firm, testing your
+      controls against the AICPA Trust Services Criteria. It dominates North America.
+      <strong>ISO 27001</strong> is a certificate from an accredited body confirming you run an
+      information security management system, and it is the recognised currency in Europe,
+      the UK, Asia and the Middle East.</p>
+      <p>Follow your customers. Roughly half to three quarters of the underlying control work
+      carries over, so the second one is cheaper &mdash; but do not buy it until somebody asks.</p>
+    </div>
+
+
+    <p>Both prove to a customer that you take security seriously. They are built
+    differently, cost differently, and are recognised in different places. Picking the
+    wrong one first is an expensive detour, and the deciding factor is usually geography
+    plus who is asking.</p>
+
+    <h2>The difference in one table</h2>
+
+    <div class="table-wrap">
+    <table>
+    <thead><tr><th></th><th>SOC 2</th><th>ISO 27001</th></tr></thead>
+    <tbody>
+      <tr><td>What you get</td><td>An attestation report with an auditor's opinion</td><td>A certificate</td></tr>
+      <tr><td>Who issues it</td><td>A licensed CPA firm</td><td>An accredited certification body</td></tr>
+      <tr><td>Governing body</td><td>AICPA (United States)</td><td>ISO / IEC (international)</td></tr>
+      <tr><td>Recognised mainly in</td><td>North America</td><td>Europe, UK, Asia, Middle East</td></tr>
+      <tr><td>What it assesses</td><td>Controls against the Trust Services Criteria</td><td>An information security management system (ISMS)</td></tr>
+      <tr><td>Output a customer reads</td><td>A long report, often 40&ndash;100 pages, under NDA</td><td>A one-page certificate, plus a Statement of Applicability</td></tr>
+      <tr><td>Cycle</td><td>Annual examination</td><td>Three-year certificate with annual surveillance audits</td></tr>
+      <tr><td>Flexibility of controls</td><td>You define controls that meet the criteria</td><td>Annex A controls, with justified exclusions</td></tr>
+      <tr><td>Typical first-year cost</td><td>$15,000&ndash;$50,000</td><td>$20,000&ndash;$60,000</td></tr>
+    </tbody>
+    </table>
+    </div>
+
+    <h2>The structural difference that matters</h2>
+
+    <p>SOC 2 audits <strong>controls</strong>. You describe what you do, the auditor tests
+    whether it works, and the report says so at length. There is no pass mark &mdash; there
+    is an opinion, and any exceptions are printed in the report for your customers to read.</p>
+
+    <p>ISO 27001 certifies a <strong>management system</strong>. It cares less about any
+    individual control and more about whether you have a functioning machine for
+    identifying risks, deciding what to do, and reviewing it: risk assessments, a Statement
+    of Applicability, internal audits, management review. You either meet the standard and
+    get certified, or you do not.</p>
+
+    <p>Put crudely: SOC 2 asks "is MFA on?"; ISO 27001 asks "how did you decide MFA was
+    needed, and who checks that decision is still right?"</p>
+
+    <h2>Which should you do first?</h2>
+
+    <h3>Start with SOC 2 if</h3>
+    <ul>
+      <li>Your customers are American. This is the whole decision for most B2B SaaS.</li>
+      <li>Deals are blocked right now and you need the fastest credible answer.</li>
+      <li>You are small and want something proportionate to a ten-person company.</li>
+    </ul>
+
+    <h3>Start with ISO 27001 if</h3>
+    <ul>
+      <li>Your customers are European, British, Asian or Middle Eastern, where the
+      certificate is the recognised currency.</li>
+      <li>You sell into regulated industries or government procurement that names it.</li>
+      <li>You want a security programme you can point at internally, not just a report.</li>
+    </ul>
+
+    <p>If you genuinely sell into both markets, most companies do SOC 2 first because it is
+    faster to a usable artefact, then add ISO 27001 within a year or two.</p>
+
+    <h2>How much of the work is shared?</h2>
+
+    <p>A great deal &mdash; commonly estimated at half to three quarters of the underlying
+    controls. Access control, MFA, onboarding and offboarding, change management, vendor
+    management, encryption, backups, incident response, training: all of it counts twice.</p>
+
+    <p>What does not carry over is the ISO-specific machinery. If you did SOC 2 first, ISO
+    27001 will still ask you to build:</p>
+
+    <ul>
+      <li>A formal risk assessment methodology, not just a risk register.</li>
+      <li>A Statement of Applicability justifying every Annex A control you included or
+      excluded.</li>
+      <li>An internal audit programme &mdash; you audit yourself before the certification
+      body does.</li>
+      <li>Documented management review at a set cadence.</li>
+    </ul>
+
+    <p>So the second framework is meaningfully cheaper than the first, but it is not free.</p>
+
+    <h2>Can one audit cover both?</h2>
+
+    <p>Some firms offer combined SOC 2 and ISO 27001 engagements and share fieldwork where
+    the evidence overlaps. It saves real money if you know you want both. It is not worth
+    scoping a dual engagement speculatively &mdash; the saving is smaller than the cost of
+    doing a framework nobody asked you for.</p>
+
+    <h2>What customers actually do with each</h2>
+
+    <p>A SOC 2 report is confidential and usually shared under NDA, because it contains a
+    detailed description of your systems and any exceptions found. Enterprise security
+    teams read it properly.</p>
+
+    <p>An ISO 27001 certificate is public and verifiable against the certification body's
+    register. It is easier to hand out and carries less detail &mdash; which is an advantage
+    at the top of a sales cycle and a disadvantage when a security team wants specifics.</p>
+
+    <h2>The honest summary</h2>
+
+    <p>Neither makes you secure. Both are commercial instruments that let a buyer's
+    procurement process approve you. Do the one your buyers ask for, do it properly, and do
+    not buy the second until somebody has actually asked for it.</p>
+
+
+<h2>Questions people ask</h2>
+<h3>What is the difference between SOC 2 and ISO 27001?</h3>
+<p>SOC 2 is an attestation report issued by a licensed CPA firm that tests your controls against the AICPA Trust Services Criteria. ISO 27001 is a certificate issued by an accredited certification body that confirms you operate an information security management system meeting the ISO standard. SOC 2 is dominant in North America; ISO 27001 is the recognised currency in Europe, the UK, Asia and the Middle East.</p>
+<h3>Should a startup do SOC 2 or ISO 27001 first?</h3>
+<p>Follow your customers. If they are American, do SOC 2 first because it is what their procurement teams ask for and it produces a usable artefact faster. If they are European, British, Asian or Middle Eastern, or you sell into regulated or government procurement, start with ISO 27001.</p>
+<h3>Does SOC 2 count towards ISO 27001?</h3>
+<p>Much of the underlying control work carries over, commonly half to three quarters: access control, MFA, onboarding and offboarding, change management, vendor management, encryption, backups, incident response and training. What does not carry over is the ISO-specific machinery, namely a formal risk assessment methodology, a Statement of Applicability, an internal audit programme and documented management review.</p>
+<h3>Is ISO 27001 harder than SOC 2?</h3>
+<p>It is more prescriptive. SOC 2 lets you define controls that meet the criteria; ISO 27001 requires a management system with defined artefacts and asks you to justify every Annex A control you exclude. Many teams find SOC 2 faster to a first result and ISO 27001 more useful as an internal security programme.</p>
+<h3>Can you get SOC 2 and ISO 27001 at the same time?</h3>
+<p>Yes. Some audit firms run combined engagements and share fieldwork where evidence overlaps, which saves money if you already know you need both. It is not worth scoping speculatively, because the saving is smaller than the cost of certifying against a framework no customer asked for.</p>
+
+    <div class="callout">
+      <p><strong>See this against your own company.</strong> SOC2Starter turns 19 questions
+      into a personalised list of what you are missing, drafts the policies, and files the
+      evidence against the requirement it proves. Fourteen days free, no card.</p>
+      <p><a class="btn btn-primary" href="/app/auth/signup">Start free</a>
+      <a href="/features" style="margin-left:12px">See everything it does &rarr;</a></p>
+    </div>
+
+    <div class="next-up">
+      <h2>Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>
+      <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
+      <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>SOC2Starter</h4>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      &copy; <span id="yr">2026</span> Deepak Gandhi (trading as SOC2Starter). All rights reserved.
+      SOC2Starter helps you prepare for a SOC 2 examination. It does not perform the
+      examination, does not issue an attestation, and is not a substitute for an auditor &mdash;
+      an independent CPA firm performs the SOC 2 examination.
+    </p>
+  </div>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-vs-iso-27001#post",
+      "headline": "SOC 2 vs ISO 27001: Which Should a Startup Do First?",
+      "description": "SOC 2 and ISO 27001 compared for startups: what each actually is, what they cost, how much work carries over between them, and how to decide which to do first.",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-vs-iso-27001",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-06",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Gandhi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SOC2Starter",
+        "url": "https://soc-2-compliance.vercel.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://soc-2-compliance.vercel.app/assets/og-image.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-vs-iso-27001"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://soc-2-compliance.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://soc-2-compliance.vercel.app/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SOC 2 vs ISO 27001: Which Should a Startup Do First?",
+          "item": "https://soc-2-compliance.vercel.app/blog/soc-2-vs-iso-27001"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between SOC 2 and ISO 27001?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SOC 2 is an attestation report issued by a licensed CPA firm that tests your controls against the AICPA Trust Services Criteria. ISO 27001 is a certificate issued by an accredited certification body that confirms you operate an information security management system meeting the ISO standard. SOC 2 is dominant in North America; ISO 27001 is the recognised currency in Europe, the UK, Asia and the Middle East."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should a startup do SOC 2 or ISO 27001 first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Follow your customers. If they are American, do SOC 2 first because it is what their procurement teams ask for and it produces a usable artefact faster. If they are European, British, Asian or Middle Eastern, or you sell into regulated or government procurement, start with ISO 27001."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SOC 2 count towards ISO 27001?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Much of the underlying control work carries over, commonly half to three quarters: access control, MFA, onboarding and offboarding, change management, vendor management, encryption, backups, incident response and training. What does not carry over is the ISO-specific machinery, namely a formal risk assessment methodology, a Statement of Applicability, an internal audit programme and documented management review."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is ISO 27001 harder than SOC 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is more prescriptive. SOC 2 lets you define controls that meet the criteria; ISO 27001 requires a management system with defined artefacts and asks you to justify every Annex A control you exclude. Many teams find SOC 2 faster to a first result and ISO 27001 more useful as an internal security programme."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you get SOC 2 and ISO 27001 at the same time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Some audit firms run combined engagements and share fieldwork where evidence overlaps, which saves money if you already know you need both. It is not worth scoping speculatively, because the saving is smaller than the cost of certifying against a framework no customer asked for."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

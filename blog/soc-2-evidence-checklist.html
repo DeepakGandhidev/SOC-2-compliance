@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>SOC 2 Evidence Checklist: What Auditors Actually Ask For (28 Items)</title>
+<meta name="description" content="The complete list of SOC 2 evidence an auditor requests from a startup: 10 policies and 18 operational artefacts, what satisfies each, and the four requests that catch teams out.">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="canonical" href="https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist">
+<meta property="og:title" content="SOC 2 Evidence Checklist: What Auditors Actually Ask For (28 Items)">
+<meta property="og:description" content="The complete list of SOC 2 evidence an auditor requests from a startup: 10 policies and 18 operational artefacts, what satisfies each, and the four requests that catch teams out.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist">
+<meta property="og:site_name" content="SOC2Starter">
+<meta property="og:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">S2</span> SOC2Starter</a>
+    <nav class="site">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog" aria-current="page">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/app/auth/login">Sign in</a>
+      <a class="btn btn-primary" href="/app/auth/signup" style="padding:9px 16px">Start free trial</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/blog">Guides</a> &rsaquo; Evidence</p>
+    <h1>What evidence does a SOC 2 auditor actually ask for?</h1>
+    <p class="post-meta">Updated 2026-09-06 &middot; 9 min read &middot; by Deepak Gandhi, who builds
+    <a href="/features">SOC2Starter</a></p>
+
+    <div class="answer">
+      <span class="label">The short answer</span>
+      <p>A SOC 2 auditor asks for two kinds of thing: <strong>policies</strong> that say a
+      control exists, and <strong>evidence</strong> that the control actually operated. For a
+      startup with the Security criteria in scope that is roughly 28 items &mdash; about ten
+      approved policies plus eighteen operational artefacts, of which access reviews,
+      offboarding records, MFA enforcement settings, backup restore tests and vendor reviews
+      are the most heavily tested.</p>
+      <p>The full list is below, with what satisfies each one.</p>
+    </div>
+
+
+    <p>Every founder preparing for a first SOC 2 hits the same wall. The framework is
+    written as criteria, not as a list of files, so "implement logical access controls"
+    tells you nothing about what to put in a folder. Then a request list arrives from the
+    auditor and it turns out the answer was concrete all along.</p>
+
+    <p>This is that list. Twenty-eight items, grouped the way an audit actually works:
+    ten policies, and eighteen pieces of proof that what the policies claim is really
+    happening. It is the same catalogue SOC2Starter generates, which is where the
+    specificity comes from.</p>
+
+    <h2>Why an auditor asks for two different things</h2>
+
+    <p>A SOC 2 examination tests two questions, and they need different artefacts.</p>
+
+    <p><strong>Is there a control?</strong> That is what a policy answers. A document that
+    says who may reach production, approved by someone with the authority to approve it,
+    on a date.</p>
+
+    <p><strong>Did the control operate?</strong> That is evidence. A quarterly access
+    review with a date on it, an offboarding checklist showing the revocation actually
+    happened, a restore test that someone genuinely ran.</p>
+
+    <p>A Type 1 report leans on the first. A Type 2 report lives on the second &mdash; it
+    tests whether controls operated over a period, so a policy written the week before
+    fieldwork proves very little. If you are unsure which you need,
+    <a href="/blog/soc-2-type-1-vs-type-2">the difference is worth ten minutes</a>.</p>
+
+    <h2>The ten policies</h2>
+
+    <p>Every one of these needs the same three things: an owner, an approval date, and a
+    review date in the future. An unapproved draft is not a policy, and an auditor will
+    say so.</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>Policy</th><th>Priority</th><th>What proves it</th></tr></thead>
+<tbody>
+<tr><td>Information Security Policy</td><td>High</td><td>Approved document with an approval date and an approver.</td></tr>
+<tr><td>Access Control Policy</td><td>High</td><td>Approved access control policy.</td></tr>
+<tr><td>Incident Response Policy</td><td>High</td><td>Approved policy and, ideally, one incident or tabletop write-up.</td></tr>
+<tr><td>Password Management Policy</td><td>Medium</td><td>Approved policy plus your password manager settings.</td></tr>
+<tr><td>Vendor Management Policy</td><td>Medium</td><td>Approved policy plus your vendor inventory.</td></tr>
+<tr><td>Data Retention Policy</td><td>Medium</td><td>Approved retention policy and a deletion runbook.</td></tr>
+<tr><td>Change Management Policy</td><td>Medium</td><td>Approved policy plus a sample of reviewed pull requests.</td></tr>
+<tr><td>Security Awareness Policy</td><td>Medium</td><td>Approved policy plus training completion records.</td></tr>
+<tr><td>Business Continuity Policy</td><td>Low</td><td>Approved BC/DR policy and your last restore test result.</td></tr>
+<tr><td>Acceptable Use Policy</td><td>Low</td><td>Approved policy plus employee acknowledgements.</td></tr>
+</tbody>
+</table>
+</div>
+
+    <h2>The eighteen pieces of evidence</h2>
+
+    <p>Priority here means what to do first if you are starting from nothing, not what an
+    auditor cares least about. The high-priority items are the ones that are both heavily
+    tested and slow to fix retroactively.</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>Area</th><th>What the auditor asks for</th><th>What satisfies it</th><th>Priority</th></tr></thead>
+<tbody>
+<tr><td>Security</td><td>MFA enforced on critical systems</td><td>Screenshot or export of the MFA enforcement setting in each identity provider &mdash; email, code hosting, cloud console, password manager.</td><td>High</td></tr>
+<tr><td>Security</td><td>Annual risk assessment</td><td>A risk register with owners, ratings and a review date.</td><td>Medium</td></tr>
+<tr><td>Security</td><td>Incident log</td><td>An incident log export &mdash; or a signed statement that there were no incidents this period.</td><td>Medium</td></tr>
+<tr><td>Access control</td><td>Production access inventory</td><td>An export of IAM users and roles, or your cloud console member list.</td><td>High</td></tr>
+<tr><td>Access control</td><td>Quarterly access review</td><td>A signed-off review showing the date, the reviewer, and the access that was removed.</td><td>High</td></tr>
+<tr><td>Access control</td><td>Employee onboarding records</td><td>Completed onboarding checklists for recent hires.</td><td>Medium</td></tr>
+<tr><td>Access control</td><td>Employee offboarding records</td><td>Completed offboarding checklists showing revocation dates.</td><td>High</td></tr>
+<tr><td>Infrastructure</td><td>Backup configuration</td><td>A backup settings screenshot showing schedule and retention.</td><td>High</td></tr>
+<tr><td>Infrastructure</td><td>Backup restore test</td><td>A restore test write-up: date, who ran it, what happened.</td><td>Medium</td></tr>
+<tr><td>Infrastructure</td><td>Monitoring and alerting</td><td>Alert rule configuration, plus one example of an alert that actually fired.</td><td>Medium</td></tr>
+<tr><td>Infrastructure</td><td>Vulnerability management</td><td>Scanner output, plus evidence that the findings were remediated.</td><td>High</td></tr>
+<tr><td>Infrastructure</td><td>Encryption at rest and in transit</td><td>The database encryption setting and your TLS configuration or an SSL Labs report.</td><td>High</td></tr>
+<tr><td>People</td><td>Security awareness training</td><td>A training completion report listing every current employee.</td><td>Medium</td></tr>
+<tr><td>People</td><td>Confidentiality agreements</td><td>Signed agreements, or an HR report showing signature status.</td><td>Medium</td></tr>
+<tr><td>People</td><td>Background checks</td><td>Completion records &mdash; not the reports themselves.</td><td>Low</td></tr>
+<tr><td>Vendors</td><td>Vendor inventory</td><td>A vendor list with the data each handles, a risk rating and an owner.</td><td>Medium</td></tr>
+<tr><td>Vendors</td><td>Annual vendor review</td><td>Review notes for each critical vendor, with a date and a reviewer.</td><td>Medium</td></tr>
+<tr><td>Vendors</td><td>Vendor security documentation</td><td>Your vendors' own SOC 2 or ISO 27001 reports, or their security summaries.</td><td>Low</td></tr>
+</tbody>
+</table>
+</div>
+
+    <h2>The four requests that catch people out</h2>
+
+    <h3>The quarterly access review</h3>
+    <p>Not a list of who has access &mdash; a record that somebody <em>looked</em> at the
+    list, on a date, and made decisions. A screenshot of your IAM console proves the state
+    of the world today. The review proves the control operates. You cannot reconstruct
+    four quarters of these the week before fieldwork, which is why it is the single most
+    common finding for startups.</p>
+
+    <h3>Offboarding evidence</h3>
+    <p>An auditor will take your list of leavers and check that access ended when
+    employment did. This is one of the few places where a gap is objectively provable from
+    timestamps, so it is one of the first things sampled. If somebody left in March and
+    their GitHub account was disabled in June, that is a finding no policy can talk away.</p>
+
+    <h3>The restore test</h3>
+    <p>Backups configured is a setting. A restore test is an event: a date, a person, an
+    outcome, ideally a note about what broke. Most teams have the first and have never done
+    the second.</p>
+
+    <h3>An incident log with nothing in it</h3>
+    <p>Teams often skip this because nothing happened. An empty log is fine; a missing one
+    is not. A signed statement saying there were no security incidents this period is a
+    perfectly acceptable artefact &mdash; the control being tested is that you would have
+    recorded one.</p>
+
+    <h2>What evidence has to look like</h2>
+
+    <p>Auditors reject artefacts for boring reasons far more often than substantive ones.
+    In practice, evidence needs to be:</p>
+
+    <ul>
+      <li><strong>Dated, and dated inside the audit period.</strong> An undated screenshot
+      proves nothing about when the control operated.</li>
+      <li><strong>Attributable.</strong> Who ran the review, who approved the policy, who
+      performed the test.</li>
+      <li><strong>Complete.</strong> A user list showing eight of your twelve accounts
+      invites a question you do not want.</li>
+      <li><strong>Native where possible.</strong> A CSV export from the source system beats
+      a photograph of a monitor.</li>
+      <li><strong>Reproducible.</strong> If the auditor asks how you produced it, the answer
+      should be a procedure, not a memory.</li>
+    </ul>
+
+    <h2>Where to collect it from</h2>
+
+    <p>Most of this list already exists inside tools you pay for. The access review comes
+    out of Google Workspace, Okta or Microsoft 365. The production access inventory comes
+    from AWS IAM. Branch protection and code review evidence comes from GitHub or GitLab.
+    Pulling those on a schedule and filing them against the requirement they prove is
+    exactly what <a href="/features">SOC2Starter's twelve read-only connectors</a> do, and
+    it is the difference between a quarterly afternoon of screenshots and a button.</p>
+
+    <h2>A sensible order to do this in</h2>
+
+    <ol>
+      <li><strong>Turn on MFA everywhere and capture the settings.</strong> Highest impact,
+      lowest effort, and it is tested every time.</li>
+      <li><strong>Write and approve the four high-priority policies.</strong> Information
+      Security, Access Control, Incident Response, and one of Change Management or Vendor
+      Management depending on your risk.</li>
+      <li><strong>Start the evidence clock.</strong> Do the first access review now, even
+      if it is imperfect, because a Type 2 needs a history and history only accumulates
+      forwards.</li>
+      <li><strong>Fix offboarding.</strong> Make revocation part of the checklist, not part
+      of somebody's memory.</li>
+      <li><strong>Run one restore test</strong> and write down what happened.</li>
+      <li><strong>Inventory your vendors</strong> and collect their reports. Slow, dull,
+      and entirely parallelisable across the team.</li>
+    </ol>
+
+
+<h2>Questions people ask</h2>
+<h3>How much evidence does a SOC 2 audit need?</h3>
+<p>For a startup with the Security criteria in scope, expect roughly 28 distinct items: about ten approved policies and eighteen pieces of operational proof such as access reviews, offboarding records, backup restore tests, vulnerability scans and vendor reviews. The number of individual files is larger, because a Type 2 report samples recurring controls across the whole observation period rather than once.</p>
+<h3>What is the difference between a policy and evidence in SOC 2?</h3>
+<p>A policy states that a control exists and who owns it. Evidence proves the control actually operated. A Type 1 report tests mainly the first; a Type 2 report tests the second across an observation period, which is why policies written just before fieldwork carry little weight.</p>
+<h3>Can I create SOC 2 evidence retroactively?</h3>
+<p>Not for controls that are supposed to recur. An auditor tests whether a quarterly access review happened each quarter, and a review dated the week before fieldwork shows the control did not operate during the period. Point-in-time artefacts such as configuration settings can be captured at any time, but recurring evidence only accumulates forwards, which is the main argument for starting early.</p>
+<h3>What is the most common SOC 2 finding for startups?</h3>
+<p>Access management: quarterly reviews that were never performed, and offboarding where accounts outlived employment. Both are provable from timestamps, so they are sampled early and cannot be argued away after the fact.</p>
+<h3>Do I need a penetration test for SOC 2?</h3>
+<p>SOC 2 does not name a penetration test as a requirement. It expects a vulnerability management process, and most auditors accept a combination of automated scanning and evidence that findings get remediated. Many customers ask for a pen test separately in security questionnaires, which is usually the real reason startups buy one.</p>
+
+    <div class="callout">
+      <p><strong>See this against your own company.</strong> SOC2Starter turns 19 questions
+      into a personalised list of what you are missing, drafts the policies, and files the
+      evidence against the requirement it proves. Fourteen days free, no card.</p>
+      <p><a class="btn btn-primary" href="/app/auth/signup">Start free</a>
+      <a href="/features" style="margin-left:12px">See everything it does &rarr;</a></p>
+    </div>
+
+    <div class="next-up">
+      <h2>Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
+      <li><a href="/blog/soc-2-policies-you-need">The 10 policies SOC 2 requires, and what each one has to say</a></li>
+      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>SOC2Starter</h4>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      &copy; <span id="yr">2026</span> Deepak Gandhi (trading as SOC2Starter). All rights reserved.
+      SOC2Starter helps you prepare for a SOC 2 examination. It does not perform the
+      examination, does not issue an attestation, and is not a substitute for an auditor &mdash;
+      an independent CPA firm performs the SOC 2 examination.
+    </p>
+  </div>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist#post",
+      "headline": "SOC 2 Evidence Checklist: What Auditors Actually Ask For (28 Items)",
+      "description": "The complete list of SOC 2 evidence an auditor requests from a startup: 10 policies and 18 operational artefacts, what satisfies each, and the four requests that catch teams out.",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-06",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Gandhi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SOC2Starter",
+        "url": "https://soc-2-compliance.vercel.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://soc-2-compliance.vercel.app/assets/og-image.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://soc-2-compliance.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://soc-2-compliance.vercel.app/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SOC 2 Evidence Checklist: What Auditors Actually Ask For (28 Items)",
+          "item": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much evidence does a SOC 2 audit need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a startup with the Security criteria in scope, expect roughly 28 distinct items: about ten approved policies and eighteen pieces of operational proof such as access reviews, offboarding records, backup restore tests, vulnerability scans and vendor reviews. The number of individual files is larger, because a Type 2 report samples recurring controls across the whole observation period rather than once."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a policy and evidence in SOC 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A policy states that a control exists and who owns it. Evidence proves the control actually operated. A Type 1 report tests mainly the first; a Type 2 report tests the second across an observation period, which is why policies written just before fieldwork carry little weight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I create SOC 2 evidence retroactively?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not for controls that are supposed to recur. An auditor tests whether a quarterly access review happened each quarter, and a review dated the week before fieldwork shows the control did not operate during the period. Point-in-time artefacts such as configuration settings can be captured at any time, but recurring evidence only accumulates forwards, which is the main argument for starting early."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the most common SOC 2 finding for startups?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Access management: quarterly reviews that were never performed, and offboarding where accounts outlived employment. Both are provable from timestamps, so they are sampled early and cannot be argued away after the fact."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a penetration test for SOC 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SOC 2 does not name a penetration test as a requirement. It expects a vulnerability management process, and most auditors accept a combination of automated scanning and evidence that findings get remediated. Many customers ask for a pen test separately in security questionnaires, which is usually the real reason startups buy one."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

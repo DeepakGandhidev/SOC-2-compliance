@@ -54,6 +54,8 @@ and sets the security headers.
 | `/checkout` | `checkout.html` — Paddle's default payment link points here |
 | `/thanks` | `thanks.html` — where Paddle sends the browser after payment |
 | `/app/*` | The product. A compiled single-page bundle, not editable here — see below |
+| `/blog` | `blog/index.html` — the guide index |
+| `/blog/<slug>` | `blog/<slug>.html` — one guide per file |
 
 ## The app at `/app`
 
@@ -114,6 +116,27 @@ server function will tell you so in as many words.
 
 `/thanks` changes no billing state. Only a signature-verified webhook, or the app reading
 Paddle's API directly, can do that — so landing on it without paying grants nothing.
+
+## The guides at `/blog`
+
+Seven articles targeting what founders search before a first audit. Each one is plain
+HTML like the rest of the site; to add another, copy an existing file and keep four
+things intact, because they are what the page is actually for:
+
+1. The **short answer** block directly under the headline. It has to make sense quoted on
+   its own — that is what a featured snippet and an AI answer engine take.
+2. The **`FAQPage` schema** at the bottom, matching the questions visible on the page.
+   Schema that does not match the page is worse than no schema.
+3. **Question-shaped `<h2>`s.** People and answer engines both search in questions.
+4. **Links to two or three other guides**, and one to `/features`.
+
+Then add the URL to `sitemap.xml` and a card to `blog/index.html`.
+
+The evidence checklist is the important one: it is generated from the product's real
+requirement catalogue, so it is the single page a competitor cannot honestly copy.
+
+**Read [GROWTH.md](GROWTH.md) before doing any more SEO work.** It covers what is done,
+what only a person can do (all of the link building), and what to expect month by month.
 
 ## SEO
 

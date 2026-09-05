@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>SOC 2 Policies: The 10 You Need and What Each Must Contain</title>
+<meta name="description" content="SOC 2 never names a policy, but ten have become standard for B2B SaaS. What each one must cover, the three reasons auditors reject them, and why templates cause failures.">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="canonical" href="https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need">
+<meta property="og:title" content="SOC 2 Policies: The 10 You Need and What Each Must Contain">
+<meta property="og:description" content="SOC 2 never names a policy, but ten have become standard for B2B SaaS. What each one must cover, the three reasons auditors reject them, and why templates cause failures.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need">
+<meta property="og:site_name" content="SOC2Starter">
+<meta property="og:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">S2</span> SOC2Starter</a>
+    <nav class="site">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog" aria-current="page">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/app/auth/login">Sign in</a>
+      <a class="btn btn-primary" href="/app/auth/signup" style="padding:9px 16px">Start free trial</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/blog">Guides</a> &rsaquo; Policies</p>
+    <h1>The 10 policies SOC 2 requires, and what each one has to say</h1>
+    <p class="post-meta">Updated 2026-09-06 &middot; 8 min read &middot; by Deepak Gandhi, who builds
+    <a href="/features">SOC2Starter</a></p>
+
+    <div class="answer">
+      <span class="label">The short answer</span>
+      <p>SOC 2 names no policies. It states criteria, and an auditor judges whether your
+      documentation demonstrates them. In practice, ten have become standard for B2B SaaS:
+      <strong>Information Security, Access Control, Password Management, Incident Response,
+      Change Management, Vendor Management, Data Retention, Business Continuity, Acceptable
+      Use, and Security Awareness</strong>.</p>
+      <p>Each needs a named approver, an approval date and a review date &mdash; and must
+      describe what you genuinely do, because every sentence is a control the auditor can
+      test you against.</p>
+    </div>
+
+
+    <p>SOC 2 never lists policies by name. It states criteria, and an auditor decides
+    whether your documentation demonstrates them. What follows is the set that has settled
+    into standard practice for B2B SaaS companies &mdash; the same ten SOC2Starter drafts
+    &mdash; and what each has to actually say.</p>
+
+    <h2>The ten, and what each is for</h2>
+
+    <div class="table-wrap">
+    <table>
+    <thead><tr><th>Policy</th><th>What it is for</th></tr></thead>
+    <tbody>
+<tr><td><strong>Information Security Policy</strong></td><td>The parent document. States that security is governed, who owns it, and how the other policies hang off it.</td></tr>
+<tr><td><strong>Access Control Policy</strong></td><td>Who gets access to what, how it is granted, how it is reviewed, how it ends.</td></tr>
+<tr><td><strong>Password Management Policy</strong></td><td>The credential rules, including what your password manager enforces.</td></tr>
+<tr><td><strong>Incident Response Policy</strong></td><td>What counts as an incident, who is called, and what happens in the first hour.</td></tr>
+<tr><td><strong>Change Management Policy</strong></td><td>How code reaches production without one person being able to do it silently.</td></tr>
+<tr><td><strong>Vendor Management Policy</strong></td><td>How you decide a third party is safe to hand data to.</td></tr>
+<tr><td><strong>Data Retention Policy</strong></td><td>How long you keep data and how it gets deleted.</td></tr>
+<tr><td><strong>Business Continuity Policy</strong></td><td>What happens when infrastructure fails.</td></tr>
+<tr><td><strong>Acceptable Use Policy</strong></td><td>What employees may do with company systems and devices.</td></tr>
+<tr><td><strong>Security Awareness Policy</strong></td><td>That people are trained, and how you know.</td></tr>
+    </tbody>
+    </table>
+    </div>
+
+    <h2>What makes a policy count</h2>
+
+    <p>Auditors reject policies for three reasons, and none of them is writing quality.</p>
+
+    <ul>
+      <li><strong>It was never approved.</strong> A document in a Google Drive folder is a
+      draft. A policy has an approver, an approval date, and a version. If you cannot show
+      who approved it and when, it does not exist for audit purposes.</li>
+      <li><strong>It has no review date.</strong> Policies are expected to be reviewed at
+      least annually. A policy approved two years ago with no review is evidence of a
+      control that stopped operating.</li>
+      <li><strong>It describes a company you are not.</strong> This is the expensive one. A
+      downloaded template that promises quarterly penetration tests and a 24/7 SOC commits
+      you to controls the auditor will then test. You will fail against your own document.
+      Understating is safe; overstating is a self-inflicted finding.</li>
+    </ul>
+
+    <div class="callout">
+      <p><strong>The template trap.</strong> The fastest way to fail a first audit is to
+      adopt an enterprise policy pack unedited. Every sentence in a policy is a control an
+      auditor may test. Write what your ten-person company genuinely does, and no more.</p>
+    </div>
+
+    <h2>Each one, and what it has to contain</h2>
+
+    <h3>Information Security Policy</h3>
+    <p>The parent document. States that security is governed, who owns it, and how the other policies hang off it.</p>
+    <p><strong>Must cover:</strong> Scope, roles and responsibilities, the security objectives, how often it is reviewed, who approved it.</p>
+    <h3>Access Control Policy</h3>
+    <p>Who gets access to what, how it is granted, how it is reviewed, how it ends.</p>
+    <p><strong>Must cover:</strong> Least privilege, the approval path, MFA requirements, the review cadence, revocation on termination.</p>
+    <h3>Password Management Policy</h3>
+    <p>The credential rules, including what your password manager enforces.</p>
+    <p><strong>Must cover:</strong> Minimum length, reuse and rotation rules, MFA, where secrets may and may not be stored.</p>
+    <h3>Incident Response Policy</h3>
+    <p>What counts as an incident, who is called, and what happens in the first hour.</p>
+    <p><strong>Must cover:</strong> Severity definitions, roles, escalation path, customer notification, post-incident review.</p>
+    <h3>Change Management Policy</h3>
+    <p>How code reaches production without one person being able to do it silently.</p>
+    <p><strong>Must cover:</strong> Code review requirement, testing, approvals, rollback, emergency change handling.</p>
+    <h3>Vendor Management Policy</h3>
+    <p>How you decide a third party is safe to hand data to.</p>
+    <p><strong>Must cover:</strong> Risk tiering, what diligence each tier needs, review cadence, offboarding a vendor.</p>
+    <h3>Data Retention Policy</h3>
+    <p>How long you keep data and how it gets deleted.</p>
+    <p><strong>Must cover:</strong> Retention periods by data type, deletion procedure, backup expiry, customer deletion requests.</p>
+    <h3>Business Continuity Policy</h3>
+    <p>What happens when infrastructure fails.</p>
+    <p><strong>Must cover:</strong> RTO and RPO, backup schedule, restore testing cadence, who declares an outage.</p>
+    <h3>Acceptable Use Policy</h3>
+    <p>What employees may do with company systems and devices.</p>
+    <p><strong>Must cover:</strong> Device requirements, prohibited use, personal device rules, what happens on violation.</p>
+    <h3>Security Awareness Policy</h3>
+    <p>That people are trained, and how you know.</p>
+    <p><strong>Must cover:</strong> Training at onboarding, annual refresh, phishing simulation if you run one, completion tracking.</p>
+
+    <h2>The order to write them in</h2>
+
+    <p>If you are starting from nothing, four of these do most of the work, because they
+    map to the controls that get tested hardest:</p>
+
+    <ol>
+      <li><strong>Information Security Policy</strong> &mdash; everything else references it.</li>
+      <li><strong>Access Control Policy</strong> &mdash; access management is the most common
+      source of findings.</li>
+      <li><strong>Incident Response Policy</strong> &mdash; the one customers ask about
+      directly in security questionnaires.</li>
+      <li><strong>Change Management Policy</strong> &mdash; cheap to satisfy if you already
+      require pull request review.</li>
+    </ol>
+
+    <p>The remaining six are quicker once the first four set the tone.</p>
+
+    <h2>Policies are not the finish line</h2>
+
+    <p>A policy is a claim. The audit tests the claim. Your access control policy says
+    access is reviewed quarterly, so the auditor asks for four reviews with dates on them
+    &mdash; and that is evidence, not documentation.
+    <a href="/blog/soc-2-evidence-checklist">The eighteen artefacts that go with these ten
+    policies are listed here.</a></p>
+
+    <p>Which is the argument for writing your policies around what you already do, then
+    changing practice deliberately &mdash; rather than writing an aspirational document and
+    hoping nobody checks.</p>
+
+
+<h2>Questions people ask</h2>
+<h3>What policies are required for SOC 2?</h3>
+<p>SOC 2 does not name required policies; it states criteria and the auditor judges whether your documentation demonstrates them. In practice, B2B SaaS companies are expected to have ten: Information Security, Access Control, Password Management, Incident Response, Change Management, Vendor Management, Data Retention, Business Continuity, Acceptable Use, and Security Awareness.</p>
+<h3>Can I use SOC 2 policy templates?</h3>
+<p>Yes, but edit them down to what your company actually does. Every sentence in a policy is a control the auditor may test, so an unedited enterprise template that promises quarterly penetration tests and 24/7 monitoring commits you to controls you will then fail. Understating is safe; overstating is a self-inflicted finding.</p>
+<h3>Who has to approve a SOC 2 policy?</h3>
+<p>Someone with authority to approve it, usually a founder, CTO or the designated security owner. What matters for the audit is that the approval is recorded: a named approver, an approval date, and a version. An unapproved draft does not count as a policy.</p>
+<h3>How often do SOC 2 policies need to be reviewed?</h3>
+<p>At least annually. A policy approved two years ago with no evidence of review is itself evidence that a control stopped operating, so each policy should carry a next-review date and someone should own hitting it.</p>
+<h3>How long should a SOC 2 policy be?</h3>
+<p>Long enough to state the control and short enough that it is true. For a startup, most of these fit in one to three pages. Length impresses nobody and every extra commitment is another thing to be tested against.</p>
+
+    <div class="callout">
+      <p><strong>See this against your own company.</strong> SOC2Starter turns 19 questions
+      into a personalised list of what you are missing, drafts the policies, and files the
+      evidence against the requirement it proves. Fourteen days free, no card.</p>
+      <p><a class="btn btn-primary" href="/app/auth/signup">Start free</a>
+      <a href="/features" style="margin-left:12px">See everything it does &rarr;</a></p>
+    </div>
+
+    <div class="next-up">
+      <h2>Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-evidence-checklist">What evidence does a SOC 2 auditor actually ask for?</a></li>
+      <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
+      <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>SOC2Starter</h4>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      &copy; <span id="yr">2026</span> Deepak Gandhi (trading as SOC2Starter). All rights reserved.
+      SOC2Starter helps you prepare for a SOC 2 examination. It does not perform the
+      examination, does not issue an attestation, and is not a substitute for an auditor &mdash;
+      an independent CPA firm performs the SOC 2 examination.
+    </p>
+  </div>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need#post",
+      "headline": "SOC 2 Policies: The 10 You Need and What Each Must Contain",
+      "description": "SOC 2 never names a policy, but ten have become standard for B2B SaaS. What each one must cover, the three reasons auditors reject them, and why templates cause failures.",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-06",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Gandhi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SOC2Starter",
+        "url": "https://soc-2-compliance.vercel.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://soc-2-compliance.vercel.app/assets/og-image.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://soc-2-compliance.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://soc-2-compliance.vercel.app/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SOC 2 Policies: The 10 You Need and What Each Must Contain",
+          "item": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What policies are required for SOC 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SOC 2 does not name required policies; it states criteria and the auditor judges whether your documentation demonstrates them. In practice, B2B SaaS companies are expected to have ten: Information Security, Access Control, Password Management, Incident Response, Change Management, Vendor Management, Data Retention, Business Continuity, Acceptable Use, and Security Awareness."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use SOC 2 policy templates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but edit them down to what your company actually does. Every sentence in a policy is a control the auditor may test, so an unedited enterprise template that promises quarterly penetration tests and 24/7 monitoring commits you to controls you will then fail. Understating is safe; overstating is a self-inflicted finding."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who has to approve a SOC 2 policy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Someone with authority to approve it, usually a founder, CTO or the designated security owner. What matters for the audit is that the approval is recorded: a named approver, an approval date, and a version. An unapproved draft does not count as a policy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often do SOC 2 policies need to be reviewed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At least annually. A policy approved two years ago with no evidence of review is itself evidence that a control stopped operating, so each policy should carry a next-review date and someone should own hitting it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long should a SOC 2 policy be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Long enough to state the control and short enough that it is true. For a startup, most of these fit in one to three pages. Length impresses nobody and every extra commitment is another thing to be tested against."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

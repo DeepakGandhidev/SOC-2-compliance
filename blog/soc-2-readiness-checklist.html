@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>SOC 2 Readiness Checklist for Startups: A Week-by-Week Plan</title>
+<meta name="description" content="A practical SOC 2 readiness checklist for a 5-50 person startup: what to do in week one, the fast wins, the ten policies, when to start the evidence clock, and the five costly mistakes.">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="canonical" href="https://soc-2-compliance.vercel.app/blog/soc-2-readiness-checklist">
+<meta property="og:title" content="SOC 2 Readiness Checklist for Startups: A Week-by-Week Plan">
+<meta property="og:description" content="A practical SOC 2 readiness checklist for a 5-50 person startup: what to do in week one, the fast wins, the ten policies, when to start the evidence clock, and the five costly mistakes.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://soc-2-compliance.vercel.app/blog/soc-2-readiness-checklist">
+<meta property="og:site_name" content="SOC2Starter">
+<meta property="og:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">S2</span> SOC2Starter</a>
+    <nav class="site">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog" aria-current="page">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/app/auth/login">Sign in</a>
+      <a class="btn btn-primary" href="/app/auth/signup" style="padding:9px 16px">Start free trial</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/blog">Guides</a> &rsaquo; Getting ready</p>
+    <h1>A SOC 2 readiness checklist for a 10-person startup</h1>
+    <p class="post-meta">Updated 2026-09-06 &middot; 9 min read &middot; by Deepak Gandhi, who builds
+    <a href="/features">SOC2Starter</a></p>
+
+    <div class="answer">
+      <span class="label">The short answer</span>
+      <p>Decide the report type and scope <strong>Security only</strong>. Do the fast wins
+      first &mdash; enforce MFA everywhere, deploy a password manager, require pull request
+      review, remove stale access. Then write ten policies describing what you actually do.
+      Then <strong>start the evidence clock</strong>: a first access review, fixed offboarding,
+      a restore test, an incident log, a vendor inventory.</p>
+      <p>Budget one to three months of readiness, and six to twelve months to a first Type 2
+      report. The observation window is calendar time and cannot be shortened.</p>
+    </div>
+
+
+    <p>Written for the person who has just been told a deal depends on SOC 2 and has no
+    compliance team, no security engineer, and a product to ship. Nothing here needs a
+    consultant. Most of it is a founder and an afternoon.</p>
+
+    <h2>Week 1 &mdash; decide the shape of it</h2>
+
+    <ul>
+      <li><strong>Ask the customer which report they accept.</strong> Type 1 or Type 2. This
+      one question decides your timeline and can save you an entire audit fee. Most
+      enterprise buyers mean <a href="/blog/soc-2-type-1-vs-type-2">Type 2</a>.</li>
+      <li><strong>Scope Security only.</strong> Availability, Confidentiality, Processing
+      Integrity and Privacy are optional and permanently expensive. Add one only if a signed
+      contract names it.</li>
+      <li><strong>Get three audit quotes.</strong> The spread for identical scope is large.
+      A small firm's report is signed by a licensed CPA firm exactly like a big firm's.</li>
+      <li><strong>Name one owner.</strong> Not a committee. One person who is accountable
+      for the report existing.</li>
+    </ul>
+
+    <h2>Week 2 &mdash; the things that are pure win</h2>
+
+    <p>Do these before writing a single policy. They are fast, they close the most commonly
+    tested gaps, and they are worth doing whether or not you ever get audited.</p>
+
+    <ul>
+      <li><strong>Enforce MFA everywhere.</strong> Email, code hosting, cloud console,
+      password manager. Not "encouraged" &mdash; enforced at the identity provider, with the
+      setting screenshotted.</li>
+      <li><strong>Deploy a password manager</strong> to everyone and stop credentials living
+      in Slack messages and .env files people email each other.</li>
+      <li><strong>Turn on branch protection</strong> and require pull request review on
+      anything that reaches production. This satisfies change management almost entirely.</li>
+      <li><strong>Remove access nobody needs.</strong> The contractor from last year. The
+      founder's personal AWS root key. The shared login three people use.</li>
+      <li><strong>Check encryption.</strong> Database encryption at rest on, TLS enforced,
+      no plaintext anything.</li>
+    </ul>
+
+    <h2>Week 3&ndash;4 &mdash; write the policies</h2>
+
+    <p>Ten documents, each one to three pages, each with an approver and an approval date.
+    Start with Information Security, Access Control, Incident Response and Change
+    Management &mdash; those four carry most of the weight.</p>
+
+    <p>The rule that matters: <strong>describe what you actually do</strong>. Every sentence
+    is a control an auditor may test. A template promising quarterly penetration tests will
+    be tested against, and you will fail your own document.
+    <a href="/blog/soc-2-policies-you-need">What each policy has to contain is here.</a></p>
+
+    <h2>Month 2 &mdash; start the evidence clock</h2>
+
+    <p>This is the step teams skip and later cannot fix, because recurring evidence only
+    accumulates forwards.</p>
+
+    <ul>
+      <li><strong>Do your first access review now.</strong> Export every user from every
+      system, have someone review it, record the date, the reviewer, and what was removed.
+      Imperfect and done beats perfect and later.</li>
+      <li><strong>Fix offboarding.</strong> A written checklist that ends with access
+      revocation, and a record for each leaver. Auditors compare termination dates to
+      revocation timestamps, and gaps are objectively provable.</li>
+      <li><strong>Fix onboarding</strong> the same way, including the confidentiality
+      agreement and security training.</li>
+      <li><strong>Run one backup restore test.</strong> Actually restore something. Write
+      down the date, who did it, and what broke.</li>
+      <li><strong>Start an incident log.</strong> Empty is fine. Missing is not.</li>
+      <li><strong>Inventory your vendors</strong> &mdash; what data each one touches, a risk
+      rating, an owner &mdash; and collect their SOC 2 or ISO reports.</li>
+      <li><strong>Turn on vulnerability scanning</strong> and, more importantly, keep
+      evidence that findings got fixed.</li>
+    </ul>
+
+    <h2>Month 3 onwards &mdash; make it recur</h2>
+
+    <p>A Type 2 tests operation over time, so what you need now is a cadence rather than a
+    push:</p>
+
+    <div class="table-wrap">
+    <table>
+    <thead><tr><th>Cadence</th><th>What happens</th></tr></thead>
+    <tbody>
+      <tr><td>Every quarter</td><td>Access review, with a date, a reviewer and the removals recorded</td></tr>
+      <tr><td>Every quarter</td><td>Vulnerability scan, and evidence that findings were remediated</td></tr>
+      <tr><td>Annually</td><td>Policy review and re-approval, risk assessment, vendor review, restore test, security training</td></tr>
+      <tr><td>Per event</td><td>Onboarding and offboarding records, incident write-ups, change approvals</td></tr>
+    </tbody>
+    </table>
+    </div>
+
+    <p>If these live in somebody's head they will be missed in a busy quarter, and a missed
+    quarter is an exception in the report. This is precisely the work
+    <a href="/features">SOC2Starter's recurring tasks and reminders</a> exist to carry.</p>
+
+    <h2>The five mistakes that cost the most</h2>
+
+    <ol>
+      <li><strong>Adopting an enterprise policy template unedited.</strong> You commit to
+      controls you do not operate and fail against your own document.</li>
+      <li><strong>Scoping more criteria than a customer asked for.</strong> Permanent
+      recurring cost for no commercial benefit.</li>
+      <li><strong>Starting the observation window before the controls work.</strong> The
+      window covers whatever was actually happening, including the two months you were
+      still fixing things.</li>
+      <li><strong>Leaving evidence to the end.</strong> Recurring evidence cannot be
+      backdated, and trying is the one genuinely serious mistake on this list.</li>
+      <li><strong>Making it one person's secret project.</strong> Offboarding, training and
+      vendor reviews are done by other people. If they do not know, it does not happen.</li>
+    </ol>
+
+    <h2>A realistic schedule</h2>
+
+    <p>From nothing to a first Type 2 report: <strong>6 to 12 months</strong>. Roughly one to
+    three months of readiness work, then a three-to-twelve-month observation window that no
+    amount of money shortens, then two to four weeks of fieldwork and report drafting.</p>
+
+    <p>Which is why the answer to "when should we start?" is almost always "before a
+    customer asks", and the second-best answer is today.</p>
+
+
+<h2>Questions people ask</h2>
+<h3>How do I prepare for a SOC 2 audit as a small startup?</h3>
+<p>Decide the report type and scope Security only, then do the fast wins: enforce MFA everywhere, deploy a password manager, require pull request review, remove stale access and confirm encryption. Next write and approve ten policies describing what you genuinely do. Then start the evidence clock with a first access review, fixed offboarding, a backup restore test, an incident log and a vendor inventory, and put those on a recurring cadence.</p>
+<h3>How long does SOC 2 readiness take?</h3>
+<p>One to three months of preparation for a small startup with a focused owner. A Type 1 report follows a few weeks later. A first Type 2 report takes six to twelve months in total, because the observation window is calendar time that cannot be compressed.</p>
+<h3>What should a startup do first for SOC 2?</h3>
+<p>Enforce MFA on email, code hosting, the cloud console and your password manager, and capture the enforcement settings as evidence. It is the highest-impact, lowest-effort control, and it is tested in every audit.</p>
+<h3>Do I need a compliance consultant for SOC 2?</h3>
+<p>Not usually, at 5 to 50 people with Security-only scope. The work is a defined list, and the auditor is independent of whoever helped you prepare. Consultants earn their fee on complex environments, multiple frameworks, or when nobody internally can own it.</p>
+<h3>When should a startup start SOC 2?</h3>
+<p>Before a customer asks, because the Type 2 observation window is calendar time and cannot be bought down. If a deal is already blocked, start now and ask the customer whether a Type 1 unblocks the contract while the Type 2 window runs.</p>
+
+    <div class="callout">
+      <p><strong>See this against your own company.</strong> SOC2Starter turns 19 questions
+      into a personalised list of what you are missing, drafts the policies, and files the
+      evidence against the requirement it proves. Fourteen days free, no card.</p>
+      <p><a class="btn btn-primary" href="/app/auth/signup">Start free</a>
+      <a href="/features" style="margin-left:12px">See everything it does &rarr;</a></p>
+    </div>
+
+    <div class="next-up">
+      <h2>Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-evidence-checklist">What evidence does a SOC 2 auditor actually ask for?</a></li>
+      <li><a href="/blog/soc-2-policies-you-need">The 10 policies SOC 2 requires, and what each one has to say</a></li>
+      <li><a href="/blog/soc-2-timeline">How long does SOC 2 take?</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>SOC2Starter</h4>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      &copy; <span id="yr">2026</span> Deepak Gandhi (trading as SOC2Starter). All rights reserved.
+      SOC2Starter helps you prepare for a SOC 2 examination. It does not perform the
+      examination, does not issue an attestation, and is not a substitute for an auditor &mdash;
+      an independent CPA firm performs the SOC 2 examination.
+    </p>
+  </div>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-readiness-checklist#post",
+      "headline": "SOC 2 Readiness Checklist for Startups: A Week-by-Week Plan",
+      "description": "A practical SOC 2 readiness checklist for a 5-50 person startup: what to do in week one, the fast wins, the ten policies, when to start the evidence clock, and the five costly mistakes.",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-readiness-checklist",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-06",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@type": "Person",
+        "name": "Deepak Gandhi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SOC2Starter",
+        "url": "https://soc-2-compliance.vercel.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://soc-2-compliance.vercel.app/assets/og-image.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-readiness-checklist"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://soc-2-compliance.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://soc-2-compliance.vercel.app/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SOC 2 Readiness Checklist for Startups: A Week-by-Week Plan",
+          "item": "https://soc-2-compliance.vercel.app/blog/soc-2-readiness-checklist"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I prepare for a SOC 2 audit as a small startup?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Decide the report type and scope Security only, then do the fast wins: enforce MFA everywhere, deploy a password manager, require pull request review, remove stale access and confirm encryption. Next write and approve ten policies describing what you genuinely do. Then start the evidence clock with a first access review, fixed offboarding, a backup restore test, an incident log and a vendor inventory, and put those on a recurring cadence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does SOC 2 readiness take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One to three months of preparation for a small startup with a focused owner. A Type 1 report follows a few weeks later. A first Type 2 report takes six to twelve months in total, because the observation window is calendar time that cannot be compressed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should a startup do first for SOC 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enforce MFA on email, code hosting, the cloud console and your password manager, and capture the enforcement settings as evidence. It is the highest-impact, lowest-effort control, and it is tested in every audit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a compliance consultant for SOC 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not usually, at 5 to 50 people with Security-only scope. The work is a defined list, and the auditor is independent of whoever helped you prepare. Consultants earn their fee on complex environments, multiple frameworks, or when nobody internally can own it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should a startup start SOC 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Before a customer asks, because the Type 2 observation window is calendar time and cannot be bought down. If a deal is already blocked, start now and ask the customer whether a Type 1 unblocks the contract while the Type 2 window runs."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

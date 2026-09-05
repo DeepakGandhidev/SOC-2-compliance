@@ -74,6 +74,9 @@ nav.site { margin-left: auto; display: flex; align-items: center; gap: 20px; fle
 nav.site a { color: var(--ink-60); font-size: .93rem; font-weight: 550; }
 nav.site a:hover { color: var(--ink); text-decoration: none; }
 nav.site a[aria-current="page"] { color: var(--ink); }
+/* `nav.site a` outranks `.btn-primary`, which left the header CTA grey on blue. */
+nav.site a.btn-primary { color: #fff; }
+nav.site a.btn-primary:hover { color: #fff; }
 
 /* ---------------------------------------------------------------- buttons */
 
@@ -190,3 +193,66 @@ footer.site .fine {
   section { padding: 48px 0; }
   .hero { padding: 56px 0 44px; }
 }
+
+/* ---------------------------------------------------------------- blog
+
+   Articles are the only pages on this site written to be found rather than
+   navigated to, so they get two things the rest does not: a measure narrow
+   enough to read a thousand words in, and a direct answer at the top that
+   both a person skimming and an answer engine quoting can take at face
+   value without reading the rest. */
+
+.post-list { display: grid; gap: 20px; margin-top: 32px; }
+
+.post-card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 24px;
+}
+.post-card:hover { border-color: var(--brand); }
+.post-card h3 { margin: 0 0 .4rem; font-size: 1.15rem; }
+.post-card h3 a { color: var(--ink); }
+.post-card p { margin: 0 0 .75rem; color: var(--ink-60); }
+.post-card .kicker {
+  font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--brand); margin: 0 0 .5rem;
+}
+
+.article { padding: 48px 0 80px; }
+.article .wrap { max-width: var(--measure); }
+.article h2 { font-size: 1.35rem; margin-top: 2.75rem; }
+.article h3 { font-size: 1.05rem; margin-top: 2rem; }
+.article .table-wrap { margin: 1.5rem 0; }
+.article table { font-size: .93rem; }
+.article ul, .article ol { margin-bottom: 1.25rem; }
+
+.post-meta {
+  color: var(--ink-40); font-size: .9rem;
+  margin: 0 0 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line);
+}
+.post-meta a { color: var(--ink-40); text-decoration: underline; }
+
+/* The short answer. Deliberately the first thing under the headline. */
+.answer {
+  background: var(--brand-soft); border-left: 3px solid var(--brand);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 20px 24px; margin: 0 0 2rem;
+}
+.answer p:last-child { margin-bottom: 0; }
+.answer .label {
+  font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--brand); display: block; margin-bottom: .5rem;
+}
+
+.callout {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 20px 24px; margin: 2rem 0;
+}
+.callout p:last-child { margin-bottom: 0; }
+
+.next-up { margin-top: 3.5rem; border-top: 1px solid var(--line); padding-top: 1.5rem; }
+.next-up h2 { font-size: 1.1rem; margin-top: 0; }
+.next-up ul { list-style: none; padding: 0; }
+.next-up li { margin-bottom: .6rem; }
+
+.crumbs { font-size: .85rem; color: var(--ink-40); margin-bottom: 1.5rem; }
+.crumbs a { color: var(--ink-40); }
