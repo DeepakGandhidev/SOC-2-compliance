@@ -1,7 +1,11 @@
 # SOC2Starter — website
 
-The marketing and legal site for SOC2Starter. Plain HTML and one stylesheet: no build
-step, no dependencies, nothing to keep patched.
+The marketing and legal site for SOC2Starter, plus the product itself at `/app`.
+
+The pages are plain HTML and one stylesheet: no build step, no dependencies, nothing to
+keep patched. `/app` is the compiled Expo web build of the mobile app — the same
+codebase, the same Supabase backend, the same row-level security. It is committed here
+rather than built here, because Vercel runs no build command for this repo.
 
 ## Company details
 
@@ -49,6 +53,45 @@ and sets the security headers.
 | `/refund` | `refund.html` |
 | `/checkout` | `checkout.html` — Paddle's default payment link points here |
 | `/thanks` | `thanks.html` — where Paddle sends the browser after payment |
+| `/app/*` | The product. A compiled single-page bundle, not editable here — see below |
+
+## The app at `/app`
+
+Everything the mobile app does, in a browser: the assessment, requirements, the action
+plan, policies, evidence, tasks, integrations, the inbox and the exports. Same account,
+same data — someone can start on their laptop and finish on their phone.
+
+It is built from the Expo project, not from this repo:
+
+```bash
+cd ../soc2starter
+npm run build:web          # exports, then replaces ../soc2starter-site/app
+cd ../soc2starter-site
+git add app && git commit && git push
+```
+
+The whole `app/` directory is replaced on every build, never merged — a stale chunk from
+a previous export is served perfectly happily by Vercel and is a horrible thing to debug.
+
+Three pieces of configuration make it work, and all three break silently if changed:
+
+| | |
+| --- | --- |
+| `experiments.baseUrl: "/app"` in the Expo `app.json` | Makes the bundle ask for `/app/_expo/…` rather than `/_expo/…`. Without it every script tag 404s and the page is blank |
+| The `/app/:path*` rewrite in `vercel.json` | It is a single-page app: a deep link like `/app/policies/123` must serve `app/index.html` and let the router sort it out. Vercel checks the filesystem first, so real asset files still win |
+| `connect-src` in the CSP includes `https://*.supabase.co` | The pages need no network access at all; the app needs Supabase. Omit it and the app renders and then cannot log anybody in |
+
+`Disallow: /app/` is in `robots.txt`. It is behind a login and renders client-side, so
+there is nothing there for a crawler.
+
+### What differs from the native app
+
+| | |
+| --- | --- |
+| Push notifications | Not available. The in-app inbox is the source of truth on every platform; on web it is the only channel. `src/lib/notifications.web.ts` says so honestly rather than pretending to register |
+| Dialogs | react-native-web ships `Alert.alert` as a no-op, which made every confirmation a dead button. `src/lib/alert.web.ts` draws a real one |
+| Layout | The screens are phone-first. On a desktop browser the column is capped and centred (`webPage` in `src/theme`) instead of stretching a button across 1440px |
+| The camera | Uses the browser's file picker and webcam rather than the native camera |
 
 ## How checkout works
 

@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
 
+# The app itself is behind a login and renders client-side; there is nothing to index.
+Disallow: /app/
+
 # Checkout and confirmation pages are per-visitor, not content.
 Disallow: /checkout
 Disallow: /thanks
