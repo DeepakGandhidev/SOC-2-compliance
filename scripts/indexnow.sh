@@ -52,9 +52,30 @@ else
 fi
 
 N=$(echo "$URLS" | wc -l | tr -d ' ')
+
+# Never announce a URL that is not actually live. Submitting a 404 wastes the
+# crawl, burns IndexNow quota, and usually means the change was not deployed.
 echo
-echo "Submitting $N URL(s):"
-echo "$URLS" | sed 's|^|  |'
+echo "Checking $N URL(s) are live:"
+DEAD=0
+while IFS= read -r u; do
+  code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "$u" || echo 000)
+  if [ "$code" = "200" ]; then
+    printf '  %-3s %s\n' "$code" "$u"
+  else
+    printf '  \033[31m%-3s %s\033[0m\n' "$code" "$u"
+    DEAD=$((DEAD + 1))
+  fi
+done <<< "$URLS"
+
+if [ "$DEAD" -gt 0 ]; then
+  echo
+  echo "$DEAD URL(s) are not live. Nothing submitted." >&2
+  echo "Deploy first, then run this again:" >&2
+  echo "  git add -A && git commit -m '...' && git push" >&2
+  echo "Use --force to submit anyway." >&2
+  case "${*}" in *--force*) echo "(--force given, continuing)" ;; *) exit 1 ;; esac
+fi
 
 LIST=$(echo "$URLS" | sed 's|.*|"&"|' | paste -sd, -)
 BODY="{\"host\":\"${HOST}\",\"key\":\"${KEY}\",\"keyLocation\":\"${KEYURL}\",\"urlList\":[${LIST}]}"
