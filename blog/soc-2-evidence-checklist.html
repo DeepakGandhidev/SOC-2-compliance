@@ -4,17 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-<title>SOC 2 Evidence Checklist: What Auditors Actually Ask For (28 Items)</title>
-<meta name="description" content="The complete list of SOC 2 evidence an auditor requests from a startup: 10 policies and 18 operational artefacts, what satisfies each, and the four requests that catch teams out.">
+<title>SOC 2 Evidence Checklist: What Auditors Ask For</title>
+<meta name="description" content="The 28 items a SOC 2 auditor requests from a startup: 10 policies and 18 operational artefacts, what satisfies each one, and the four requests that catch teams out.">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/favicon.png">
 <link rel="canonical" href="https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist">
-<meta property="og:title" content="SOC 2 Evidence Checklist: What Auditors Actually Ask For (28 Items)">
-<meta property="og:description" content="The complete list of SOC 2 evidence an auditor requests from a startup: 10 policies and 18 operational artefacts, what satisfies each, and the four requests that catch teams out.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="alternate" hreflang="en" href="https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist">
+<link rel="alternate" hreflang="x-default" href="https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist">
+<meta name="author" content="Deepak Gandhi">
+<meta property="og:title" content="SOC 2 Evidence Checklist: What Auditors Ask For">
+<meta property="og:description" content="The 28 items a SOC 2 auditor requests from a startup: 10 policies and 18 operational artefacts, what satisfies each one, and the four requests that catch teams out.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist">
 <meta property="og:site_name" content="SOC2Starter">
+<meta property="article:published_time" content="2026-09-06T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-09-06T00:00:00+00:00">
+<meta property="article:author" content="Deepak Gandhi">
+<meta property="article:section" content="Evidence">
+<meta property="article:tag" content="SOC 2">
 <meta property="og:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -55,6 +64,20 @@
       <p>The full list is below, with what satisfies each one.</p>
     </div>
 
+    <nav class="toc" aria-label="On this page">
+      <p class="toc-title">On this page</p>
+      <ol>
+        <li><a href="#why-an-auditor-asks-for-two-different-things">Why an auditor asks for two different things</a></li>
+        <li><a href="#the-ten-policies">The ten policies</a></li>
+        <li><a href="#the-eighteen-pieces-of-evidence">The eighteen pieces of evidence</a></li>
+        <li><a href="#the-four-requests-that-catch-people-out">The four requests that catch people out</a></li>
+        <li><a href="#what-evidence-has-to-look-like">What evidence has to look like</a></li>
+        <li><a href="#where-to-collect-it-from">Where to collect it from</a></li>
+        <li><a href="#a-sensible-order-to-do-this-in">A sensible order to do this in</a></li>
+        <li><a href="#questions-people-ask">Questions people ask</a></li>
+      </ol>
+    </nav>
+
 
     <p>Every founder preparing for a first SOC 2 hits the same wall. The framework is
     written as criteria, not as a list of files, so "implement logical access controls"
@@ -66,7 +89,7 @@
     happening. It is the same catalogue SOC2Starter generates, which is where the
     specificity comes from.</p>
 
-    <h2>Why an auditor asks for two different things</h2>
+    <h2 id="why-an-auditor-asks-for-two-different-things">Why an auditor asks for two different things</h2>
 
     <p>A SOC 2 examination tests two questions, and they need different artefacts.</p>
 
@@ -83,7 +106,7 @@
     fieldwork proves very little. If you are unsure which you need,
     <a href="/blog/soc-2-type-1-vs-type-2">the difference is worth ten minutes</a>.</p>
 
-    <h2>The ten policies</h2>
+    <h2 id="the-ten-policies">The ten policies</h2>
 
     <p>Every one of these needs the same three things: an owner, an approval date, and a
     review date in the future. An unapproved draft is not a policy, and an auditor will
@@ -107,7 +130,7 @@
 </table>
 </div>
 
-    <h2>The eighteen pieces of evidence</h2>
+    <h2 id="the-eighteen-pieces-of-evidence">The eighteen pieces of evidence</h2>
 
     <p>Priority here means what to do first if you are starting from nothing, not what an
     auditor cares least about. The high-priority items are the ones that are both heavily
@@ -139,33 +162,33 @@
 </table>
 </div>
 
-    <h2>The four requests that catch people out</h2>
+    <h2 id="the-four-requests-that-catch-people-out">The four requests that catch people out</h2>
 
-    <h3>The quarterly access review</h3>
+    <h3 id="the-quarterly-access-review">The quarterly access review</h3>
     <p>Not a list of who has access &mdash; a record that somebody <em>looked</em> at the
     list, on a date, and made decisions. A screenshot of your IAM console proves the state
     of the world today. The review proves the control operates. You cannot reconstruct
     four quarters of these the week before fieldwork, which is why it is the single most
     common finding for startups.</p>
 
-    <h3>Offboarding evidence</h3>
+    <h3 id="offboarding-evidence">Offboarding evidence</h3>
     <p>An auditor will take your list of leavers and check that access ended when
     employment did. This is one of the few places where a gap is objectively provable from
     timestamps, so it is one of the first things sampled. If somebody left in March and
     their GitHub account was disabled in June, that is a finding no policy can talk away.</p>
 
-    <h3>The restore test</h3>
+    <h3 id="the-restore-test">The restore test</h3>
     <p>Backups configured is a setting. A restore test is an event: a date, a person, an
     outcome, ideally a note about what broke. Most teams have the first and have never done
     the second.</p>
 
-    <h3>An incident log with nothing in it</h3>
+    <h3 id="an-incident-log-with-nothing-in-it">An incident log with nothing in it</h3>
     <p>Teams often skip this because nothing happened. An empty log is fine; a missing one
     is not. A signed statement saying there were no security incidents this period is a
     perfectly acceptable artefact &mdash; the control being tested is that you would have
     recorded one.</p>
 
-    <h2>What evidence has to look like</h2>
+    <h2 id="what-evidence-has-to-look-like">What evidence has to look like</h2>
 
     <p>Auditors reject artefacts for boring reasons far more often than substantive ones.
     In practice, evidence needs to be:</p>
@@ -183,7 +206,7 @@
       should be a procedure, not a memory.</li>
     </ul>
 
-    <h2>Where to collect it from</h2>
+    <h2 id="where-to-collect-it-from">Where to collect it from</h2>
 
     <p>Most of this list already exists inside tools you pay for. The access review comes
     out of Google Workspace, Okta or Microsoft 365. The production access inventory comes
@@ -192,7 +215,7 @@
     exactly what <a href="/features">SOC2Starter's twelve read-only connectors</a> do, and
     it is the difference between a quarterly afternoon of screenshots and a button.</p>
 
-    <h2>A sensible order to do this in</h2>
+    <h2 id="a-sensible-order-to-do-this-in">A sensible order to do this in</h2>
 
     <ol>
       <li><strong>Turn on MFA everywhere and capture the settings.</strong> Highest impact,
@@ -210,17 +233,16 @@
       and entirely parallelisable across the team.</li>
     </ol>
 
-
-<h2>Questions people ask</h2>
-<h3>How much evidence does a SOC 2 audit need?</h3>
+<h2 id="questions-people-ask">Questions people ask</h2>
+<h3 id="how-much-evidence-does-a-soc-2-audit-need">How much evidence does a SOC 2 audit need?</h3>
 <p>For a startup with the Security criteria in scope, expect roughly 28 distinct items: about ten approved policies and eighteen pieces of operational proof such as access reviews, offboarding records, backup restore tests, vulnerability scans and vendor reviews. The number of individual files is larger, because a Type 2 report samples recurring controls across the whole observation period rather than once.</p>
-<h3>What is the difference between a policy and evidence in SOC 2?</h3>
+<h3 id="what-is-the-difference-between-a-policy-and-evidence-in-soc-2">What is the difference between a policy and evidence in SOC 2?</h3>
 <p>A policy states that a control exists and who owns it. Evidence proves the control actually operated. A Type 1 report tests mainly the first; a Type 2 report tests the second across an observation period, which is why policies written just before fieldwork carry little weight.</p>
-<h3>Can I create SOC 2 evidence retroactively?</h3>
+<h3 id="can-i-create-soc-2-evidence-retroactively">Can I create SOC 2 evidence retroactively?</h3>
 <p>Not for controls that are supposed to recur. An auditor tests whether a quarterly access review happened each quarter, and a review dated the week before fieldwork shows the control did not operate during the period. Point-in-time artefacts such as configuration settings can be captured at any time, but recurring evidence only accumulates forwards, which is the main argument for starting early.</p>
-<h3>What is the most common SOC 2 finding for startups?</h3>
+<h3 id="what-is-the-most-common-soc-2-finding-for-startups">What is the most common SOC 2 finding for startups?</h3>
 <p>Access management: quarterly reviews that were never performed, and offboarding where accounts outlived employment. Both are provable from timestamps, so they are sampled early and cannot be argued away after the fact.</p>
-<h3>Do I need a penetration test for SOC 2?</h3>
+<h3 id="do-i-need-a-penetration-test-for-soc-2">Do I need a penetration test for SOC 2?</h3>
 <p>SOC 2 does not name a penetration test as a requirement. It expects a vulnerability management process, and most auditors accept a combination of automated scanning and evidence that findings get remediated. Many customers ask for a pen test separately in security questionnaires, which is usually the real reason startups buy one.</p>
 
     <div class="callout">
@@ -232,7 +254,7 @@
     </div>
 
     <div class="next-up">
-      <h2>Read next</h2>
+      <h2 id="read-next">Read next</h2>
       <ul>
       <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
       <li><a href="/blog/soc-2-policies-you-need">The 10 policies SOC 2 requires, and what each one has to say</a></li>
@@ -246,11 +268,11 @@
   <div class="wrap">
     <div class="cols">
       <div>
-        <h4>SOC2Starter</h4>
+        <h2 class="foot-h">SOC2Starter</h2>
         <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
       </div>
       <div>
-        <h4>Product</h4>
+        <h2 class="foot-h">Product</h2>
         <ul>
           <li><a href="/">Overview</a></li>
           <li><a href="/features">Features</a></li>
@@ -261,7 +283,7 @@
         </ul>
       </div>
       <div>
-        <h4>Learn</h4>
+        <h2 class="foot-h">Learn</h2>
         <ul>
           <li><a href="/blog">All guides</a></li>
           <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
@@ -270,7 +292,7 @@
         </ul>
       </div>
       <div>
-        <h4>Legal</h4>
+        <h2 class="foot-h">Legal</h2>
         <ul>
           <li><a href="/terms">Terms of service</a></li>
           <li><a href="/privacy">Privacy policy</a></li>
@@ -292,35 +314,106 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "BlogPosting",
-      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist#post",
-      "headline": "SOC 2 Evidence Checklist: What Auditors Actually Ask For (28 Items)",
-      "description": "The complete list of SOC 2 evidence an auditor requests from a startup: 10 policies and 18 operational artefacts, what satisfies each, and the four requests that catch teams out.",
+      "@type": "Organization",
+      "@id": "https://soc-2-compliance.vercel.app/#organization",
+      "name": "SOC2Starter",
+      "legalName": "Deepak Gandhi (trading as SOC2Starter)",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "logo": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "image": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "email": "deepakgandhi2007@gmail.com",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "founder": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "knowsAbout": [
+        "SOC 2",
+        "SOC 2 Type 2",
+        "Trust Services Criteria",
+        "Security compliance",
+        "Evidence collection",
+        "Access reviews",
+        "Information security policies"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "deepakgandhi2007@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": "English",
+        "url": "https://soc-2-compliance.vercel.app/contact"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://soc-2-compliance.vercel.app/#logo",
+      "url": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "contentUrl": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "SOC2Starter"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://soc-2-compliance.vercel.app/#deepak",
+      "name": "Deepak Gandhi",
+      "url": "https://soc-2-compliance.vercel.app/about",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "knowsAbout": [
+        "SOC 2 readiness",
+        "Security compliance for startups",
+        "Evidence management"
+      ],
+      "description": "Builds SOC2Starter, a SOC 2 readiness and evidence tool for small B2B SaaS teams."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://soc-2-compliance.vercel.app/#website",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "name": "SOC2Starter",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist#webpage",
       "url": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist",
+      "name": "SOC 2 Evidence Checklist: What Auditors Ask For",
+      "description": "The 28 items a SOC 2 auditor requests from a startup: 10 policies and 18 operational artefacts, what satisfies each one, and the four requests that catch teams out.",
+      "isPartOf": {
+        "@id": "https://soc-2-compliance.vercel.app/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
       "datePublished": "2026-09-06",
       "dateModified": "2026-09-06",
       "inLanguage": "en",
-      "isAccessibleForFree": true,
-      "author": {
-        "@type": "Person",
-        "name": "Deepak Gandhi"
+      "mainEntity": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist#post"
       },
-      "publisher": {
-        "@type": "Organization",
-        "name": "SOC2Starter",
-        "url": "https://soc-2-compliance.vercel.app/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://soc-2-compliance.vercel.app/assets/og-image.png"
-        }
+      "breadcrumb": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist#breadcrumb"
       },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist"
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": [
+          "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist"
+        ]
       }
     },
     {
       "@type": "BreadcrumbList",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -337,8 +430,194 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "SOC 2 Evidence Checklist: What Auditors Actually Ask For (28 Items)",
-          "item": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist"
+          "name": "What evidence does a SOC 2 auditor actually ask for?"
+        }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist#post",
+      "headline": "SOC 2 Evidence Checklist: What Auditors Ask For",
+      "alternativeHeadline": "What evidence does a SOC 2 auditor actually ask for?",
+      "name": "What evidence does a SOC 2 auditor actually ask for?",
+      "description": "The 28 items a SOC 2 auditor requests from a startup: 10 policies and 18 operational artefacts, what satisfies each one, and the four requests that catch teams out.",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-06",
+      "wordCount": 1841,
+      "timeRequired": "PT9M",
+      "articleSection": "Evidence",
+      "keywords": [
+        "SOC 2",
+        "SOC 2 compliance",
+        "startup security",
+        "Evidence"
+      ],
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://soc-2-compliance.vercel.app/#website"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist#webpage"
+      },
+      "image": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist#list",
+      "name": "SOC 2 evidence an auditor asks for",
+      "description": "The 28 artefacts a SOC 2 auditor requests from a startup with the Security criteria in scope.",
+      "numberOfItems": 28,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Information Security Policy"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Access Control Policy"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Password Management Policy"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Incident Response Policy"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Vendor Management Policy"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Data Retention Policy"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Business Continuity Policy"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Change Management Policy"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Acceptable Use Policy"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Security Awareness Policy"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "MFA enforced on critical systems"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Annual risk assessment"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "Incident log"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "Production access inventory"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "Quarterly access review"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Employee onboarding records"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "Employee offboarding records"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "Backup configuration"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "Backup restore test"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "Monitoring and alerting"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "Vulnerability management"
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "name": "Encryption at rest and in transit"
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "name": "Security awareness training"
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "name": "Confidentiality agreements"
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "name": "Background checks"
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "name": "Vendor inventory"
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "name": "Annual vendor review"
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "name": "Vendor security documentation"
         }
       ]
     },
@@ -385,7 +664,11 @@
             "text": "SOC 2 does not name a penetration test as a requirement. It expects a vulnerability management process, and most auditors accept a combination of automated scanning and evidence that findings get remediated. Many customers ask for a pen test separately in security questionnaires, which is usually the real reason startups buy one."
           }
         }
-      ]
+      ],
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist#faq",
+      "isPartOf": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist#webpage"
+      }
     }
   ]
 }

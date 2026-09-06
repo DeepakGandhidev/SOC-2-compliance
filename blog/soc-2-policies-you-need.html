@@ -5,16 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
 <title>SOC 2 Policies: The 10 You Need and What Each Must Contain</title>
-<meta name="description" content="SOC 2 never names a policy, but ten have become standard for B2B SaaS. What each one must cover, the three reasons auditors reject them, and why templates cause failures.">
+<meta name="description" content="SOC 2 names no policies, but ten are standard for B2B SaaS. What each must contain, the three reasons auditors reject them, and why templates cause audit failures.">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/favicon.png">
 <link rel="canonical" href="https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="alternate" hreflang="en" href="https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need">
+<link rel="alternate" hreflang="x-default" href="https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need">
+<meta name="author" content="Deepak Gandhi">
 <meta property="og:title" content="SOC 2 Policies: The 10 You Need and What Each Must Contain">
-<meta property="og:description" content="SOC 2 never names a policy, but ten have become standard for B2B SaaS. What each one must cover, the three reasons auditors reject them, and why templates cause failures.">
+<meta property="og:description" content="SOC 2 names no policies, but ten are standard for B2B SaaS. What each must contain, the three reasons auditors reject them, and why templates cause audit failures.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need">
 <meta property="og:site_name" content="SOC2Starter">
+<meta property="article:published_time" content="2026-09-06T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-09-06T00:00:00+00:00">
+<meta property="article:author" content="Deepak Gandhi">
+<meta property="article:section" content="Policies">
+<meta property="article:tag" content="SOC 2">
 <meta property="og:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -56,13 +65,25 @@
       test you against.</p>
     </div>
 
+    <nav class="toc" aria-label="On this page">
+      <p class="toc-title">On this page</p>
+      <ol>
+        <li><a href="#the-ten-and-what-each-is-for">The ten, and what each is for</a></li>
+        <li><a href="#what-makes-a-policy-count">What makes a policy count</a></li>
+        <li><a href="#each-one-and-what-it-has-to-contain">Each one, and what it has to contain</a></li>
+        <li><a href="#the-order-to-write-them-in">The order to write them in</a></li>
+        <li><a href="#policies-are-not-the-finish-line">Policies are not the finish line</a></li>
+        <li><a href="#questions-people-ask">Questions people ask</a></li>
+      </ol>
+    </nav>
+
 
     <p>SOC 2 never lists policies by name. It states criteria, and an auditor decides
     whether your documentation demonstrates them. What follows is the set that has settled
     into standard practice for B2B SaaS companies &mdash; the same ten SOC2Starter drafts
     &mdash; and what each has to actually say.</p>
 
-    <h2>The ten, and what each is for</h2>
+    <h2 id="the-ten-and-what-each-is-for">The ten, and what each is for</h2>
 
     <div class="table-wrap">
     <table>
@@ -82,7 +103,7 @@
     </table>
     </div>
 
-    <h2>What makes a policy count</h2>
+    <h2 id="what-makes-a-policy-count">What makes a policy count</h2>
 
     <p>Auditors reject policies for three reasons, and none of them is writing quality.</p>
 
@@ -105,40 +126,40 @@
       auditor may test. Write what your ten-person company genuinely does, and no more.</p>
     </div>
 
-    <h2>Each one, and what it has to contain</h2>
+    <h2 id="each-one-and-what-it-has-to-contain">Each one, and what it has to contain</h2>
 
-    <h3>Information Security Policy</h3>
+    <h3 id="information-security-policy">Information Security Policy</h3>
     <p>The parent document. States that security is governed, who owns it, and how the other policies hang off it.</p>
     <p><strong>Must cover:</strong> Scope, roles and responsibilities, the security objectives, how often it is reviewed, who approved it.</p>
-    <h3>Access Control Policy</h3>
+    <h3 id="access-control-policy">Access Control Policy</h3>
     <p>Who gets access to what, how it is granted, how it is reviewed, how it ends.</p>
     <p><strong>Must cover:</strong> Least privilege, the approval path, MFA requirements, the review cadence, revocation on termination.</p>
-    <h3>Password Management Policy</h3>
+    <h3 id="password-management-policy">Password Management Policy</h3>
     <p>The credential rules, including what your password manager enforces.</p>
     <p><strong>Must cover:</strong> Minimum length, reuse and rotation rules, MFA, where secrets may and may not be stored.</p>
-    <h3>Incident Response Policy</h3>
+    <h3 id="incident-response-policy">Incident Response Policy</h3>
     <p>What counts as an incident, who is called, and what happens in the first hour.</p>
     <p><strong>Must cover:</strong> Severity definitions, roles, escalation path, customer notification, post-incident review.</p>
-    <h3>Change Management Policy</h3>
+    <h3 id="change-management-policy">Change Management Policy</h3>
     <p>How code reaches production without one person being able to do it silently.</p>
     <p><strong>Must cover:</strong> Code review requirement, testing, approvals, rollback, emergency change handling.</p>
-    <h3>Vendor Management Policy</h3>
+    <h3 id="vendor-management-policy">Vendor Management Policy</h3>
     <p>How you decide a third party is safe to hand data to.</p>
     <p><strong>Must cover:</strong> Risk tiering, what diligence each tier needs, review cadence, offboarding a vendor.</p>
-    <h3>Data Retention Policy</h3>
+    <h3 id="data-retention-policy">Data Retention Policy</h3>
     <p>How long you keep data and how it gets deleted.</p>
     <p><strong>Must cover:</strong> Retention periods by data type, deletion procedure, backup expiry, customer deletion requests.</p>
-    <h3>Business Continuity Policy</h3>
+    <h3 id="business-continuity-policy">Business Continuity Policy</h3>
     <p>What happens when infrastructure fails.</p>
     <p><strong>Must cover:</strong> RTO and RPO, backup schedule, restore testing cadence, who declares an outage.</p>
-    <h3>Acceptable Use Policy</h3>
+    <h3 id="acceptable-use-policy">Acceptable Use Policy</h3>
     <p>What employees may do with company systems and devices.</p>
     <p><strong>Must cover:</strong> Device requirements, prohibited use, personal device rules, what happens on violation.</p>
-    <h3>Security Awareness Policy</h3>
+    <h3 id="security-awareness-policy">Security Awareness Policy</h3>
     <p>That people are trained, and how you know.</p>
     <p><strong>Must cover:</strong> Training at onboarding, annual refresh, phishing simulation if you run one, completion tracking.</p>
 
-    <h2>The order to write them in</h2>
+    <h2 id="the-order-to-write-them-in">The order to write them in</h2>
 
     <p>If you are starting from nothing, four of these do most of the work, because they
     map to the controls that get tested hardest:</p>
@@ -155,7 +176,7 @@
 
     <p>The remaining six are quicker once the first four set the tone.</p>
 
-    <h2>Policies are not the finish line</h2>
+    <h2 id="policies-are-not-the-finish-line">Policies are not the finish line</h2>
 
     <p>A policy is a claim. The audit tests the claim. Your access control policy says
     access is reviewed quarterly, so the auditor asks for four reviews with dates on them
@@ -167,17 +188,16 @@
     changing practice deliberately &mdash; rather than writing an aspirational document and
     hoping nobody checks.</p>
 
-
-<h2>Questions people ask</h2>
-<h3>What policies are required for SOC 2?</h3>
+<h2 id="questions-people-ask">Questions people ask</h2>
+<h3 id="what-policies-are-required-for-soc-2">What policies are required for SOC 2?</h3>
 <p>SOC 2 does not name required policies; it states criteria and the auditor judges whether your documentation demonstrates them. In practice, B2B SaaS companies are expected to have ten: Information Security, Access Control, Password Management, Incident Response, Change Management, Vendor Management, Data Retention, Business Continuity, Acceptable Use, and Security Awareness.</p>
-<h3>Can I use SOC 2 policy templates?</h3>
+<h3 id="can-i-use-soc-2-policy-templates">Can I use SOC 2 policy templates?</h3>
 <p>Yes, but edit them down to what your company actually does. Every sentence in a policy is a control the auditor may test, so an unedited enterprise template that promises quarterly penetration tests and 24/7 monitoring commits you to controls you will then fail. Understating is safe; overstating is a self-inflicted finding.</p>
-<h3>Who has to approve a SOC 2 policy?</h3>
+<h3 id="who-has-to-approve-a-soc-2-policy">Who has to approve a SOC 2 policy?</h3>
 <p>Someone with authority to approve it, usually a founder, CTO or the designated security owner. What matters for the audit is that the approval is recorded: a named approver, an approval date, and a version. An unapproved draft does not count as a policy.</p>
-<h3>How often do SOC 2 policies need to be reviewed?</h3>
+<h3 id="how-often-do-soc-2-policies-need-to-be-reviewed">How often do SOC 2 policies need to be reviewed?</h3>
 <p>At least annually. A policy approved two years ago with no evidence of review is itself evidence that a control stopped operating, so each policy should carry a next-review date and someone should own hitting it.</p>
-<h3>How long should a SOC 2 policy be?</h3>
+<h3 id="how-long-should-a-soc-2-policy-be">How long should a SOC 2 policy be?</h3>
 <p>Long enough to state the control and short enough that it is true. For a startup, most of these fit in one to three pages. Length impresses nobody and every extra commitment is another thing to be tested against.</p>
 
     <div class="callout">
@@ -189,7 +209,7 @@
     </div>
 
     <div class="next-up">
-      <h2>Read next</h2>
+      <h2 id="read-next">Read next</h2>
       <ul>
       <li><a href="/blog/soc-2-evidence-checklist">What evidence does a SOC 2 auditor actually ask for?</a></li>
       <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
@@ -203,11 +223,11 @@
   <div class="wrap">
     <div class="cols">
       <div>
-        <h4>SOC2Starter</h4>
+        <h2 class="foot-h">SOC2Starter</h2>
         <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
       </div>
       <div>
-        <h4>Product</h4>
+        <h2 class="foot-h">Product</h2>
         <ul>
           <li><a href="/">Overview</a></li>
           <li><a href="/features">Features</a></li>
@@ -218,7 +238,7 @@
         </ul>
       </div>
       <div>
-        <h4>Learn</h4>
+        <h2 class="foot-h">Learn</h2>
         <ul>
           <li><a href="/blog">All guides</a></li>
           <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
@@ -227,7 +247,7 @@
         </ul>
       </div>
       <div>
-        <h4>Legal</h4>
+        <h2 class="foot-h">Legal</h2>
         <ul>
           <li><a href="/terms">Terms of service</a></li>
           <li><a href="/privacy">Privacy policy</a></li>
@@ -249,35 +269,106 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "BlogPosting",
-      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need#post",
-      "headline": "SOC 2 Policies: The 10 You Need and What Each Must Contain",
-      "description": "SOC 2 never names a policy, but ten have become standard for B2B SaaS. What each one must cover, the three reasons auditors reject them, and why templates cause failures.",
+      "@type": "Organization",
+      "@id": "https://soc-2-compliance.vercel.app/#organization",
+      "name": "SOC2Starter",
+      "legalName": "Deepak Gandhi (trading as SOC2Starter)",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "logo": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "image": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "email": "deepakgandhi2007@gmail.com",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "founder": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "knowsAbout": [
+        "SOC 2",
+        "SOC 2 Type 2",
+        "Trust Services Criteria",
+        "Security compliance",
+        "Evidence collection",
+        "Access reviews",
+        "Information security policies"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "deepakgandhi2007@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": "English",
+        "url": "https://soc-2-compliance.vercel.app/contact"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://soc-2-compliance.vercel.app/#logo",
+      "url": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "contentUrl": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "SOC2Starter"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://soc-2-compliance.vercel.app/#deepak",
+      "name": "Deepak Gandhi",
+      "url": "https://soc-2-compliance.vercel.app/about",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "knowsAbout": [
+        "SOC 2 readiness",
+        "Security compliance for startups",
+        "Evidence management"
+      ],
+      "description": "Builds SOC2Starter, a SOC 2 readiness and evidence tool for small B2B SaaS teams."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://soc-2-compliance.vercel.app/#website",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "name": "SOC2Starter",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need#webpage",
       "url": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need",
+      "name": "SOC 2 Policies: The 10 You Need and What Each Must Contain",
+      "description": "SOC 2 names no policies, but ten are standard for B2B SaaS. What each must contain, the three reasons auditors reject them, and why templates cause audit failures.",
+      "isPartOf": {
+        "@id": "https://soc-2-compliance.vercel.app/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
       "datePublished": "2026-09-06",
       "dateModified": "2026-09-06",
       "inLanguage": "en",
-      "isAccessibleForFree": true,
-      "author": {
-        "@type": "Person",
-        "name": "Deepak Gandhi"
+      "mainEntity": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need#post"
       },
-      "publisher": {
-        "@type": "Organization",
-        "name": "SOC2Starter",
-        "url": "https://soc-2-compliance.vercel.app/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://soc-2-compliance.vercel.app/assets/og-image.png"
-        }
+      "breadcrumb": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need#breadcrumb"
       },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need"
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": [
+          "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need"
+        ]
       }
     },
     {
       "@type": "BreadcrumbList",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -294,10 +385,46 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "SOC 2 Policies: The 10 You Need and What Each Must Contain",
-          "item": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need"
+          "name": "The 10 policies SOC 2 requires, and what each one has to say"
         }
       ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need#post",
+      "headline": "SOC 2 Policies: The 10 You Need and What Each Must Contain",
+      "alternativeHeadline": "The 10 policies SOC 2 requires, and what each one has to say",
+      "name": "The 10 policies SOC 2 requires, and what each one has to say",
+      "description": "SOC 2 names no policies, but ten are standard for B2B SaaS. What each must contain, the three reasons auditors reject them, and why templates cause audit failures.",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-06",
+      "wordCount": 1404,
+      "timeRequired": "PT8M",
+      "articleSection": "Policies",
+      "keywords": [
+        "SOC 2",
+        "SOC 2 compliance",
+        "startup security",
+        "Policies"
+      ],
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://soc-2-compliance.vercel.app/#website"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need#webpage"
+      },
+      "image": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      }
     },
     {
       "@type": "FAQPage",
@@ -342,7 +469,11 @@
             "text": "Long enough to state the control and short enough that it is true. For a startup, most of these fit in one to three pages. Length impresses nobody and every extra commitment is another thing to be tested against."
           }
         }
-      ]
+      ],
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need#faq",
+      "isPartOf": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need#webpage"
+      }
     }
   ]
 }

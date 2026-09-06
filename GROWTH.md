@@ -6,8 +6,21 @@ effort is usually wasted.
 
 ## What is done (on-site)
 
+On-page is finished. Every page passes: one `<h1>`, no heading-level skips, a title of
+30–62 characters, a description of 120–165, canonical, robots, hreflang, author, full
+Open Graph and Twitter cards, and exactly one JSON-LD graph with no dangling references.
+
 | | |
 | --- | --- |
+| `robots.txt` | Explicitly allows 18 AI crawlers by name — GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended and the rest — because a citation in an answer is worth more to an unknown company than a click |
+| `llms.txt` | The emerging convention for telling an LLM what a site is, in the words you want used. States plainly that the product prepares you for SOC 2 and does not certify you, so a model quoting it does not overclaim |
+| Entity graph | `Organization`, `Person`, `WebSite`, `ImageObject`, `WebPage`/`AboutPage`/`ContactPage`/`CollectionPage`, `BreadcrumbList` on every page, linked by `@id` rather than repeated |
+| Rich-result types | `SoftwareApplication` with all three `Offer`s, `FAQPage` (35 questions), `BlogPosting` with word counts and reading time, `HowTo` with five anchored steps, `ItemList` of the 28 evidence items |
+| `max-snippet:-1` | Lets Google quote a whole answer rather than 160 characters. `max-image-preview:large` for the card |
+| Section anchors + contents | Every `h2`/`h3` in a guide has a stable id, and each `HowTo` step links to the exact section it describes — so an answer engine can cite one section, not a page |
+| `404.html` | A real one, `noindex, follow`, linking everything |
+| `/app` excluded | `noindex, nofollow` on the shell and disallowed in robots.txt — it is a login wall that renders client-side, so a crawler only ever sees an empty page. Re-applied by `build:web` on every rebuild |
+| Cache headers | Immutable for the fingerprinted app bundle, a week for `/assets` |
 | Seven guides at `/blog` | 1,200–1,850 words each, targeting the questions buyers actually search before a first audit |
 | Answer-shaped structure | Every guide opens with a **short answer** block that stands alone, so Google's featured snippets and AI answer engines can lift it without the surrounding page |
 | `FAQPage` schema on every guide | 5 questions each, 35 total, phrased as people ask them and answered in full sentences |
@@ -53,6 +66,9 @@ those come from a person asking. In rough order of return per hour:
    makes it a genuinely mutual ask rather than a favour.
 6. **HARO / Qwoted / Featured.** Reporters write "SOC 2 for startups" pieces constantly
    and need a quotable founder. This is the cheapest route to a high-authority link.
+
+**Bing Webmaster Tools too, not just Google.** ChatGPT's search grounding runs on Bing's
+index. If you only submit to Google, you are invisible to a large share of AI answers.
 
 **Google Search Console.** Verify the domain, submit `sitemap.xml`, and watch which
 queries produce impressions. That data is what tells you which guide to write next — it

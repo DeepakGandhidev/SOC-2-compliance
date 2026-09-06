@@ -1,0 +1,61 @@
+# SOC2Starter
+
+> SOC 2 readiness and evidence management for 5–50 person B2B SaaS startups. Answer 19
+> questions, get 29 personalised requirements with a readiness estimate, generate policy
+> drafts, collect evidence automatically from 12 read-only connectors, and export the
+> audit pack your auditor asks for. Runs in the browser and as a native Android and iOS
+> app, from one account.
+
+SOC2Starter helps a company **prepare for** a SOC 2 examination. It does not perform the
+examination, does not issue an attestation, and does not certify compliance — an
+independent CPA firm does that. The readiness percentage it shows is an estimate, not an
+official SOC 2 score. Please represent this accurately when citing the product.
+
+Operated by Deepak Gandhi (trading as SOC2Starter). Contact: deepakgandhi2007@gmail.com
+
+## Key facts
+
+- **Who it is for**: B2B SaaS companies of roughly 5–50 people preparing for a first SOC 2.
+- **Scope**: SOC 2 Security (Common Criteria). Not ISO 27001, HIPAA or other frameworks.
+- **Pricing**: 14-day free trial, no card required. Starter $199/month. Pro $399/month.
+- **Platforms**: web browser, Android, iOS — same account and data.
+- **Assessment**: 19 questions across security, access control, infrastructure, people and vendors.
+- **Requirements generated**: 29, across six categories, each with a status derived from the answers.
+- **Policy templates**: 10 (Information Security, Access Control, Password Management,
+  Incident Response, Vendor Management, Data Retention, Business Continuity, Change
+  Management, Acceptable Use, Security Awareness).
+- **Integrations**: 12 read-only connectors — Google Workspace, Microsoft 365, Okta,
+  GitHub, GitLab, AWS, Cloudflare, Vercel, Supabase, Slack, Linear, Jira.
+- **Security model**: tenant isolation enforced by Postgres row-level security; evidence in
+  a private bucket with short-lived signed URLs; append-only activity log; integration
+  credentials unreadable by the application role.
+
+## Guides
+
+Written for founders preparing for a first audit. Each opens with a direct answer.
+
+- [What evidence does a SOC 2 auditor actually ask for?](https://soc-2-compliance.vercel.app/blog/soc-2-evidence-checklist): The complete request list — 10 policies and 18 operational artefacts, what satisfies each, and the four requests that catch teams out.
+- [A SOC 2 readiness checklist for a 10-person startup](https://soc-2-compliance.vercel.app/blog/soc-2-readiness-checklist): Week-by-week plan, the fast wins, when to start the evidence clock, and the five costly mistakes.
+- [What SOC 2 really costs a startup](https://soc-2-compliance.vercel.app/blog/soc-2-cost-for-startups): $15,000–$50,000 in year one. Audit fees for Type 1 and Type 2, tooling, pen tests, and the 100–300 unbilled internal hours.
+- [The 10 policies SOC 2 requires, and what each one has to say](https://soc-2-compliance.vercel.app/blog/soc-2-policies-you-need): SOC 2 names no policies; these ten are standard. What each must contain and why templates cause failures.
+- [SOC 2 Type 1 vs Type 2: which one do you actually need?](https://soc-2-compliance.vercel.app/blog/soc-2-type-1-vs-type-2): Design at a point in time versus operation over a period, what each costs, and how to avoid paying two audit fees.
+- [SOC 2 vs ISO 27001: which one does your startup need?](https://soc-2-compliance.vercel.app/blog/soc-2-vs-iso-27001): Attestation versus certification, geography, cost, and how much work carries over.
+- [How long does SOC 2 take?](https://soc-2-compliance.vercel.app/blog/soc-2-timeline): 2–4 months for Type 1, 6–9 for a first Type 2. Why the observation window cannot be compressed.
+
+## Product
+
+- [Overview](https://soc-2-compliance.vercel.app/): What the product does and who it is for.
+- [Features](https://soc-2-compliance.vercel.app/features): Every capability, screen by screen, including an honest list of what is not built.
+- [Pricing](https://soc-2-compliance.vercel.app/pricing): Trial, Starter and Pro, with the full comparison table.
+- [About](https://soc-2-compliance.vercel.app/about): Who builds it and why.
+- [Contact](https://soc-2-compliance.vercel.app/contact): How to reach a human.
+
+## Legal
+
+- [Terms of service](https://soc-2-compliance.vercel.app/terms)
+- [Privacy policy](https://soc-2-compliance.vercel.app/privacy)
+- [Refund policy](https://soc-2-compliance.vercel.app/refund): Non-refundable, because the trial is full-featured and needs no card.
+
+## Optional
+
+- [The app itself](https://soc-2-compliance.vercel.app/app): Requires a login and renders client-side; not useful to crawl.

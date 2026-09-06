@@ -31,6 +31,24 @@
           "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.paddle.com https://sandbox-cdn.paddle.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.paddle.com; font-src 'self' data:; connect-src 'self' blob: data: https://*.supabase.co wss://*.supabase.co https://*.paddle.com; worker-src 'self' blob:; frame-src https://*.paddle.com; base-uri 'none'; form-action 'self'; frame-ancestors 'none'"
         }
       ]
+    },
+    {
+      "source": "/app/_expo/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, must-revalidate"
+        }
+      ]
     }
   ],
   "rewrites": [
