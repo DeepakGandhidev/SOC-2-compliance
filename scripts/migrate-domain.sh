@@ -23,6 +23,13 @@ case "$NEW" in
   *) echo "error: '$NEW' does not look like a domain" >&2; exit 1 ;;
 esac
 
+if [ "$NEW" = "$OLD" ]; then
+  echo "error: '$NEW' is already the current domain — nothing to migrate." >&2
+  echo "       Pass the NEW domain you are moving to, eg:" >&2
+  echo "         $0 soc2starter.com" >&2
+  exit 1
+fi
+
 cd "$(dirname "$0")/.."
 
 FILES=$(grep -rl "$OLD" \
