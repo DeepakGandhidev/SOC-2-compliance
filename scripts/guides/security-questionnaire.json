@@ -1,0 +1,81 @@
+{
+  "slug": "soc-2-security-questionnaire",
+  "title": "How to Answer an Enterprise Security Questionnaire",
+  "h1": "How to answer an enterprise security questionnaire",
+  "description": "The 40-question security review that stalls enterprise deals: what buyers are really checking, which answers lose the deal, and how to answer once and reuse it.",
+  "section": "Questionnaires",
+  "crumb": "Questionnaire",
+  "cardBlurb": "What the buyer is really checking, why &ldquo;no&rdquo; rarely loses the deal, and how to answer once so the next one takes an hour.",
+  "readingTime": 7,
+  "shortAnswer": "<p>Answer <strong>honestly and specifically</strong>, and never leave a blank. A truthful &ldquo;no, and here is our timeline&rdquo; almost never loses a deal &mdash; an evasive or copy-pasted answer often does, because it tells the reviewer they cannot trust anything else on the form. Build the answers once into a reusable bank and the second questionnaire takes an hour instead of a week.</p>",
+  "sections": [
+    {
+      "h2": "What the questionnaire is actually for",
+      "html": "<p>A security questionnaire is not a test you pass or fail. It is a risk file. Somebody in the buyer's security team has to write down what happens to their data inside your company, sign their name to it, and defend that assessment if you are ever breached.</p>\n    <p>That reframes every answer. The reviewer is not looking for perfection from a twelve-person startup &mdash; they know what you are. They are looking for whether you <em>know your own posture</em>. A company that says &ldquo;we do not have formal access reviews yet, we run them ad hoc, and quarterly reviews start in March&rdquo; is far easier to sign off than one that ticks every box in a way the reviewer does not believe.</p>\n    <p>The questionnaire is also how the buyer decides how much more work to do. Clean, specific answers end the review. Vague ones trigger a follow-up call, then a spreadsheet of clarifications, then a month of delay on a deal you thought was closed.</p>"
+    },
+    {
+      "h2": "The formats you will be sent",
+      "html": "<p>There are only a handful in common circulation, and they overlap heavily.</p>\n    <ul>\n      <li><strong>SIG (Standardized Information Gathering)</strong> &mdash; the long one. SIG Lite is the abridged version most startups actually receive.</li>\n      <li><strong>CAIQ</strong> &mdash; the Cloud Security Alliance's questionnaire, common when you are hosting the buyer's data.</li>\n      <li><strong>VSA (Vendor Security Alliance)</strong> &mdash; shorter, startup-friendly.</li>\n      <li><strong>A bespoke spreadsheet</strong> &mdash; most common of all. Someone's internal list, often assembled from the above.</li>\n    </ul>\n    <p>Because they overlap, answering one properly gets you most of the way through the next. That is the entire argument for building an answer bank rather than treating each one as a fresh fire drill.</p>"
+    },
+    {
+      "h2": "The questions that actually carry weight",
+      "html": "<p>Most of the form is inventory. A smaller set genuinely drives the buyer's decision, and these deserve real care:</p>\n    <ul>\n      <li><strong>Do you have a SOC 2 report?</strong> The single highest-leverage line. A report attached here ends most of the review at question one.</li>\n      <li><strong>Who can access customer data, and how is that access reviewed?</strong> The question behind the question is whether an ex-employee still has a live account.</li>\n      <li><strong>Is MFA enforced on everything?</strong> Not &ldquo;available&rdquo; &mdash; enforced, including on your cloud provider's root account.</li>\n      <li><strong>Is data encrypted in transit and at rest, and who holds the keys?</strong></li>\n      <li><strong>What are your subprocessors?</strong> Every vendor that touches their data. This must match your public privacy policy exactly, and reviewers do check.</li>\n      <li><strong>What is your incident response process, and what is the notification window?</strong> Often contractual, so the number you write may end up in the agreement.</li>\n      <li><strong>Do you run a penetration test, and how often?</strong></li>\n      <li><strong>How do you handle offboarding?</strong> The most common place a startup's honest answer is weak &mdash; and the most common real-world breach path.</li>\n    </ul>"
+    },
+    {
+      "h2": "How to answer when the honest answer is no",
+      "html": "<p>This is the part founders get wrong, usually by hedging. The pattern that works has three parts: <strong>state the current reality, state the compensating control, state the date</strong>.</p>\n    <p>A weak answer: <em>&ldquo;Access reviews are performed regularly.&rdquo;</em> The reviewer reads that as a no with extra steps, and now doubts your other answers.</p>\n    <p>A strong answer: <em>&ldquo;We do not yet run formal quarterly access reviews. Access is limited to three engineers, granted through Google Workspace SSO, and revoked as part of offboarding. Formal quarterly reviews with documented sign-off begin in Q2, as part of our SOC 2 readiness work.&rdquo;</em></p>\n    <p>That answer is shorter than the excuse, more useful to the reviewer, and it is defensible if they ever check. It also does something the hedge cannot: it gives the reviewer language they can paste into their own risk assessment. Make their job easy and they approve you faster.</p>\n    <p>The one thing you must never do is claim a control you do not have. If it surfaces later &mdash; during your own SOC 2 audit, or after an incident &mdash; you have a misrepresentation in a contractual document, which is a materially worse problem than the missing control ever was.</p>"
+    },
+    {
+      "h2": "Build the answer bank once",
+      "html": "<p>The first questionnaire is expensive. The tenth should not be. What makes the difference is keeping the answers as reusable artefacts rather than as a filled-in spreadsheet you email and forget.</p>\n    <p>Keep, in one place: your standard answer to each recurring question, the policy each one points at, the evidence that proves it, the date it was last reviewed, and who owns it. When the next questionnaire arrives, most of it is assembly.</p>\n    <p>This is the same material a SOC 2 audit asks for, which is the real reason readiness work pays for itself before the report exists. The policies, the access review records, the subprocessor list and the incident response plan are simultaneously your audit evidence and your questionnaire answers. Doing it once serves both.</p>"
+    },
+    {
+      "h2": "What to attach, and why it shortens the review",
+      "html": "<p>Most reviewers would rather read one good document than forty one-line answers. Attaching the right artefacts turns a multi-week thread into a single pass.</p>\n    <ul>\n      <li><strong>Your policy set.</strong> The approved, dated versions &mdash; not drafts. Ten documents is normal for a startup: information security, access control, incident response, change management, vendor management, business continuity, risk assessment, data classification, acceptable use, and secure development.</li>\n      <li><strong>A recent penetration test summary.</strong> The executive summary, not the full technical report. Most buyers want to see that one happened and that findings were remediated.</li>\n      <li><strong>An architecture or data-flow diagram.</strong> One page showing where their data lives, which region, and which third parties touch it. This single artefact pre-empts a surprising number of follow-up questions.</li>\n      <li><strong>Your subprocessor list.</strong> Matching your privacy policy exactly.</li>\n      <li><strong>SOC 2 report or a dated readiness statement.</strong> Whichever you actually have.</li>\n    </ul>\n    <p>If a buyer asks for something you cannot share &mdash; a full penetration test report is a common one, since it is effectively a map of your weaknesses &mdash; say so and offer the summary under NDA. Reviewers understand that refusal; they do not understand silence.</p>"
+    },
+    {
+      "h2": "The five mistakes that actually cost deals",
+      "html": "<p>Across the questionnaires that stall, the same handful of errors recur.</p>\n    <ol>\n      <li><strong>Claiming a control you do not have.</strong> The only genuinely unrecoverable mistake. It converts a missing control into a misrepresentation in a document that often becomes contractual.</li>\n      <li><strong>Leaving cells blank.</strong> A blank is read as something to hide, and it guarantees a follow-up round. &ldquo;Not applicable, because we do not process payment card data&rdquo; takes ten seconds and closes the question.</li>\n      <li><strong>Contradicting your own public documents.</strong> Reviewers open your privacy policy and your subprocessor list while reading your answers. A vendor named in one and missing from the other restarts the whole review.</li>\n      <li><strong>Answering with marketing language.</strong> &ldquo;Bank-grade encryption&rdquo; and &ldquo;enterprise-ready security&rdquo; mean nothing to a security reviewer and signal that nobody technical filled in the form. Name the algorithm, the provider, and the key custody arrangement.</li>\n      <li><strong>Taking three weeks to respond.</strong> Momentum matters. A partial response in two days, with the remainder promised by a named date, keeps the deal alive better than a perfect response a month later.</li>\n    </ol>"
+    },
+    {
+      "h2": "When to say the report is coming",
+      "html": "<p>If you do not have SOC 2 yet, say so plainly and give the buyer something concrete to hold: your scope, your observation window, and your expected report date. &ldquo;Security-only scope, three-month observation window starting in March, Type 2 report expected in July&rdquo; is a sentence a procurement team can plan around.</p>\n    <p>Many enterprise buyers will proceed on that basis, often with a contractual commitment to deliver the report by a named date. What stalls the deal is not the absence of a report &mdash; it is the absence of a date.</p>\n    <p>If the deal genuinely cannot wait, ask what would unblock it. The usual instruments are a completed questionnaire, your policy set, a recent penetration test, and a Type 1 as an interim. Most enterprise buyers have a process for exactly this, and asking costs nothing.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How long does a security questionnaire take to complete?",
+      "a": "The first one typically takes a week of scattered effort, because most of the time goes on finding answers rather than writing them. Once you have a reusable answer bank with the supporting policies and evidence, subsequent questionnaires usually take one to three hours, since the formats overlap heavily."
+    },
+    {
+      "q": "What happens if I answer no to a security question?",
+      "a": "Usually nothing, provided the answer is specific and paired with a compensating control and a date. Reviewers expect gaps at a small company. What loses deals is a vague or evasive answer, because it makes the reviewer distrust the rest of the form and escalate to a longer review."
+    },
+    {
+      "q": "Does a SOC 2 report replace the security questionnaire?",
+      "a": "Often it shortens it dramatically rather than replacing it. Many buyers accept a SOC 2 Type 2 report in place of most of the form, asking only a handful of questions the report does not cover. Some regulated buyers will still send the full questionnaire regardless, but it is far quicker to answer with a report in hand."
+    },
+    {
+      "q": "Can I reuse answers between different questionnaires?",
+      "a": "Yes, and you should. SIG, CAIQ, VSA and most bespoke spreadsheets ask the same underlying questions in different wording, so a maintained answer bank covers most of any new form. Review each reused answer before sending, because a stale answer about a tool you no longer use is worse than no answer."
+    },
+    {
+      "q": "Who should fill out the security questionnaire?",
+      "a": "Whoever actually knows the answers, which at a startup is usually the CTO or the engineer who owns infrastructure. Sales should not fill it in alone. The one rule that matters is that nobody claims a control that does not exist, since the completed questionnaire frequently becomes a contractual document."
+    }
+  ],
+  "readNext": [
+    [
+      "/blog/soc-2-evidence-checklist",
+      "What evidence a SOC 2 auditor actually asks for"
+    ],
+    [
+      "/blog/soc-2-type-1-vs-type-2",
+      "SOC 2 Type 1 vs Type 2: which one do you actually need?"
+    ],
+    [
+      "/blog/soc-2-timeline",
+      "How long does SOC 2 take?"
+    ]
+  ]
+}

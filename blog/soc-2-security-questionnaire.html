@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>How to Answer an Enterprise Security Questionnaire</title>
+<meta name="description" content="The 40-question security review that stalls enterprise deals: what buyers are really checking, which answers lose the deal, and how to answer once and reuse it.">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="canonical" href="https://soc-2-compliance.vercel.app/blog/soc-2-security-questionnaire">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="alternate" hreflang="en" href="https://soc-2-compliance.vercel.app/blog/soc-2-security-questionnaire">
+<link rel="alternate" hreflang="x-default" href="https://soc-2-compliance.vercel.app/blog/soc-2-security-questionnaire">
+<meta name="author" content="Deepak Gandhi">
+<meta property="og:title" content="How to Answer an Enterprise Security Questionnaire">
+<meta property="og:description" content="The 40-question security review that stalls enterprise deals: what buyers are really checking, which answers lose the deal, and how to answer once and reuse it.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://soc-2-compliance.vercel.app/blog/soc-2-security-questionnaire">
+<meta property="og:site_name" content="SOC2Starter">
+<meta property="article:published_time" content="2026-09-06T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-09-06T00:00:00+00:00">
+<meta property="article:author" content="Deepak Gandhi">
+<meta property="article:section" content="Questionnaires">
+<meta property="article:tag" content="SOC 2">
+<meta property="og:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">S2</span> SOC2Starter</a>
+    <nav class="site">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog" aria-current="page">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/app/auth/login">Sign in</a>
+      <a class="btn btn-primary" href="/app/auth/signup" style="padding:9px 16px">Start free trial</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/blog">Guides</a> &rsaquo; Questionnaire</p>
+    <h1>How to answer an enterprise security questionnaire</h1>
+    <p class="post-meta">Updated 2026-09-06 &middot; 7 min read &middot; by Deepak Gandhi, who builds
+    <a href="/features">SOC2Starter</a></p>
+
+    <div class="answer">
+      <span class="label">The short answer</span>
+      <p>Answer <strong>honestly and specifically</strong>, and never leave a blank. A truthful &ldquo;no, and here is our timeline&rdquo; almost never loses a deal &mdash; an evasive or copy-pasted answer often does, because it tells the reviewer they cannot trust anything else on the form. Build the answers once into a reusable bank and the second questionnaire takes an hour instead of a week.</p>
+    </div>
+
+    <h2 id="what-the-questionnaire-is-actually-for">What the questionnaire is actually for</h2>
+    <p>A security questionnaire is not a test you pass or fail. It is a risk file. Somebody in the buyer's security team has to write down what happens to their data inside your company, sign their name to it, and defend that assessment if you are ever breached.</p>
+    <p>That reframes every answer. The reviewer is not looking for perfection from a twelve-person startup &mdash; they know what you are. They are looking for whether you <em>know your own posture</em>. A company that says &ldquo;we do not have formal access reviews yet, we run them ad hoc, and quarterly reviews start in March&rdquo; is far easier to sign off than one that ticks every box in a way the reviewer does not believe.</p>
+    <p>The questionnaire is also how the buyer decides how much more work to do. Clean, specific answers end the review. Vague ones trigger a follow-up call, then a spreadsheet of clarifications, then a month of delay on a deal you thought was closed.</p>
+
+    <h2 id="the-formats-you-will-be-sent">The formats you will be sent</h2>
+    <p>There are only a handful in common circulation, and they overlap heavily.</p>
+    <ul>
+      <li><strong>SIG (Standardized Information Gathering)</strong> &mdash; the long one. SIG Lite is the abridged version most startups actually receive.</li>
+      <li><strong>CAIQ</strong> &mdash; the Cloud Security Alliance's questionnaire, common when you are hosting the buyer's data.</li>
+      <li><strong>VSA (Vendor Security Alliance)</strong> &mdash; shorter, startup-friendly.</li>
+      <li><strong>A bespoke spreadsheet</strong> &mdash; most common of all. Someone's internal list, often assembled from the above.</li>
+    </ul>
+    <p>Because they overlap, answering one properly gets you most of the way through the next. That is the entire argument for building an answer bank rather than treating each one as a fresh fire drill.</p>
+
+    <h2 id="the-questions-that-actually-carry-weight">The questions that actually carry weight</h2>
+    <p>Most of the form is inventory. A smaller set genuinely drives the buyer's decision, and these deserve real care:</p>
+    <ul>
+      <li><strong>Do you have a SOC 2 report?</strong> The single highest-leverage line. A report attached here ends most of the review at question one.</li>
+      <li><strong>Who can access customer data, and how is that access reviewed?</strong> The question behind the question is whether an ex-employee still has a live account.</li>
+      <li><strong>Is MFA enforced on everything?</strong> Not &ldquo;available&rdquo; &mdash; enforced, including on your cloud provider's root account.</li>
+      <li><strong>Is data encrypted in transit and at rest, and who holds the keys?</strong></li>
+      <li><strong>What are your subprocessors?</strong> Every vendor that touches their data. This must match your public privacy policy exactly, and reviewers do check.</li>
+      <li><strong>What is your incident response process, and what is the notification window?</strong> Often contractual, so the number you write may end up in the agreement.</li>
+      <li><strong>Do you run a penetration test, and how often?</strong></li>
+      <li><strong>How do you handle offboarding?</strong> The most common place a startup's honest answer is weak &mdash; and the most common real-world breach path.</li>
+    </ul>
+
+    <h2 id="how-to-answer-when-the-honest-answer-is-no">How to answer when the honest answer is no</h2>
+    <p>This is the part founders get wrong, usually by hedging. The pattern that works has three parts: <strong>state the current reality, state the compensating control, state the date</strong>.</p>
+    <p>A weak answer: <em>&ldquo;Access reviews are performed regularly.&rdquo;</em> The reviewer reads that as a no with extra steps, and now doubts your other answers.</p>
+    <p>A strong answer: <em>&ldquo;We do not yet run formal quarterly access reviews. Access is limited to three engineers, granted through Google Workspace SSO, and revoked as part of offboarding. Formal quarterly reviews with documented sign-off begin in Q2, as part of our SOC 2 readiness work.&rdquo;</em></p>
+    <p>That answer is shorter than the excuse, more useful to the reviewer, and it is defensible if they ever check. It also does something the hedge cannot: it gives the reviewer language they can paste into their own risk assessment. Make their job easy and they approve you faster.</p>
+    <p>The one thing you must never do is claim a control you do not have. If it surfaces later &mdash; during your own SOC 2 audit, or after an incident &mdash; you have a misrepresentation in a contractual document, which is a materially worse problem than the missing control ever was.</p>
+
+    <h2 id="build-the-answer-bank-once">Build the answer bank once</h2>
+    <p>The first questionnaire is expensive. The tenth should not be. What makes the difference is keeping the answers as reusable artefacts rather than as a filled-in spreadsheet you email and forget.</p>
+    <p>Keep, in one place: your standard answer to each recurring question, the policy each one points at, the evidence that proves it, the date it was last reviewed, and who owns it. When the next questionnaire arrives, most of it is assembly.</p>
+    <p>This is the same material a SOC 2 audit asks for, which is the real reason readiness work pays for itself before the report exists. The policies, the access review records, the subprocessor list and the incident response plan are simultaneously your audit evidence and your questionnaire answers. Doing it once serves both.</p>
+
+    <h2 id="what-to-attach-and-why-it-shortens-the-review">What to attach, and why it shortens the review</h2>
+    <p>Most reviewers would rather read one good document than forty one-line answers. Attaching the right artefacts turns a multi-week thread into a single pass.</p>
+    <ul>
+      <li><strong>Your policy set.</strong> The approved, dated versions &mdash; not drafts. Ten documents is normal for a startup: information security, access control, incident response, change management, vendor management, business continuity, risk assessment, data classification, acceptable use, and secure development.</li>
+      <li><strong>A recent penetration test summary.</strong> The executive summary, not the full technical report. Most buyers want to see that one happened and that findings were remediated.</li>
+      <li><strong>An architecture or data-flow diagram.</strong> One page showing where their data lives, which region, and which third parties touch it. This single artefact pre-empts a surprising number of follow-up questions.</li>
+      <li><strong>Your subprocessor list.</strong> Matching your privacy policy exactly.</li>
+      <li><strong>SOC 2 report or a dated readiness statement.</strong> Whichever you actually have.</li>
+    </ul>
+    <p>If a buyer asks for something you cannot share &mdash; a full penetration test report is a common one, since it is effectively a map of your weaknesses &mdash; say so and offer the summary under NDA. Reviewers understand that refusal; they do not understand silence.</p>
+
+    <h2 id="the-five-mistakes-that-actually-cost-deals">The five mistakes that actually cost deals</h2>
+    <p>Across the questionnaires that stall, the same handful of errors recur.</p>
+    <ol>
+      <li><strong>Claiming a control you do not have.</strong> The only genuinely unrecoverable mistake. It converts a missing control into a misrepresentation in a document that often becomes contractual.</li>
+      <li><strong>Leaving cells blank.</strong> A blank is read as something to hide, and it guarantees a follow-up round. &ldquo;Not applicable, because we do not process payment card data&rdquo; takes ten seconds and closes the question.</li>
+      <li><strong>Contradicting your own public documents.</strong> Reviewers open your privacy policy and your subprocessor list while reading your answers. A vendor named in one and missing from the other restarts the whole review.</li>
+      <li><strong>Answering with marketing language.</strong> &ldquo;Bank-grade encryption&rdquo; and &ldquo;enterprise-ready security&rdquo; mean nothing to a security reviewer and signal that nobody technical filled in the form. Name the algorithm, the provider, and the key custody arrangement.</li>
+      <li><strong>Taking three weeks to respond.</strong> Momentum matters. A partial response in two days, with the remainder promised by a named date, keeps the deal alive better than a perfect response a month later.</li>
+    </ol>
+
+    <h2 id="when-to-say-the-report-is-coming">When to say the report is coming</h2>
+    <p>If you do not have SOC 2 yet, say so plainly and give the buyer something concrete to hold: your scope, your observation window, and your expected report date. &ldquo;Security-only scope, three-month observation window starting in March, Type 2 report expected in July&rdquo; is a sentence a procurement team can plan around.</p>
+    <p>Many enterprise buyers will proceed on that basis, often with a contractual commitment to deliver the report by a named date. What stalls the deal is not the absence of a report &mdash; it is the absence of a date.</p>
+    <p>If the deal genuinely cannot wait, ask what would unblock it. The usual instruments are a completed questionnaire, your policy set, a recent penetration test, and a Type 1 as an interim. Most enterprise buyers have a process for exactly this, and asking costs nothing.</p>
+
+<h2 id="questions-people-ask">Questions people ask</h2>
+<h3 id="how-long-does-a-security-questionnaire-take-to-complete">How long does a security questionnaire take to complete?</h3>
+<p>The first one typically takes a week of scattered effort, because most of the time goes on finding answers rather than writing them. Once you have a reusable answer bank with the supporting policies and evidence, subsequent questionnaires usually take one to three hours, since the formats overlap heavily.</p>
+<h3 id="what-happens-if-i-answer-no-to-a-security-question">What happens if I answer no to a security question?</h3>
+<p>Usually nothing, provided the answer is specific and paired with a compensating control and a date. Reviewers expect gaps at a small company. What loses deals is a vague or evasive answer, because it makes the reviewer distrust the rest of the form and escalate to a longer review.</p>
+<h3 id="does-a-soc-2-report-replace-the-security-questionnaire">Does a SOC 2 report replace the security questionnaire?</h3>
+<p>Often it shortens it dramatically rather than replacing it. Many buyers accept a SOC 2 Type 2 report in place of most of the form, asking only a handful of questions the report does not cover. Some regulated buyers will still send the full questionnaire regardless, but it is far quicker to answer with a report in hand.</p>
+<h3 id="can-i-reuse-answers-between-different-questionnaires">Can I reuse answers between different questionnaires?</h3>
+<p>Yes, and you should. SIG, CAIQ, VSA and most bespoke spreadsheets ask the same underlying questions in different wording, so a maintained answer bank covers most of any new form. Review each reused answer before sending, because a stale answer about a tool you no longer use is worse than no answer.</p>
+<h3 id="who-should-fill-out-the-security-questionnaire">Who should fill out the security questionnaire?</h3>
+<p>Whoever actually knows the answers, which at a startup is usually the CTO or the engineer who owns infrastructure. Sales should not fill it in alone. The one rule that matters is that nobody claims a control that does not exist, since the completed questionnaire frequently becomes a contractual document.</p>
+
+    <div class="callout">
+      <p><strong>See this against your own company.</strong> SOC2Starter turns 19 questions
+      into a personalised list of what you are missing, drafts the policies, and files the
+      evidence against the requirement it proves. Fourteen days free, no card.</p>
+      <p><a class="btn btn-primary" href="/app/auth/signup">Start free</a>
+      <a href="/features" style="margin-left:12px">See everything it does &rarr;</a></p>
+    </div>
+
+    <div class="next-up">
+      <h2 id="read-next">Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
+      <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
+      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2 class="foot-h">SOC2Starter</h2>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Product</h2>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Learn</h2>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Legal</h2>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="next-up">
+      <h2 id="read-next">Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-evidence-checklist">What evidence a SOC 2 auditor actually asks for</a></li>
+      <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
+      <li><a href="/blog/soc-2-timeline">How long does SOC 2 take?</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2 class="foot-h">SOC2Starter</h2>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Product</h2>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Learn</h2>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Legal</h2>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      &copy; <span id="yr">2026</span> Deepak Gandhi (trading as SOC2Starter). All rights reserved.
+      SOC2Starter helps you prepare for a SOC 2 examination. It does not perform the
+      examination, does not issue an attestation, and is not a substitute for an auditor &mdash;
+      an independent CPA firm performs the SOC 2 examination.
+    </p>
+  </div>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://soc-2-compliance.vercel.app/#organization",
+      "name": "SOC2Starter",
+      "legalName": "Deepak Gandhi (trading as SOC2Starter)",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "logo": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "image": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "email": "deepakgandhi2007@gmail.com",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "founder": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "knowsAbout": [
+        "SOC 2",
+        "SOC 2 Type 2",
+        "Trust Services Criteria",
+        "Security compliance",
+        "Evidence collection",
+        "Access reviews",
+        "Information security policies"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "deepakgandhi2007@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": "English",
+        "url": "https://soc-2-compliance.vercel.app/contact"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://soc-2-compliance.vercel.app/#logo",
+      "url": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "contentUrl": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "SOC2Starter"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://soc-2-compliance.vercel.app/#deepak",
+      "name": "Deepak Gandhi",
+      "url": "https://soc-2-compliance.vercel.app/about",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "knowsAbout": [
+        "SOC 2 readiness",
+        "Security compliance for startups",
+        "Evidence management"
+      ],
+      "description": "Builds SOC2Starter, a SOC 2 readiness and evidence tool for small B2B SaaS teams."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://soc-2-compliance.vercel.app/#website",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "name": "SOC2Starter",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-security-questionnaire#webpage",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-security-questionnaire",
+      "name": "How to Answer an Enterprise Security Questionnaire",
+      "description": "The 40-question security review that stalls enterprise deals: what buyers are really checking, which answers lose the deal, and how to answer once and reuse it.",
+      "isPartOf": {
+        "@id": "https://soc-2-compliance.vercel.app/#website"
+      },
+      "inLanguage": "en",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-06",
+      "primaryImageOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "breadcrumb": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-security-questionnaire#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-security-questionnaire#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://soc-2-compliance.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://soc-2-compliance.vercel.app/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Questionnaire",
+          "item": "https://soc-2-compliance.vercel.app/blog/soc-2-security-questionnaire"
+        }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-security-questionnaire#post",
+      "headline": "How to Answer an Enterprise Security Questionnaire",
+      "description": "The 40-question security review that stalls enterprise deals: what buyers are really checking, which answers lose the deal, and how to answer once and reuse it.",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-security-questionnaire",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-06",
+      "author": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-security-questionnaire#webpage"
+      },
+      "image": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "inLanguage": "en",
+      "articleSection": "Questionnaires",
+      "wordCount": 1261,
+      "timeRequired": "PT7M"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-security-questionnaire#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does a security questionnaire take to complete?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The first one typically takes a week of scattered effort, because most of the time goes on finding answers rather than writing them. Once you have a reusable answer bank with the supporting policies and evidence, subsequent questionnaires usually take one to three hours, since the formats overlap heavily."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I answer no to a security question?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually nothing, provided the answer is specific and paired with a compensating control and a date. Reviewers expect gaps at a small company. What loses deals is a vague or evasive answer, because it makes the reviewer distrust the rest of the form and escalate to a longer review."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a SOC 2 report replace the security questionnaire?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often it shortens it dramatically rather than replacing it. Many buyers accept a SOC 2 Type 2 report in place of most of the form, asking only a handful of questions the report does not cover. Some regulated buyers will still send the full questionnaire regardless, but it is far quicker to answer with a report in hand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I reuse answers between different questionnaires?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and you should. SIG, CAIQ, VSA and most bespoke spreadsheets ask the same underlying questions in different wording, so a maintained answer bank covers most of any new form. Review each reused answer before sending, because a stale answer about a tool you no longer use is worse than no answer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who should fill out the security questionnaire?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Whoever actually knows the answers, which at a startup is usually the CTO or the engineer who owns infrastructure. Sales should not fill it in alone. The one rule that matters is that nobody claims a control that does not exist, since the completed questionnaire frequently becomes a contractual document."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
