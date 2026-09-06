@@ -29,6 +29,8 @@ Open Graph and Twitter cards, and exactly one JSON-LD graph with no dangling ref
 | `sitemap.xml`, canonicals, Open Graph | All twelve public URLs, with `lastmod` on the guides |
 | Static HTML, no JS | Sub-second render, which is the one ranking factor this site is genuinely excellent at |
 
+The full page-by-page keyword map is in [KEYWORDS.md](KEYWORDS.md).
+
 ### Why these seven topics
 
 They are the queries with buying intent, not the ones with the largest volume. Somebody

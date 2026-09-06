@@ -135,6 +135,9 @@ Then add the URL to `sitemap.xml` and a card to `blog/index.html`.
 The evidence checklist is the important one: it is generated from the product's real
 requirement catalogue, so it is the single page a competitor cannot honestly copy.
 
+[KEYWORDS.md](KEYWORDS.md) is the page-by-page keyword map — what each page targets and
+why, plus what is deliberately not targeted.
+
 **Read [GROWTH.md](GROWTH.md) before doing any more SEO work.** It covers what is done,
 what only a person can do (all of the link building), and what to expect month by month.
 
