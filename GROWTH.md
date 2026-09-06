@@ -26,7 +26,7 @@ Open Graph and Twitter cards, and exactly one JSON-LD graph with no dangling ref
 | `FAQPage` schema on every guide | 5 questions each, 35 total, phrased as people ask them and answered in full sentences |
 | `BlogPosting` + `BreadcrumbList` schema | Author, publisher, dates, and the position of each page in the site |
 | Internal linking | Every guide links to two or three others and to `/features`; the homepage, `/features` and `/pricing` link into the guides |
-| `sitemap.xml`, canonicals, Open Graph | All twelve public URLs, with `lastmod` on the guides |
+| `sitemap.xml`, canonicals, Open Graph | All sixteen public URLs, with `lastmod` on the guides |
 | Static HTML, no JS | Sub-second render, which is the one ranking factor this site is genuinely excellent at |
 
 The full page-by-page keyword map is in [KEYWORDS.md](KEYWORDS.md).
@@ -40,6 +40,12 @@ also the one page a competitor cannot copy honestly: it is derived from the prod
 actual requirement catalogue.
 
 ## What is NOT done, and cannot be done from a keyboard here
+
+The assets for all of it are written and waiting in [outreach/](outreach/) — listing
+copy, the Product Hunt launch, the Show HN and the essay behind it, drafted Reddit
+answers, and the HARO and auditor outreach templates. Read [outreach/README.md](outreach/README.md)
+first: it sequences them, and the order matters more than the content, because most of
+these are single-use.
 
 **Backlinks.** Nothing on this list can be automated, and everything that can be
 automated is the kind of link building that gets a domain penalised. Directory spam,
