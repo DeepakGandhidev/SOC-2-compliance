@@ -360,6 +360,7 @@ def main():
         print("\nDry run — nothing written.")
         return
     print("\nNext:")
+    print("  ./scripts/bust-cache.sh   # stamp the stylesheet hash into the new page")
     print("  ./scripts/seo-check.sh")
     print("  git add -A && git commit && git push")
     print(f"  ./scripts/indexnow.sh /blog/{spec['slug']}")
