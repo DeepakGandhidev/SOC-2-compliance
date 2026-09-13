@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>How to Run Your First SOC 2 Access Review</title>
+<meta name="description" content="Access reviews are the most common SOC 2 finding for startups, and the one gap you cannot fix retroactively. How to run the first one and what evidence to keep.">
+<link rel="stylesheet" href="/assets/style.css?v=478da6c7">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="canonical" href="https://soc-2-compliance.vercel.app/blog/soc-2-access-review">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="alternate" hreflang="en" href="https://soc-2-compliance.vercel.app/blog/soc-2-access-review">
+<link rel="alternate" hreflang="x-default" href="https://soc-2-compliance.vercel.app/blog/soc-2-access-review">
+<meta name="author" content="Deepak Gandhi">
+<meta property="og:title" content="How to Run Your First SOC 2 Access Review">
+<meta property="og:description" content="Access reviews are the most common SOC 2 finding for startups, and the one gap you cannot fix retroactively. How to run the first one and what evidence to keep.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://soc-2-compliance.vercel.app/blog/soc-2-access-review">
+<meta property="og:site_name" content="SOC2Starter">
+<meta property="article:published_time" content="2026-09-14T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-09-14T00:00:00+00:00">
+<meta property="article:author" content="Deepak Gandhi">
+<meta property="article:section" content="Readiness">
+<meta property="article:tag" content="SOC 2">
+<meta property="og:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">S2</span> SOC2Starter</a>
+    <nav class="site">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog" aria-current="page">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/app/auth/login">Sign in</a>
+      <a class="btn btn-primary" href="/app/auth/signup" style="padding:9px 16px">Start free trial</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/blog">Guides</a> &rsaquo; Access review</p>
+    <h1>How to run your first access review</h1>
+    <p class="post-meta">Updated 2026-09-14 &middot; 8 min read &middot; by Deepak Gandhi, who builds
+    <a href="/features">SOC2Starter</a></p>
+
+    <div class="answer">
+      <span class="label">The short answer</span>
+      <p>List every system holding company or customer data, export who has access to each, have the person who owns that system confirm every account line by line, remove what should not be there, and <strong>keep the export, the decisions, and the date</strong>. Do it quarterly. The review itself takes an afternoon; the reason it is the most common SOC 2 finding is that it is the easiest thing to skip and the one thing you cannot create afterwards.</p>
+    </div>
+
+    <h2 id="why-this-is-the-finding-that-catches-startups">Why this is the finding that catches startups</h2>
+    <p>A SOC 2 Type 2 report is an opinion about whether controls <em>operated</em> over a period. That word does the damage. Most readiness gaps can be closed the week before fieldwork: you can write a policy, approve it, and it exists. You cannot write three quarterly access reviews that did not happen.</p>
+    <p>If your observation window is six months and the control says reviews happen quarterly, the auditor expects to see two. Producing one dated the week before fieldwork tells them the control did not operate. That is an exception in your report, and depending on severity it can mean restarting the window.</p>
+    <p>The practical consequence: <strong>start running access reviews before you think you need to</strong>. The first one is worth running the week you decide to pursue SOC 2, because it starts the clock on the evidence you will later need.</p>
+
+    <h2 id="what-an-access-review-actually-is">What an access review actually is</h2>
+    <p>Stripped of the jargon, it answers one question per system: <em>should each of these people still have this level of access?</em></p>
+    <p>It is not a security scan and it is not an audit of what people did. It is a deliberate, recorded decision by somebody accountable that the current access list is correct. The recorded part is what turns an ordinary piece of hygiene into evidence.</p>
+    <p>Three things have to be true for it to count:</p>
+    <ul>
+      <li><strong>Somebody specific reviewed it.</strong> A named person, not &ldquo;the team&rdquo;.</li>
+      <li><strong>Every account got a decision.</strong> Keep, change, or remove &mdash; including the ones you kept.</li>
+      <li><strong>It is dated.</strong> A review without a date proves nothing about when the control operated.</li>
+    </ul>
+
+    <h2 id="building-the-inventory-first">Building the inventory first</h2>
+    <p>You cannot review access to systems you have not listed, and the list is usually longer than people expect. Work outward from where data actually sits.</p>
+    <ul>
+      <li><strong>Identity.</strong> Google Workspace, Microsoft 365, or Okta. Start here, because for most companies it is the front door to everything else.</li>
+      <li><strong>Cloud infrastructure.</strong> AWS, GCP or Azure &mdash; including the root account, which is the single most commonly neglected item on this list.</li>
+      <li><strong>Source control.</strong> GitHub or GitLab: organisation members, owners, and who can push to protected branches.</li>
+      <li><strong>Production databases</strong> and any admin console that can read customer data.</li>
+      <li><strong>Customer support tooling</strong>, which very often reads customer data and is very often forgotten.</li>
+      <li><strong>Anything holding company-sensitive data</strong>: payroll, billing, the password manager.</li>
+    </ul>
+    <p>For each, write down who owns it. The owner is the person who will do the reviewing, and naming them now avoids the review stalling later on the question of who decides.</p>
+
+    <h2 id="running-the-first-one">Running the first one</h2>
+    <p>Set aside an afternoon. For each system in the inventory:</p>
+    <ol>
+      <li><strong>Export the current access list.</strong> A CSV where possible, a dated screenshot where not. This export is your evidence &mdash; save it before you change anything, because it establishes the starting state.</li>
+      <li><strong>Go line by line.</strong> For each account: is this a current employee or contractor, do they still need this system, and do they need this <em>level</em> of access? Admin rights that were convenient once tend to persist.</li>
+      <li><strong>Look for the accounts nobody owns.</strong> Shared logins, service accounts, integrations installed for a trial two years ago, and personal accounts that were never converted. These are where real risk hides.</li>
+      <li><strong>Record a decision for every line.</strong> Including &ldquo;keep&rdquo;. A review showing eleven keeps and three removals is evidence; a review showing only the removals looks like a cleanup, not a review.</li>
+      <li><strong>Make the changes, and note the date each was completed.</strong></li>
+      <li><strong>Have the system owner sign off</strong> &mdash; an email or a dated comment is enough. It does not need to be a formal signature, but it does need to be attributable to a person.</li>
+    </ol>
+    <p>Expect the first review to be uncomfortable. Almost every company finds at least one account belonging to somebody who left. That discovery is the control working, not a reason to hide the record &mdash; auditors are far more concerned by reviews that never find anything.</p>
+
+    <h2 id="what-the-first-one-looks-like-in-practice">What the first one looks like in practice</h2>
+    <p>A concrete version, at a ten-person company running Google Workspace, AWS and GitHub.</p>
+    <p><strong>Google Workspace.</strong> Export the user list. Eleven accounts for ten people &mdash; the extra is a contractor who finished in March. Suspend it, note the date. Two accounts have super-admin that do not need it; drop them to standard. Confirm MFA enforcement is on for everyone, and screenshot the setting with the date visible.</p>
+    <p><strong>AWS.</strong> List IAM users and roles. The root account exists and has MFA, which you verify rather than assume. One IAM user is a leftover from a migration and belongs to nobody; disable it. Two engineers hold broad production permissions that were reasonable when there were four people and are not now; narrow them. Record each change.</p>
+    <p><strong>GitHub.</strong> Organisation members, and specifically who holds owner. The contractor is still a member here too &mdash; which is exactly why the review covers every system rather than trusting that offboarding caught everything. Remove them. Confirm branch protection on the default branch requires review, because that is also your change management evidence.</p>
+    <p>Total elapsed time: an afternoon. Output: three dated exports, a short table of decisions, four completed removals with dates, and your name against each. That package is the evidence, and it is worth more to an auditor than any policy describing the intention to do it.
+
+    <h2 id="what-to-keep-afterwards">What to keep afterwards</h2>
+    <p>The artefact matters as much as the activity. For each review, keep in one place:</p>
+    <ul>
+      <li>The <strong>original export</strong> with its date.</li>
+      <li>The <strong>decision per account</strong>.</li>
+      <li>The <strong>removals actually completed</strong>, with dates &mdash; a decision to revoke access is not evidence that access was revoked.</li>
+      <li>The <strong>reviewer's name</strong> and their sign-off.</li>
+    </ul>
+    <p>Store them where they will still be findable in nine months, when the auditor asks. A folder per quarter works. What does not work is a Slack thread, because the evidence you need will have scrolled out of retention exactly when you need it.</p>
+
+    <h2 id="making-it-recur-without-relying-on-memory">Making it recur without relying on memory</h2>
+    <p>The first review is easy because you have just decided to care. The fourth is where it fails, and the fourth is the one the auditor will look for.</p>
+    <p>Put the next three in the calendar now, with a named owner on each, before you close the first one. Attach the checklist to the invitation so the person doing it does not have to remember the steps. If your team uses a ticketing system, a recurring ticket beats a calendar entry, because it leaves its own dated trail of having been completed.</p>
+    <p>The failure mode is almost never that somebody refuses to do the review. It is that nobody was specifically responsible in a quarter when everyone was busy, and a missed quarter cannot be repaired.</p>
+
+    <h2 id="mistakes-that-turn-a-real-review-into-a-weak-one">Mistakes that turn a real review into a weak one</h2>
+    <ul>
+      <li><strong>Reviewing only the identity provider.</strong> SSO is not universal coverage. Databases, cloud root accounts, and support tools frequently sit outside it.</li>
+      <li><strong>Recording only removals.</strong> Without the full list and the keeps, there is no evidence of the scope actually reviewed.</li>
+      <li><strong>Undated screenshots.</strong> The single most common evidence defect. If the image does not show a date, the file name should, and the folder should too.</li>
+      <li><strong>One person reviewing their own access.</strong> For the accounts with the most privilege, have someone else confirm.</li>
+      <li><strong>Treating offboarding as a substitute.</strong> Offboarding is a separate control. The review is what catches the case where offboarding was missed &mdash; which is precisely the case that matters.</li>
+    </ul>
+
+<h2 id="questions-people-ask">Questions people ask</h2>
+<h3 id="how-often-should-access-reviews-be-done-for-soc-2">How often should access reviews be done for SOC 2?</h3>
+<p>Quarterly is the common cadence and the one most startups commit to in their access control policy. The frequency is your choice, but the report tests the cadence you wrote down, so promising monthly reviews and running them twice a year is worse than committing to quarterly and doing it. Pick the interval you will actually sustain.</p>
+<h3 id="what-systems-need-to-be-included-in-an-access-review">What systems need to be included in an access review?</h3>
+<p>Anything holding company or customer data, or granting access to it. In practice that means your identity provider, cloud infrastructure including the root account, source control, production databases and admin consoles, customer support tooling, and business systems such as payroll and the password manager. Reviewing only the identity provider is a common gap, since databases and cloud root accounts often sit outside SSO.</p>
+<h3 id="can-i-do-an-access-review-retroactively-before-the-audit">Can I do an access review retroactively before the audit?</h3>
+<p>No, and this is the most important thing to understand about the control. A Type 2 report tests whether controls operated across the observation window, so a review dated the week before fieldwork demonstrates the opposite of what it needs to. Start running reviews before the window opens; it is the one gap that cannot be closed later.</p>
+<h3 id="what-evidence-proves-an-access-review-happened">What evidence proves an access review happened?</h3>
+<p>The dated export of who had access, a recorded decision for every account including the ones you kept, the completed removals with their dates, and the name of the person who reviewed and signed off. A decision to revoke access is not evidence that access was revoked, so keep proof of both.</p>
+<h3 id="who-should-perform-the-access-review">Who should perform the access review?</h3>
+<p>The person who owns the system, because they are the one who can judge whether a given level of access is still appropriate. For highly privileged accounts, including the reviewer's own, have a second person confirm. What matters to an auditor is that the reviewer is a named, accountable individual rather than a team in general.</p>
+
+    <div class="callout">
+      <p><strong>See this against your own company.</strong> SOC2Starter turns 19 questions
+      into a personalised list of what you are missing, drafts the policies, and files the
+      evidence against the requirement it proves. Fourteen days free, no card.</p>
+      <p><a class="btn btn-primary" href="/app/auth/signup">Start free</a>
+      <a href="/features" style="margin-left:12px">See everything it does &rarr;</a></p>
+    </div>
+
+    <div class="next-up">
+      <h2 id="read-next">Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
+      <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
+      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2 class="foot-h">SOC2Starter</h2>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Product</h2>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Learn</h2>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Legal</h2>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="next-up">
+      <h2 id="read-next">Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-evidence-checklist">What evidence a SOC 2 auditor actually asks for</a></li>
+      <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
+      <li><a href="/blog/soc-2-policies-you-need">The SOC 2 policies you actually need</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2 class="foot-h">SOC2Starter</h2>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Product</h2>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Learn</h2>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Legal</h2>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      &copy; <span id="yr">2026</span> Deepak Gandhi (trading as SOC2Starter). All rights reserved.
+      SOC2Starter helps you prepare for a SOC 2 examination. It does not perform the
+      examination, does not issue an attestation, and is not a substitute for an auditor &mdash;
+      an independent CPA firm performs the SOC 2 examination.
+    </p>
+  </div>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://soc-2-compliance.vercel.app/#organization",
+      "name": "SOC2Starter",
+      "legalName": "Deepak Gandhi (trading as SOC2Starter)",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "logo": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "image": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "email": "deepakgandhi2007@gmail.com",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "founder": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "knowsAbout": [
+        "SOC 2",
+        "SOC 2 Type 2",
+        "Trust Services Criteria",
+        "Security compliance",
+        "Evidence collection",
+        "Access reviews",
+        "Information security policies"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "deepakgandhi2007@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": "English",
+        "url": "https://soc-2-compliance.vercel.app/contact"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://soc-2-compliance.vercel.app/#logo",
+      "url": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "contentUrl": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "SOC2Starter"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://soc-2-compliance.vercel.app/#deepak",
+      "name": "Deepak Gandhi",
+      "url": "https://soc-2-compliance.vercel.app/about",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "knowsAbout": [
+        "SOC 2 readiness",
+        "Security compliance for startups",
+        "Evidence management"
+      ],
+      "description": "Builds SOC2Starter, a SOC 2 readiness and evidence tool for small B2B SaaS teams."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://soc-2-compliance.vercel.app/#website",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "name": "SOC2Starter",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-access-review#webpage",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-access-review",
+      "name": "How to Run Your First SOC 2 Access Review",
+      "description": "Access reviews are the most common SOC 2 finding for startups, and the one gap you cannot fix retroactively. How to run the first one and what evidence to keep.",
+      "isPartOf": {
+        "@id": "https://soc-2-compliance.vercel.app/#website"
+      },
+      "inLanguage": "en",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "primaryImageOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "breadcrumb": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-access-review#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-access-review#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://soc-2-compliance.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://soc-2-compliance.vercel.app/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Access review",
+          "item": "https://soc-2-compliance.vercel.app/blog/soc-2-access-review"
+        }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-access-review#post",
+      "headline": "How to Run Your First SOC 2 Access Review",
+      "description": "Access reviews are the most common SOC 2 finding for startups, and the one gap you cannot fix retroactively. How to run the first one and what evidence to keep.",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-access-review",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "author": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-access-review#webpage"
+      },
+      "image": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "inLanguage": "en",
+      "articleSection": "Readiness",
+      "wordCount": 1196,
+      "timeRequired": "PT8M"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-access-review#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How often should access reviews be done for SOC 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quarterly is the common cadence and the one most startups commit to in their access control policy. The frequency is your choice, but the report tests the cadence you wrote down, so promising monthly reviews and running them twice a year is worse than committing to quarterly and doing it. Pick the interval you will actually sustain."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What systems need to be included in an access review?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Anything holding company or customer data, or granting access to it. In practice that means your identity provider, cloud infrastructure including the root account, source control, production databases and admin consoles, customer support tooling, and business systems such as payroll and the password manager. Reviewing only the identity provider is a common gap, since databases and cloud root accounts often sit outside SSO."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I do an access review retroactively before the audit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, and this is the most important thing to understand about the control. A Type 2 report tests whether controls operated across the observation window, so a review dated the week before fieldwork demonstrates the opposite of what it needs to. Start running reviews before the window opens; it is the one gap that cannot be closed later."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What evidence proves an access review happened?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The dated export of who had access, a recorded decision for every account including the ones you kept, the completed removals with their dates, and the name of the person who reviewed and signed off. A decision to revoke access is not evidence that access was revoked, so keep proof of both."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who should perform the access review?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The person who owns the system, because they are the one who can judge whether a given level of access is still appropriate. For highly privileged accounts, including the reviewer's own, have a second person confirm. What matters to an auditor is that the reviewer is a named, accountable individual rather than a team in general."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>Do You Need a Penetration Test for SOC 2?</title>
+<meta name="description" content="SOC 2 never names a penetration test, yet most auditors expect one. What that contradiction means in practice, what scope to buy, when to run it, and what it costs.">
+<link rel="stylesheet" href="/assets/style.css?v=478da6c7">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="canonical" href="https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="alternate" hreflang="en" href="https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test">
+<link rel="alternate" hreflang="x-default" href="https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test">
+<meta name="author" content="Deepak Gandhi">
+<meta property="og:title" content="Do You Need a Penetration Test for SOC 2?">
+<meta property="og:description" content="SOC 2 never names a penetration test, yet most auditors expect one. What that contradiction means in practice, what scope to buy, when to run it, and what it costs.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test">
+<meta property="og:site_name" content="SOC2Starter">
+<meta property="article:published_time" content="2026-09-14T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-09-14T00:00:00+00:00">
+<meta property="article:author" content="Deepak Gandhi">
+<meta property="article:section" content="Evidence">
+<meta property="article:tag" content="SOC 2">
+<meta property="og:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">S2</span> SOC2Starter</a>
+    <nav class="site">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog" aria-current="page">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/app/auth/login">Sign in</a>
+      <a class="btn btn-primary" href="/app/auth/signup" style="padding:9px 16px">Start free trial</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/blog">Guides</a> &rsaquo; Penetration test</p>
+    <h1>Do you need a penetration test for SOC 2?</h1>
+    <p class="post-meta">Updated 2026-09-14 &middot; 8 min read &middot; by Deepak Gandhi, who builds
+    <a href="/features">SOC2Starter</a></p>
+
+    <div class="answer">
+      <span class="label">The short answer</span>
+      <p><strong>Strictly, no.</strong> The Trust Services Criteria never use the words &ldquo;penetration test&rdquo;, so no rule obliges you to buy one. <strong>Practically, usually yes.</strong> Most auditors read the criteria on vulnerability management and change detection as expecting independent testing, and most enterprise customers ask for the report separately during security review. Budget for one annually unless your auditor tells you otherwise in writing.</p>
+    </div>
+
+    <h2 id="why-the-answer-is-not-simply-written-down">Why the answer is not simply written down</h2>
+    <p>SOC 2 is not a checklist standard. It is a set of criteria you meet with controls of your own design, and an independent CPA firm forms an opinion on whether those controls were suitably designed and operating. Nowhere in the Trust Services Criteria is a penetration test named as a required control.</p>
+    <p>What the criteria do require is that you identify vulnerabilities, assess the risk they carry, and act on them &mdash; and that you detect changes that could introduce new ones. A penetration test is the most common way companies demonstrate they are doing that, but it is an <em>answer</em> to the criteria rather than a requirement of them.</p>
+    <p>This is why you will find confident articles claiming both that SOC 2 requires a penetration test and that it does not. Both are describing something real. The standard does not require it; the practice around the standard largely does.</p>
+
+    <h2 id="why-most-auditors-expect-one-anyway">Why most auditors expect one anyway</h2>
+    <p>Put yourself in the auditor's position. They have to sign an opinion that your vulnerability management control operated effectively for a period of months. If your only evidence is that you ran an automated scanner against your own code, you have shown diligence but not independence &mdash; nobody outside the company ever tried to break in.</p>
+    <p>An independent test closes that gap cheaply. That is why the question is usually settled not by the standard but by your auditor's expectations, and those vary between firms.</p>
+    <p><strong>So ask them, early, and get the answer in writing.</strong> &ldquo;For our scope, will you accept authenticated vulnerability scanning and a documented remediation process, or do you expect an independent penetration test?&rdquo; That one email can save you a five-figure expense or a restarted observation window. Ask it before fieldwork, not during.</p>
+
+    <h2 id="the-customer-is-often-the-real-reason">The customer is often the real reason</h2>
+    <p>Even where an auditor is relaxed, your buyers frequently are not. &ldquo;Do you perform annual penetration testing by an independent third party?&rdquo; appears on nearly every enterprise security questionnaire, and a no there stalls deals in the same way a missing SOC 2 report does.</p>
+    <p>This matters for how you think about the cost. If you are buying the test purely to satisfy an auditor, it is a compliance expense. If it also unblocks enterprise deals &mdash; and for most B2B SaaS companies it does &mdash; it belongs in the sales budget as much as the compliance one.</p>
+
+    <h2 id="a-vulnerability-scan-is-not-a-penetration-test">A vulnerability scan is not a penetration test</h2>
+    <p>These get conflated constantly, including by vendors selling one as the other, and the difference matters when an auditor or a customer reads your evidence.</p>
+    <ul>
+      <li><strong>Vulnerability scanning</strong> is automated. A tool compares your software and configuration against a database of known issues and produces a list. It is cheap, should run continuously, and is genuinely useful.</li>
+      <li><strong>Penetration testing</strong> is a person attempting to chain weaknesses into actual access. A tester finds the broken authorisation check that lets one customer read another customer's data &mdash; the flaw no scanner has a signature for, because it is specific to how your application works.</li>
+    </ul>
+    <p>Both belong in a mature programme. But if a questionnaire asks for a penetration test and you attach a scan report, an informed reviewer will notice, and it costs you credibility on everything else in the file.</p>
+
+    <h2 id="what-scope-to-actually-buy">What scope to actually buy</h2>
+    <p>For a typical B2B SaaS company, the useful scope is narrower than vendors will quote for.</p>
+    <ul>
+      <li><strong>Your web application, authenticated.</strong> The single most valuable test. Give the tester real accounts at more than one permission level, because the finding that matters most &mdash; one tenant reaching another tenant's data &mdash; is invisible to an unauthenticated test.</li>
+      <li><strong>Your API.</strong> Often where authorisation logic actually lives, and frequently weaker than the interface in front of it.</li>
+      <li><strong>Your cloud configuration.</strong> A review of IAM roles, storage permissions and network exposure. Cheap relative to what it catches.</li>
+    </ul>
+    <p>What you usually do not need at this stage: physical testing, social engineering, or a full red team exercise. They are legitimate services, they cost considerably more, and no startup auditor is expecting them.</p>
+    <p>Insist on <strong>authenticated, multi-tenant testing</strong>. A cheap unauthenticated scan of your marketing site technically produces a report with the words &ldquo;penetration test&rdquo; on it, and proves nothing about the product holding your customers' data.</p>
+
+    <h2 id="when-to-run-it">When to run it</h2>
+    <p>Run the test <strong>before</strong> your observation window opens, not during it, and certainly not after.</p>
+    <p>The reason is remediation. A test almost always produces findings. If the test runs inside the observation window, the window now contains a period where a known vulnerability existed and was not yet fixed &mdash; which the auditor must consider. If the test runs before, you fix the findings first and the window contains only the remediated state.</p>
+    <p>The sequence that works: run the test, remediate, obtain a retest or a written confirmation that findings were resolved, then open the observation window. Build roughly six to eight weeks into your timeline for that loop, because scheduling a reputable firm takes longer than founders expect.</p>
+
+    <h2 id="what-the-auditor-wants-in-the-file">What the auditor wants in the file</h2>
+    <p>Not the raw technical report, usually. What goes into evidence is:</p>
+    <ul>
+      <li>The <strong>scope statement</strong> and dates, showing what was tested and when.</li>
+      <li>The <strong>executive summary</strong>, including the finding counts by severity.</li>
+      <li>Your <strong>remediation record</strong> &mdash; what you fixed, when, and who signed it off. This is the part that actually demonstrates the control operating.</li>
+      <li>A <strong>retest or closure letter</strong> where findings were significant.</li>
+    </ul>
+    <p>A clean report with no remediation record is weaker evidence than a report with eight findings and a documented, dated fix for each. The auditor is assessing whether your process works, not whether you were perfect.</p>
+    <p>Be careful sharing the full technical report outside the company. It is effectively a map of your weaknesses. Most firms produce a summary intended for exactly this purpose; offer that to customers, under NDA, and keep the detailed version internal.</p>
+
+    <h2 id="how-to-choose-the-firm">How to choose the firm</h2>
+    <p>The market ranges from serious boutique consultancies to resellers who run a scanner and format the output. Both will sell you something called a penetration test, and the reports look superficially similar to anyone who has not read many.</p>
+    <p>Questions that separate them quickly:</p>
+    <ul>
+      <li><strong>Who specifically will test, and what are their credentials?</strong> You want named people. OSCP, CREST or equivalent is a reasonable signal; an unwillingness to say is a decisive one.</li>
+      <li><strong>What proportion of the work is manual?</strong> If the answer is vague, you are buying a scan.</li>
+      <li><strong>Can I see a redacted sample report?</strong> Reputable firms have one ready. Look at whether findings explain business impact or just restate a scanner's severity rating.</li>
+      <li><strong>Is a retest included?</strong> Frequently billed separately, and you need it to close findings before your observation window opens.</li>
+      <li><strong>Will you produce a shareable summary?</strong> You will need one for customers who ask, and you do not want to be redacting the technical report yourself.</li>
+    </ul>
+    <p>Give every firm the identical scope statement when you ask for a quote. Otherwise the cheapest number will simply be the narrowest test, and you will not find that out until the report arrives.
+
+    <h2 id="what-it-costs-honestly">What it costs, honestly</h2>
+    <p>Prices vary enormously for what is nominally the same service, and the variation is not mostly about quality &mdash; it is about scope, firm size, and how much manual effort is actually spent.</p>
+    <p>What moves the number: how many applications and APIs are in scope, whether testing is authenticated and multi-tenant, whether a retest is included, and whether you need the report by a specific date. What to check before signing: that a retest is included rather than billed separately, that you receive a shareable summary as well as the technical report, and that the testers are named humans rather than a rebranded scanner subscription.</p>
+    <p>Get three quotes with an identical scope statement, or you will be comparing numbers that describe different work.</p>
+
+<h2 id="questions-people-ask">Questions people ask</h2>
+<h3 id="does-soc-2-require-a-penetration-test">Does SOC 2 require a penetration test?</h3>
+<p>Not literally. The Trust Services Criteria never name a penetration test, so nothing in the standard obliges you to buy one. In practice most auditors expect independent testing as evidence for the criteria covering vulnerability management, and most enterprise customers ask for the report during security review. Ask your auditor directly and get their answer in writing before you budget.</p>
+<h3 id="how-often-do-you-need-a-penetration-test-for-soc-2">How often do you need a penetration test for SOC 2?</h3>
+<p>Annually is the common expectation, and it is what most enterprise security questionnaires ask for. Many companies also test after a significant architectural change, since a new authorisation model or a migration can introduce exactly the class of flaw a test is good at finding.</p>
+<h3 id="is-a-vulnerability-scan-enough-instead-of-a-penetration-test">Is a vulnerability scan enough instead of a penetration test?</h3>
+<p>Sometimes for the auditor, rarely for the customer. A scan is automated pattern matching against known issues; a penetration test is a person attempting to chain weaknesses into real access. Some auditors accept documented scanning plus a remediation process for a small scope, but enterprise questionnaires usually ask specifically for independent testing, and attaching a scan report in its place damages your credibility.</p>
+<h3 id="when-should-the-penetration-test-happen-relative-to-the-audit">When should the penetration test happen relative to the audit?</h3>
+<p>Before the observation window opens. A test almost always produces findings, and if it runs inside the window then the window contains a period where a known vulnerability was unremediated. Test first, fix the findings, obtain a retest or closure confirmation, then start the window. Allow six to eight weeks, because booking a reputable firm takes longer than expected.</p>
+<h3 id="do-i-have-to-give-customers-the-full-penetration-test-report">Do I have to give customers the full penetration test report?</h3>
+<p>No, and you generally should not. The full technical report is effectively a map of your weaknesses. Most testing firms produce an executive summary intended for sharing; offer that under NDA and keep the detailed version internal. Reviewers understand and expect this, provided you say so rather than simply not responding.</p>
+
+    <div class="callout">
+      <p><strong>See this against your own company.</strong> SOC2Starter turns 19 questions
+      into a personalised list of what you are missing, drafts the policies, and files the
+      evidence against the requirement it proves. Fourteen days free, no card.</p>
+      <p><a class="btn btn-primary" href="/app/auth/signup">Start free</a>
+      <a href="/features" style="margin-left:12px">See everything it does &rarr;</a></p>
+    </div>
+
+    <div class="next-up">
+      <h2 id="read-next">Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
+      <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
+      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2 class="foot-h">SOC2Starter</h2>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Product</h2>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Learn</h2>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Legal</h2>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="next-up">
+      <h2 id="read-next">Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-evidence-checklist">What evidence a SOC 2 auditor actually asks for</a></li>
+      <li><a href="/blog/soc-2-security-questionnaire">How to answer an enterprise security questionnaire</a></li>
+      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2 class="foot-h">SOC2Starter</h2>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Product</h2>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Learn</h2>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Legal</h2>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      &copy; <span id="yr">2026</span> Deepak Gandhi (trading as SOC2Starter). All rights reserved.
+      SOC2Starter helps you prepare for a SOC 2 examination. It does not perform the
+      examination, does not issue an attestation, and is not a substitute for an auditor &mdash;
+      an independent CPA firm performs the SOC 2 examination.
+    </p>
+  </div>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://soc-2-compliance.vercel.app/#organization",
+      "name": "SOC2Starter",
+      "legalName": "Deepak Gandhi (trading as SOC2Starter)",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "logo": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "image": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "email": "deepakgandhi2007@gmail.com",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "founder": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "knowsAbout": [
+        "SOC 2",
+        "SOC 2 Type 2",
+        "Trust Services Criteria",
+        "Security compliance",
+        "Evidence collection",
+        "Access reviews",
+        "Information security policies"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "deepakgandhi2007@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": "English",
+        "url": "https://soc-2-compliance.vercel.app/contact"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://soc-2-compliance.vercel.app/#logo",
+      "url": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "contentUrl": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "SOC2Starter"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://soc-2-compliance.vercel.app/#deepak",
+      "name": "Deepak Gandhi",
+      "url": "https://soc-2-compliance.vercel.app/about",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "knowsAbout": [
+        "SOC 2 readiness",
+        "Security compliance for startups",
+        "Evidence management"
+      ],
+      "description": "Builds SOC2Starter, a SOC 2 readiness and evidence tool for small B2B SaaS teams."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://soc-2-compliance.vercel.app/#website",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "name": "SOC2Starter",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test#webpage",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test",
+      "name": "Do You Need a Penetration Test for SOC 2?",
+      "description": "SOC 2 never names a penetration test, yet most auditors expect one. What that contradiction means in practice, what scope to buy, when to run it, and what it costs.",
+      "isPartOf": {
+        "@id": "https://soc-2-compliance.vercel.app/#website"
+      },
+      "inLanguage": "en",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "primaryImageOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "breadcrumb": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://soc-2-compliance.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://soc-2-compliance.vercel.app/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Penetration test",
+          "item": "https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test"
+        }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test#post",
+      "headline": "Do You Need a Penetration Test for SOC 2?",
+      "description": "SOC 2 never names a penetration test, yet most auditors expect one. What that contradiction means in practice, what scope to buy, when to run it, and what it costs.",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "author": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test#webpage"
+      },
+      "image": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "inLanguage": "en",
+      "articleSection": "Evidence",
+      "wordCount": 1263,
+      "timeRequired": "PT8M"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does SOC 2 require a penetration test?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not literally. The Trust Services Criteria never name a penetration test, so nothing in the standard obliges you to buy one. In practice most auditors expect independent testing as evidence for the criteria covering vulnerability management, and most enterprise customers ask for the report during security review. Ask your auditor directly and get their answer in writing before you budget."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often do you need a penetration test for SOC 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Annually is the common expectation, and it is what most enterprise security questionnaires ask for. Many companies also test after a significant architectural change, since a new authorisation model or a migration can introduce exactly the class of flaw a test is good at finding."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a vulnerability scan enough instead of a penetration test?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sometimes for the auditor, rarely for the customer. A scan is automated pattern matching against known issues; a penetration test is a person attempting to chain weaknesses into real access. Some auditors accept documented scanning plus a remediation process for a small scope, but enterprise questionnaires usually ask specifically for independent testing, and attaching a scan report in its place damages your credibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should the penetration test happen relative to the audit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Before the observation window opens. A test almost always produces findings, and if it runs inside the window then the window contains a period where a known vulnerability was unremediated. Test first, fix the findings, obtain a retest or closure confirmation, then start the window. Allow six to eight weeks, because booking a reputable firm takes longer than expected."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I have to give customers the full penetration test report?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, and you generally should not. The full technical report is effectively a map of your weaknesses. Most testing firms produce an executive summary intended for sharing; offer that under NDA and keep the detailed version internal. Reviewers understand and expect this, provided you say so rather than simply not responding."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

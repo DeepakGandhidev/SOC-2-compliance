@@ -1,0 +1,85 @@
+{
+  "slug": "soc-2-penetration-test",
+  "title": "Do You Need a Penetration Test for SOC 2?",
+  "h1": "Do you need a penetration test for SOC 2?",
+  "description": "SOC 2 never names a penetration test, yet most auditors expect one. What that contradiction means in practice, what scope to buy, when to run it, and what it costs.",
+  "section": "Evidence",
+  "crumb": "Penetration test",
+  "cardBlurb": "The standard never names one. Most auditors expect one anyway. What to actually buy, when to run it, and what a scan does not cover.",
+  "readingTime": 8,
+  "shortAnswer": "<p><strong>Strictly, no.</strong> The Trust Services Criteria never use the words &ldquo;penetration test&rdquo;, so no rule obliges you to buy one. <strong>Practically, usually yes.</strong> Most auditors read the criteria on vulnerability management and change detection as expecting independent testing, and most enterprise customers ask for the report separately during security review. Budget for one annually unless your auditor tells you otherwise in writing.</p>",
+  "sections": [
+    {
+      "h2": "Why the answer is not simply written down",
+      "html": "<p>SOC 2 is not a checklist standard. It is a set of criteria you meet with controls of your own design, and an independent CPA firm forms an opinion on whether those controls were suitably designed and operating. Nowhere in the Trust Services Criteria is a penetration test named as a required control.</p>\n    <p>What the criteria do require is that you identify vulnerabilities, assess the risk they carry, and act on them &mdash; and that you detect changes that could introduce new ones. A penetration test is the most common way companies demonstrate they are doing that, but it is an <em>answer</em> to the criteria rather than a requirement of them.</p>\n    <p>This is why you will find confident articles claiming both that SOC 2 requires a penetration test and that it does not. Both are describing something real. The standard does not require it; the practice around the standard largely does.</p>"
+    },
+    {
+      "h2": "Why most auditors expect one anyway",
+      "html": "<p>Put yourself in the auditor's position. They have to sign an opinion that your vulnerability management control operated effectively for a period of months. If your only evidence is that you ran an automated scanner against your own code, you have shown diligence but not independence &mdash; nobody outside the company ever tried to break in.</p>\n    <p>An independent test closes that gap cheaply. That is why the question is usually settled not by the standard but by your auditor's expectations, and those vary between firms.</p>\n    <p><strong>So ask them, early, and get the answer in writing.</strong> &ldquo;For our scope, will you accept authenticated vulnerability scanning and a documented remediation process, or do you expect an independent penetration test?&rdquo; That one email can save you a five-figure expense or a restarted observation window. Ask it before fieldwork, not during.</p>"
+    },
+    {
+      "h2": "The customer is often the real reason",
+      "html": "<p>Even where an auditor is relaxed, your buyers frequently are not. &ldquo;Do you perform annual penetration testing by an independent third party?&rdquo; appears on nearly every enterprise security questionnaire, and a no there stalls deals in the same way a missing SOC 2 report does.</p>\n    <p>This matters for how you think about the cost. If you are buying the test purely to satisfy an auditor, it is a compliance expense. If it also unblocks enterprise deals &mdash; and for most B2B SaaS companies it does &mdash; it belongs in the sales budget as much as the compliance one.</p>"
+    },
+    {
+      "h2": "A vulnerability scan is not a penetration test",
+      "html": "<p>These get conflated constantly, including by vendors selling one as the other, and the difference matters when an auditor or a customer reads your evidence.</p>\n    <ul>\n      <li><strong>Vulnerability scanning</strong> is automated. A tool compares your software and configuration against a database of known issues and produces a list. It is cheap, should run continuously, and is genuinely useful.</li>\n      <li><strong>Penetration testing</strong> is a person attempting to chain weaknesses into actual access. A tester finds the broken authorisation check that lets one customer read another customer's data &mdash; the flaw no scanner has a signature for, because it is specific to how your application works.</li>\n    </ul>\n    <p>Both belong in a mature programme. But if a questionnaire asks for a penetration test and you attach a scan report, an informed reviewer will notice, and it costs you credibility on everything else in the file.</p>"
+    },
+    {
+      "h2": "What scope to actually buy",
+      "html": "<p>For a typical B2B SaaS company, the useful scope is narrower than vendors will quote for.</p>\n    <ul>\n      <li><strong>Your web application, authenticated.</strong> The single most valuable test. Give the tester real accounts at more than one permission level, because the finding that matters most &mdash; one tenant reaching another tenant's data &mdash; is invisible to an unauthenticated test.</li>\n      <li><strong>Your API.</strong> Often where authorisation logic actually lives, and frequently weaker than the interface in front of it.</li>\n      <li><strong>Your cloud configuration.</strong> A review of IAM roles, storage permissions and network exposure. Cheap relative to what it catches.</li>\n    </ul>\n    <p>What you usually do not need at this stage: physical testing, social engineering, or a full red team exercise. They are legitimate services, they cost considerably more, and no startup auditor is expecting them.</p>\n    <p>Insist on <strong>authenticated, multi-tenant testing</strong>. A cheap unauthenticated scan of your marketing site technically produces a report with the words &ldquo;penetration test&rdquo; on it, and proves nothing about the product holding your customers' data.</p>"
+    },
+    {
+      "h2": "When to run it",
+      "html": "<p>Run the test <strong>before</strong> your observation window opens, not during it, and certainly not after.</p>\n    <p>The reason is remediation. A test almost always produces findings. If the test runs inside the observation window, the window now contains a period where a known vulnerability existed and was not yet fixed &mdash; which the auditor must consider. If the test runs before, you fix the findings first and the window contains only the remediated state.</p>\n    <p>The sequence that works: run the test, remediate, obtain a retest or a written confirmation that findings were resolved, then open the observation window. Build roughly six to eight weeks into your timeline for that loop, because scheduling a reputable firm takes longer than founders expect.</p>"
+    },
+    {
+      "h2": "What the auditor wants in the file",
+      "html": "<p>Not the raw technical report, usually. What goes into evidence is:</p>\n    <ul>\n      <li>The <strong>scope statement</strong> and dates, showing what was tested and when.</li>\n      <li>The <strong>executive summary</strong>, including the finding counts by severity.</li>\n      <li>Your <strong>remediation record</strong> &mdash; what you fixed, when, and who signed it off. This is the part that actually demonstrates the control operating.</li>\n      <li>A <strong>retest or closure letter</strong> where findings were significant.</li>\n    </ul>\n    <p>A clean report with no remediation record is weaker evidence than a report with eight findings and a documented, dated fix for each. The auditor is assessing whether your process works, not whether you were perfect.</p>\n    <p>Be careful sharing the full technical report outside the company. It is effectively a map of your weaknesses. Most firms produce a summary intended for exactly this purpose; offer that to customers, under NDA, and keep the detailed version internal.</p>"
+    },
+    {
+      "h2": "How to choose the firm",
+      "html": "<p>The market ranges from serious boutique consultancies to resellers who run a scanner and format the output. Both will sell you something called a penetration test, and the reports look superficially similar to anyone who has not read many.</p>\n    <p>Questions that separate them quickly:</p>\n    <ul>\n      <li><strong>Who specifically will test, and what are their credentials?</strong> You want named people. OSCP, CREST or equivalent is a reasonable signal; an unwillingness to say is a decisive one.</li>\n      <li><strong>What proportion of the work is manual?</strong> If the answer is vague, you are buying a scan.</li>\n      <li><strong>Can I see a redacted sample report?</strong> Reputable firms have one ready. Look at whether findings explain business impact or just restate a scanner's severity rating.</li>\n      <li><strong>Is a retest included?</strong> Frequently billed separately, and you need it to close findings before your observation window opens.</li>\n      <li><strong>Will you produce a shareable summary?</strong> You will need one for customers who ask, and you do not want to be redacting the technical report yourself.</li>\n    </ul>\n    <p>Give every firm the identical scope statement when you ask for a quote. Otherwise the cheapest number will simply be the narrowest test, and you will not find that out until the report arrives."
+    },
+    {
+      "h2": "What it costs, honestly",
+      "html": "<p>Prices vary enormously for what is nominally the same service, and the variation is not mostly about quality &mdash; it is about scope, firm size, and how much manual effort is actually spent.</p>\n    <p>What moves the number: how many applications and APIs are in scope, whether testing is authenticated and multi-tenant, whether a retest is included, and whether you need the report by a specific date. What to check before signing: that a retest is included rather than billed separately, that you receive a shareable summary as well as the technical report, and that the testers are named humans rather than a rebranded scanner subscription.</p>\n    <p>Get three quotes with an identical scope statement, or you will be comparing numbers that describe different work.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does SOC 2 require a penetration test?",
+      "a": "Not literally. The Trust Services Criteria never name a penetration test, so nothing in the standard obliges you to buy one. In practice most auditors expect independent testing as evidence for the criteria covering vulnerability management, and most enterprise customers ask for the report during security review. Ask your auditor directly and get their answer in writing before you budget."
+    },
+    {
+      "q": "How often do you need a penetration test for SOC 2?",
+      "a": "Annually is the common expectation, and it is what most enterprise security questionnaires ask for. Many companies also test after a significant architectural change, since a new authorisation model or a migration can introduce exactly the class of flaw a test is good at finding."
+    },
+    {
+      "q": "Is a vulnerability scan enough instead of a penetration test?",
+      "a": "Sometimes for the auditor, rarely for the customer. A scan is automated pattern matching against known issues; a penetration test is a person attempting to chain weaknesses into real access. Some auditors accept documented scanning plus a remediation process for a small scope, but enterprise questionnaires usually ask specifically for independent testing, and attaching a scan report in its place damages your credibility."
+    },
+    {
+      "q": "When should the penetration test happen relative to the audit?",
+      "a": "Before the observation window opens. A test almost always produces findings, and if it runs inside the window then the window contains a period where a known vulnerability was unremediated. Test first, fix the findings, obtain a retest or closure confirmation, then start the window. Allow six to eight weeks, because booking a reputable firm takes longer than expected."
+    },
+    {
+      "q": "Do I have to give customers the full penetration test report?",
+      "a": "No, and you generally should not. The full technical report is effectively a map of your weaknesses. Most testing firms produce an executive summary intended for sharing; offer that under NDA and keep the detailed version internal. Reviewers understand and expect this, provided you say so rather than simply not responding."
+    }
+  ],
+  "readNext": [
+    [
+      "/blog/soc-2-evidence-checklist",
+      "What evidence a SOC 2 auditor actually asks for"
+    ],
+    [
+      "/blog/soc-2-security-questionnaire",
+      "How to answer an enterprise security questionnaire"
+    ],
+    [
+      "/blog/soc-2-cost-for-startups",
+      "What SOC 2 really costs a startup"
+    ]
+  ]
+}

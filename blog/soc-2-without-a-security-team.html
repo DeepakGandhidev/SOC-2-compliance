@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>SOC 2 With No Dedicated Security Team</title>
+<meta name="description" content="Most companies that need SOC 2 have no security team. What one engineer can realistically own, what to defer, what you cannot defer, and where outside help pays.">
+<link rel="stylesheet" href="/assets/style.css?v=478da6c7">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="canonical" href="https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="alternate" hreflang="en" href="https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team">
+<link rel="alternate" hreflang="x-default" href="https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team">
+<meta name="author" content="Deepak Gandhi">
+<meta property="og:title" content="SOC 2 With No Dedicated Security Team">
+<meta property="og:description" content="Most companies that need SOC 2 have no security team. What one engineer can realistically own, what to defer, what you cannot defer, and where outside help pays.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team">
+<meta property="og:site_name" content="SOC2Starter">
+<meta property="article:published_time" content="2026-09-14T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-09-14T00:00:00+00:00">
+<meta property="article:author" content="Deepak Gandhi">
+<meta property="article:section" content="Readiness">
+<meta property="article:tag" content="SOC 2">
+<meta property="og:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">S2</span> SOC2Starter</a>
+    <nav class="site">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog" aria-current="page">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/app/auth/login">Sign in</a>
+      <a class="btn btn-primary" href="/app/auth/signup" style="padding:9px 16px">Start free trial</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/blog">Guides</a> &rsaquo; No security team</p>
+    <h1>SOC 2 when nobody's job title says security</h1>
+    <p class="post-meta">Updated 2026-09-14 &middot; 8 min read &middot; by Deepak Gandhi, who builds
+    <a href="/features">SOC2Starter</a></p>
+
+    <div class="answer">
+      <span class="label">The short answer</span>
+      <p>Give it to <strong>one named owner</strong> with real calendar time, not to a committee. Scope the audit to <strong>Security only</strong>. Start the recurring controls &mdash; access reviews, offboarding records, change management &mdash; immediately, because those are the ones that need calendar time to accumulate and cannot be produced later. Almost everything else can wait until the month before fieldwork. A first SOC 2 is achievable for a company of ten with no security hire.</p>
+    </div>
+
+    <h2 id="this-is-the-normal-case-not-the-exception">This is the normal case, not the exception</h2>
+    <p>The tooling and the advice in this market are largely written for companies with a compliance function. Most companies that need SOC 2 do not have one. They have a CTO who already has a full-time job, an enterprise customer waiting on an answer, and no obvious person to hand the work to.</p>
+    <p>That situation is workable. SOC 2 does not require a security team; it requires that controls exist, are appropriate to your size, and actually operate. An auditor assessing a twelve-person company is not expecting a security operations centre. They are expecting the controls you claimed to have to be real.</p>
+    <p>What genuinely does not work is leaving it unassigned. The failure mode for small companies is never a refusal to do the work &mdash; it is that nobody in particular was responsible during a busy quarter.</p>
+
+    <h2 id="give-it-to-one-person-with-time">Give it to one person, with time</h2>
+    <p>Pick one owner. Usually the CTO, or the engineer who already owns infrastructure. Not a rotating responsibility, and not &ldquo;the team&rdquo;, because auditors ask who performed a control and &ldquo;we all did&rdquo; is not an answer that survives follow-up.</p>
+    <p>Then give them actual time. A realistic budget for a first audit at a small company is a meaningful chunk of one engineer's week during readiness, dropping to a few hours a month once the recurring controls are running. Treating it as something to absorb between feature work is how deadlines get missed by a quarter.</p>
+    <p>Founders consistently underestimate this line because it is the only cost with no invoice attached. It is nearly always the largest one.</p>
+
+    <h2 id="scope-is-the-biggest-lever-you-have">Scope is the biggest lever you have</h2>
+    <p>SOC 2 has five Trust Services Criteria: Security, Availability, Processing Integrity, Confidentiality and Privacy. <strong>Security is the only mandatory one.</strong> Almost every startup should do Security alone for a first report.</p>
+    <p>Each additional criterion adds controls, evidence and audit fee. Teams add Availability because it sounds reassuring, then discover they have committed to uptime monitoring and capacity planning evidence nobody asked them for. Your customer almost certainly asked for &ldquo;SOC 2&rdquo;, not for a specific criteria set &mdash; and if they did ask for more, that is a question worth confirming before you buy it.</p>
+    <p>Narrowing scope is the single largest reduction in work available to you, and it costs nothing.</p>
+
+    <h2 id="start-the-things-that-need-calendar-time">Start the things that need calendar time</h2>
+    <p>This is the distinction that decides whether your timeline holds. Some evidence can be produced on demand. Some has to accumulate, and no amount of effort later compresses it.</p>
+    <p><strong>Start these immediately, before you feel ready:</strong></p>
+    <ul>
+      <li><strong>Access reviews.</strong> Quarterly. The most common finding for startups, and impossible to create retroactively.</li>
+      <li><strong>Offboarding records.</strong> Every departure needs a dated record that access was actually revoked. You cannot reconstruct one for somebody who left last year.</li>
+      <li><strong>Change management.</strong> If code review is already your habit, you may already be generating this evidence in your pull requests &mdash; check that branch protection enforces it rather than relying on convention.</li>
+      <li><strong>Security awareness training.</strong> Annual, with completion records.</li>
+    </ul>
+    <p>These four are cheap to start and expensive to backfill. Everything about your timeline follows from when you begin them.</p>
+
+    <h2 id="what-can-genuinely-wait">What can genuinely wait</h2>
+    <p>Plenty, and knowing this is what keeps a small team from drowning in the first month.</p>
+    <ul>
+      <li><strong>Policy writing.</strong> Ten or so documents. They need to be approved, dated, and actually followed &mdash; but they can be written in a focused week rather than spread over six months. Write them close to the audit so they describe what you really do.</li>
+      <li><strong>The risk assessment.</strong> A documented exercise, not a continuous programme at your size.</li>
+      <li><strong>Vendor reviews.</strong> Assemble the subprocessor list and review the material ones. This is a day's work, not a quarter's.</li>
+      <li><strong>Most tooling decisions.</strong> You do not need a full security stack to pass a first audit. Buying tools before you know which controls you are short on is how budgets get wasted.</li>
+    </ul>
+    <p>The instinct at a small company is to start with policies because they feel like the visible part of compliance. That is backwards: policies are the deferrable half, and the recurring controls are the urgent half.</p>
+
+    <h2 id="the-technical-gaps-that-actually-come-up">The technical gaps that actually come up</h2>
+    <p>Auditors at this size are not looking for sophistication. The findings that recur at small companies are unglamorous and cheap to fix once somebody looks.</p>
+    <ul>
+      <li><strong>MFA that is available but not enforced.</strong> Particularly on the cloud root account and on any admin console reachable from the public internet. &ldquo;Everyone has it turned on&rdquo; is not the same claim as &ldquo;it cannot be turned off&rdquo;, and only the second is a control.</li>
+      <li><strong>Production access that made sense at four people.</strong> Broad permissions granted when the team was tiny and never narrowed. Least privilege is mostly a tidying exercise, not a project.</li>
+      <li><strong>Backups nobody has restored.</strong> Having backups is not the control; demonstrating you can restore from them is. Run one restore, document it, and you have closed a finding that catches a surprising number of companies.</li>
+      <li><strong>Code review by convention rather than enforcement.</strong> If branch protection does not require review, your change management control depends on everyone remembering. Turn on the setting and the evidence generates itself.</li>
+      <li><strong>Laptops with no disk encryption or screen lock policy.</strong> Trivial to fix centrally, and routinely asked about.</li>
+    </ul>
+    <p>None of these needs a specialist. They need an afternoon and somebody willing to check the actual configuration rather than the assumed one.
+
+    <h2 id="where-outside-help-is-actually-worth-paying-for">Where outside help is actually worth paying for</h2>
+    <p>You do not need a consultant to get SOC 2, and many small companies do it without one. Where money genuinely buys time:</p>
+    <ul>
+      <li><strong>The auditor conversation, early.</strong> Free, and the highest-value hour available. A small CPA firm will tell you what they expect to see, which beats any generic checklist. Get three quotes; prices for the same report vary by multiples.</li>
+      <li><strong>A penetration test</strong>, if your auditor or your customers expect one. Not something to do in-house.</li>
+      <li><strong>A few hours of advisory</strong> at the scoping stage, if the decisions feel genuinely unclear. Rarely worth a full engagement at this size.</li>
+    </ul>
+    <p>Where it is usually not worth it: paying someone to write policies that describe a company they have not observed. You will end up editing them into truth anyway, and a policy that does not match reality is worse than none, because now the gap is documented.</p>
+
+    <h2 id="a-workable-sequence-for-a-team-of-ten">A workable sequence for a team of ten</h2>
+    <p>Roughly, and in this order:</p>
+    <ol>
+      <li>Confirm with the customer which report they actually need. Type 1 plus a committed date often unblocks a deal that seemed to require Type 2.</li>
+      <li>Choose Security-only scope. Name the owner. Put their time in the calendar.</li>
+      <li>Talk to two or three auditors. Ask what they expect for your size, including on penetration testing, and get it in writing.</li>
+      <li>Start the recurring controls this week: first access review, offboarding record template, branch protection, training.</li>
+      <li>Close the obvious technical gaps &mdash; MFA everywhere including cloud root, least privilege on production, encrypted backups with a restore you have actually tested.</li>
+      <li>Write and approve the policies, describing what you now genuinely do.</li>
+      <li>Run the penetration test if required, remediate, then open the observation window.</li>
+    </ol>
+    <p>Nothing in that list requires a security specialist. It requires one accountable person and enough calendar time to be honest about what is true.</p>
+
+<h2 id="questions-people-ask">Questions people ask</h2>
+<h3 id="can-a-startup-get-soc-2-without-a-security-team">Can a startup get SOC 2 without a security team?</h3>
+<p>Yes, and most do. SOC 2 requires controls appropriate to your size that genuinely operate, not a dedicated function. An auditor assessing a twelve-person company expects proportionate controls, not a security operations centre. What matters is that one named person owns the work and has real time for it, because the common failure is that nobody in particular was responsible.</p>
+<h3 id="who-should-own-soc-2-at-a-small-company">Who should own SOC 2 at a small company?</h3>
+<p>One named individual, usually the CTO or the engineer who already owns infrastructure. Not a rotating duty and not the team collectively, because auditors ask who performed a given control and a collective answer does not survive follow-up. Give the owner explicit calendar time rather than expecting the work to fit between feature deadlines.</p>
+<h3 id="how-much-engineering-time-does-soc-2-actually-take">How much engineering time does SOC 2 actually take?</h3>
+<p>Expect a meaningful share of one engineer's week during the readiness period, falling to a few hours a month once the recurring controls are running. It is the largest cost of SOC 2 for most small companies and the one nobody budgets, because it is the only line item that never generates an invoice.</p>
+<h3 id="should-a-startup-do-more-than-the-security-criteria">Should a startup do more than the Security criteria?</h3>
+<p>Usually not for a first report. Security is the only mandatory criterion, and each additional one adds controls, evidence and audit fee. Teams often add Availability because it sounds reassuring, then find they have committed to monitoring and capacity evidence no customer requested. Confirm what your buyer actually asked for before widening scope.</p>
+<h3 id="do-i-need-a-compliance-consultant-for-soc-2">Do I need a compliance consultant for SOC 2?</h3>
+<p>Not necessarily. The highest-value outside conversation is with the auditor, and it is usually free: a small CPA firm will tell you what they expect for a company your size. Paying someone to write policies describing a company they have not observed is rarely worth it, since you will edit them into truth anyway and a policy that does not match reality is worse than none.</p>
+
+    <div class="callout">
+      <p><strong>See this against your own company.</strong> SOC2Starter turns 19 questions
+      into a personalised list of what you are missing, drafts the policies, and files the
+      evidence against the requirement it proves. Fourteen days free, no card.</p>
+      <p><a class="btn btn-primary" href="/app/auth/signup">Start free</a>
+      <a href="/features" style="margin-left:12px">See everything it does &rarr;</a></p>
+    </div>
+
+    <div class="next-up">
+      <h2 id="read-next">Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
+      <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
+      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2 class="foot-h">SOC2Starter</h2>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Product</h2>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Learn</h2>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Legal</h2>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="next-up">
+      <h2 id="read-next">Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
+      <li><a href="/blog/soc-2-access-review">How to run your first access review</a></li>
+      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2 class="foot-h">SOC2Starter</h2>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Product</h2>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Learn</h2>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Legal</h2>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      &copy; <span id="yr">2026</span> Deepak Gandhi (trading as SOC2Starter). All rights reserved.
+      SOC2Starter helps you prepare for a SOC 2 examination. It does not perform the
+      examination, does not issue an attestation, and is not a substitute for an auditor &mdash;
+      an independent CPA firm performs the SOC 2 examination.
+    </p>
+  </div>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://soc-2-compliance.vercel.app/#organization",
+      "name": "SOC2Starter",
+      "legalName": "Deepak Gandhi (trading as SOC2Starter)",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "logo": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "image": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "email": "deepakgandhi2007@gmail.com",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "founder": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "knowsAbout": [
+        "SOC 2",
+        "SOC 2 Type 2",
+        "Trust Services Criteria",
+        "Security compliance",
+        "Evidence collection",
+        "Access reviews",
+        "Information security policies"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "deepakgandhi2007@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": "English",
+        "url": "https://soc-2-compliance.vercel.app/contact"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://soc-2-compliance.vercel.app/#logo",
+      "url": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "contentUrl": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "SOC2Starter"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://soc-2-compliance.vercel.app/#deepak",
+      "name": "Deepak Gandhi",
+      "url": "https://soc-2-compliance.vercel.app/about",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "knowsAbout": [
+        "SOC 2 readiness",
+        "Security compliance for startups",
+        "Evidence management"
+      ],
+      "description": "Builds SOC2Starter, a SOC 2 readiness and evidence tool for small B2B SaaS teams."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://soc-2-compliance.vercel.app/#website",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "name": "SOC2Starter",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team#webpage",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team",
+      "name": "SOC 2 With No Dedicated Security Team",
+      "description": "Most companies that need SOC 2 have no security team. What one engineer can realistically own, what to defer, what you cannot defer, and where outside help pays.",
+      "isPartOf": {
+        "@id": "https://soc-2-compliance.vercel.app/#website"
+      },
+      "inLanguage": "en",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "primaryImageOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "breadcrumb": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://soc-2-compliance.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://soc-2-compliance.vercel.app/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "No security team",
+          "item": "https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team"
+        }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team#post",
+      "headline": "SOC 2 With No Dedicated Security Team",
+      "description": "Most companies that need SOC 2 have no security team. What one engineer can realistically own, what to defer, what you cannot defer, and where outside help pays.",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "author": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team#webpage"
+      },
+      "image": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "inLanguage": "en",
+      "articleSection": "Readiness",
+      "wordCount": 1163,
+      "timeRequired": "PT8M"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can a startup get SOC 2 without a security team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and most do. SOC 2 requires controls appropriate to your size that genuinely operate, not a dedicated function. An auditor assessing a twelve-person company expects proportionate controls, not a security operations centre. What matters is that one named person owns the work and has real time for it, because the common failure is that nobody in particular was responsible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who should own SOC 2 at a small company?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One named individual, usually the CTO or the engineer who already owns infrastructure. Not a rotating duty and not the team collectively, because auditors ask who performed a given control and a collective answer does not survive follow-up. Give the owner explicit calendar time rather than expecting the work to fit between feature deadlines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much engineering time does SOC 2 actually take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Expect a meaningful share of one engineer's week during the readiness period, falling to a few hours a month once the recurring controls are running. It is the largest cost of SOC 2 for most small companies and the one nobody budgets, because it is the only line item that never generates an invoice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should a startup do more than the Security criteria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually not for a first report. Security is the only mandatory criterion, and each additional one adds controls, evidence and audit fee. Teams often add Availability because it sounds reassuring, then find they have committed to monitoring and capacity evidence no customer requested. Confirm what your buyer actually asked for before widening scope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a compliance consultant for SOC 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not necessarily. The highest-value outside conversation is with the auditor, and it is usually free: a small CPA firm will tell you what they expect for a company your size. Paying someone to write policies describing a company they have not observed is rarely worth it, since you will edit them into truth anyway and a policy that does not match reality is worse than none."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
