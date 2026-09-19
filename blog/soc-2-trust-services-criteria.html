@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>The SOC 2 Trust Services Criteria in Plain English</title>
+<meta name="description" content="SOC 2's five Trust Services Criteria explained without the jargon: what Security actually covers, why the other four are optional, and which ones to leave out.">
+<link rel="stylesheet" href="/assets/style.css?v=478da6c7">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="canonical" href="https://soc-2-compliance.vercel.app/blog/soc-2-trust-services-criteria">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="alternate" hreflang="en" href="https://soc-2-compliance.vercel.app/blog/soc-2-trust-services-criteria">
+<link rel="alternate" hreflang="x-default" href="https://soc-2-compliance.vercel.app/blog/soc-2-trust-services-criteria">
+<meta name="author" content="Deepak Gandhi">
+<meta property="og:title" content="The SOC 2 Trust Services Criteria in Plain English">
+<meta property="og:description" content="SOC 2's five Trust Services Criteria explained without the jargon: what Security actually covers, why the other four are optional, and which ones to leave out.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://soc-2-compliance.vercel.app/blog/soc-2-trust-services-criteria">
+<meta property="og:site_name" content="SOC2Starter">
+<meta property="article:published_time" content="2026-09-19T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-09-19T00:00:00+00:00">
+<meta property="article:author" content="Deepak Gandhi">
+<meta property="article:section" content="Fundamentals">
+<meta property="article:tag" content="SOC 2">
+<meta property="og:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soc-2-compliance.vercel.app/assets/og-image.png">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="mark">S2</span> SOC2Starter</a>
+    <nav class="site">
+      <a href="/features">Features</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog" aria-current="page">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/app/auth/login">Sign in</a>
+      <a class="btn btn-primary" href="/app/auth/signup" style="padding:9px 16px">Start free trial</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/blog">Guides</a> &rsaquo; Trust criteria</p>
+    <h1>The Trust Services Criteria, in plain English</h1>
+    <p class="post-meta">Updated 2026-09-19 &middot; 8 min read &middot; by Deepak Gandhi, who builds
+    <a href="/features">SOC2Starter</a></p>
+
+    <div class="answer">
+      <span class="label">The short answer</span>
+      <p>SOC 2 has five Trust Services Criteria: <strong>Security, Availability, Processing Integrity, Confidentiality and Privacy</strong>. Only <strong>Security is mandatory</strong> &mdash; it is included in every SOC 2 report and is often called the common criteria. The other four are optional, each adds controls, evidence and audit fee, and almost every startup should do Security alone for a first report.</p>
+    </div>
+
+    <h2 id="why-they-are-criteria-and-not-rules">Why they are criteria and not rules</h2>
+    <p>The most common misunderstanding about SOC 2 is that it is a checklist of required controls. It is not. The Trust Services Criteria describe <em>outcomes</em> your controls have to achieve, and you choose the controls that achieve them.</p>
+    <p>This is why two companies can both hold clean SOC 2 reports with completely different technology and process. One enforces access through Okta, another through Google Workspace; one reviews code in GitHub, another in GitLab. Both satisfy the same criterion because the criterion is about the outcome, not the mechanism.</p>
+    <p>It also explains why you will not find an official list of &ldquo;the 64 SOC 2 controls&rdquo; anywhere authoritative. Any such list is a vendor's interpretation &mdash; often a useful one, but an interpretation. The auditor's opinion is about whether <em>your</em> stated controls were suitably designed and operating, not whether you matched somebody's template.</p>
+
+    <h2 id="security-the-only-one-you-must-have">Security: the only one you must have</h2>
+    <p>Security is present in every SOC 2 report. It is frequently called the <strong>common criteria</strong>, and it is organised into nine series, numbered CC1 through CC9. In plain terms they cover:</p>
+    <ul>
+      <li><strong>CC1 &mdash; Control environment.</strong> Does the organisation take this seriously? Governance, competence, accountability. For a startup this mostly means somebody is genuinely responsible and background checks happen.</li>
+      <li><strong>CC2 &mdash; Communication and information.</strong> Do people know the policies exist and what they say?</li>
+      <li><strong>CC3 &mdash; Risk assessment.</strong> Have you thought about what could go wrong, written it down, and acted on it?</li>
+      <li><strong>CC4 &mdash; Monitoring.</strong> Do you check that your own controls are working, rather than assuming?</li>
+      <li><strong>CC5 &mdash; Control activities.</strong> The controls themselves exist and are deployed.</li>
+      <li><strong>CC6 &mdash; Logical and physical access.</strong> The big one for most startups. Who can reach what, how access is granted and revoked, MFA, encryption.</li>
+      <li><strong>CC7 &mdash; System operations.</strong> Monitoring, vulnerability management, incident detection and response.</li>
+      <li><strong>CC8 &mdash; Change management.</strong> Changes are authorised, tested and reviewed before reaching production.</li>
+      <li><strong>CC9 &mdash; Risk mitigation.</strong> Vendor risk and business disruption.</li>
+    </ul>
+    <p>If you are wondering where your effort will actually go: CC6, CC7 and CC8 account for most of the practical work at a small company, and CC6 alone accounts for most of the findings.</p>
+
+    <h2 id="where-the-work-actually-lands">Where the work actually lands</h2>
+    <p>Reading nine criteria series can make Security sound enormous. In practice, at a company of ten to fifty, the effort concentrates in a few places and the rest is documentation of things you already do.</p>
+    <p><strong>CC6 is roughly half the work.</strong> Access provisioning and revocation, quarterly access reviews, MFA enforcement, least privilege on production, encryption in transit and at rest. If you fix nothing else, fix CC6 &mdash; it is also where most findings come from.</p>
+    <p><strong>CC7 and CC8 are usually cheaper than expected</strong>, because engineering teams often already satisfy them. If you review pull requests before merging and your branch protection enforces it, your change management evidence generates itself. If you run dependency scanning and act on alerts, much of vulnerability management is already happening. The work is proving it, not building it.</p>
+    <p><strong>CC1 through CC4 are mostly writing.</strong> Governance, a risk assessment, evidence that people have seen the policies. Real work, but a focused week rather than a quarter, and best done close to the audit so it describes the company you actually are.</p>
+    <p>The implication for planning: start CC6's recurring controls immediately, because access reviews need calendar time to accumulate. Leave the documentation until later, because it does not.
+
+    <h2 id="availability">Availability</h2>
+    <p><strong>What it covers:</strong> that the system is available for operation and use as committed. Uptime monitoring, capacity planning, backup and recovery, and disaster recovery testing.</p>
+    <p><strong>What it costs you:</strong> you now need evidence of monitoring, documented capacity management, and a tested recovery plan &mdash; tested meaning you actually ran a restore and recorded it.</p>
+    <p><strong>When it is worth it:</strong> when you have contractual uptime commitments, or customers genuinely asking about availability guarantees. It is the most commonly added second criterion, and frequently added for the wrong reason: it sounds reassuring in a sales conversation. If no customer has asked, adding it buys you work rather than deals.</p>
+
+    <h2 id="confidentiality">Confidentiality</h2>
+    <p><strong>What it covers:</strong> that information designated as confidential is protected as committed. Classification, retention, and secure disposal.</p>
+    <p><strong>What it costs you:</strong> a data classification scheme that genuinely operates, documented retention periods, and evidence that data is actually destroyed when it should be.</p>
+    <p><strong>When it is worth it:</strong> when you handle material that is confidential in a specific, contractual sense beyond ordinary customer data &mdash; source code held on a customer's behalf, unreleased financials, legal material. Note that plenty of what people assume requires Confidentiality is already covered by Security: encryption and access control live in CC6.</p>
+
+    <h2 id="processing-integrity">Processing Integrity</h2>
+    <p><strong>What it covers:</strong> that system processing is complete, valid, accurate, timely and authorised. Not that the data is correct, but that your system does to it what it claims to do.</p>
+    <p><strong>What it costs you:</strong> evidence of input validation, processing accuracy checks, error handling and reconciliation.</p>
+    <p><strong>When it is worth it:</strong> when your product performs calculations customers rely on &mdash; payments, payroll, billing, analytics that feed financial decisions. It is the least commonly included criterion, and for good reason: for most SaaS products, no customer is asking.</p>
+
+    <h2 id="privacy">Privacy</h2>
+    <p><strong>What it covers:</strong> how you collect, use, retain, disclose and dispose of <em>personal</em> information, measured against your own published privacy notice.</p>
+    <p><strong>What it costs you:</strong> the most of the four. Consent management, data subject rights handling, and demonstrating your actual practice matches your published notice.</p>
+    <p><strong>When it is worth it:</strong> less often than people assume. Privacy here is not GDPR compliance &mdash; that is a separate legal regime and a SOC 2 Privacy opinion does not establish it. If a customer is asking about data protection obligations, they usually want a DPA and your GDPR position, not this criterion.</p>
+
+    <h2 id="how-to-choose-in-one-question">How to choose, in one question</h2>
+    <p>Ask the customer who requested SOC 2 which criteria they need. Nine times out of ten the honest answer is that they asked for &ldquo;SOC 2&rdquo; and have not thought past that, which means Security alone satisfies them.</p>
+    <p>The reason this matters so much: scope is the single largest cost lever in the entire process, and it is set before you have spent anything. Each added criterion means more controls to design, more evidence to collect across the whole observation window, and a larger audit fee. Removing one later means a new report.</p>
+    <p>A useful test: <strong>can you name the customer who asked for this criterion?</strong> If not, leave it out. You can add criteria to next year's report once you have a real reason, and you will be doing it from a position where the recurring controls already run smoothly.</p>
+
+    <h2 id="what-the-criteria-do-not-tell-you">What the criteria do not tell you</h2>
+    <p>Two things worth knowing, because they cause repeated confusion.</p>
+    <p><strong>The criteria never name specific technologies or vendors.</strong> Nowhere do they require a particular tool, a SIEM, a compliance platform, or a penetration test. Any vendor telling you SOC 2 requires their category of product is describing a common implementation choice as if it were a rule.</p>
+    <p><strong>The criteria do not set thresholds.</strong> They do not say how long passwords must be, how often access must be reviewed, or how many days you have to patch. You set those in your own policies, and the audit then tests whether you did what you said. This is why an overambitious policy is actively harmful: committing to monthly access reviews and running them quarterly creates an exception that committing to quarterly would not have.</p>
+    <p>Write policies that describe what you will genuinely sustain. The criteria give you that latitude deliberately.</p>
+
+<h2 id="questions-people-ask">Questions people ask</h2>
+<h3 id="what-are-the-five-soc-2-trust-services-criteria">What are the five SOC 2 Trust Services Criteria?</h3>
+<p>Security, Availability, Processing Integrity, Confidentiality and Privacy. Security is mandatory and appears in every SOC 2 report, where it is often called the common criteria. The other four are optional and are included only if you choose them, each adding controls, evidence and audit fee.</p>
+<h3 id="is-security-the-only-required-trust-services-criterion">Is Security the only required Trust Services Criterion?</h3>
+<p>Yes. Every SOC 2 report includes Security; the remaining four are selected based on what you commit to customers. Almost every startup should do Security alone for a first report, because scope is the largest cost lever in the process and it is fixed before you have spent anything.</p>
+<h3 id="what-is-the-difference-between-the-common-criteria-and-the-trust-services-criteria">What is the difference between the common criteria and the Trust Services Criteria?</h3>
+<p>The common criteria are the Security criteria, numbered CC1 through CC9, which are common to every SOC 2 report regardless of what else you include. The Trust Services Criteria is the wider framework containing all five categories. People frequently use the terms interchangeably, which is usually harmless since Security is always in scope.</p>
+<h3 id="should-a-startup-include-availability-in-its-soc-2-scope">Should a startup include Availability in its SOC 2 scope?</h3>
+<p>Usually not for a first report. Availability requires evidence of uptime monitoring, capacity planning, and a recovery plan you have actually tested and recorded. It is the most commonly added second criterion and often added because it sounds reassuring rather than because a customer asked. If you cannot name the customer who requested it, leave it out.</p>
+<h3 id="does-soc-2-privacy-mean-we-are-gdpr-compliant">Does SOC 2 Privacy mean we are GDPR compliant?</h3>
+<p>No. The Privacy criterion assesses whether your handling of personal information matches your own published privacy notice. GDPR is a separate legal regime with its own obligations, and a SOC 2 Privacy opinion does not establish compliance with it. Customers asking about data protection generally want a data processing agreement and your GDPR position instead.</p>
+
+    <div class="callout">
+      <p><strong>See this against your own company.</strong> SOC2Starter turns 19 questions
+      into a personalised list of what you are missing, drafts the policies, and files the
+      evidence against the requirement it proves. Fourteen days free, no card.</p>
+      <p><a class="btn btn-primary" href="/app/auth/signup">Start free</a>
+      <a href="/features" style="margin-left:12px">See everything it does &rarr;</a></p>
+    </div>
+
+    <div class="next-up">
+      <h2 id="read-next">Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
+      <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
+      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2 class="foot-h">SOC2Starter</h2>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Product</h2>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Learn</h2>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Legal</h2>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="next-up">
+      <h2 id="read-next">Read next</h2>
+      <ul>
+      <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
+      <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
+      <li><a href="/blog/soc-2-policies-you-need">The SOC 2 policies you actually need</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2 class="foot-h">SOC2Starter</h2>
+        <p style="color:#7C8698;max-width:26ch;margin:0">SOC 2 readiness and evidence management for 5&ndash;50 person startups.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Product</h2>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/app/auth/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Learn</h2>
+        <ul>
+          <li><a href="/blog">All guides</a></li>
+          <li><a href="/blog/soc-2-evidence-checklist">Evidence checklist</a></li>
+          <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 costs</a></li>
+          <li><a href="/blog/soc-2-type-1-vs-type-2">Type 1 vs Type 2</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Legal</h2>
+        <ul>
+          <li><a href="/terms">Terms of service</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/refund">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      &copy; <span id="yr">2026</span> Deepak Gandhi (trading as SOC2Starter). All rights reserved.
+      SOC2Starter helps you prepare for a SOC 2 examination. It does not perform the
+      examination, does not issue an attestation, and is not a substitute for an auditor &mdash;
+      an independent CPA firm performs the SOC 2 examination.
+    </p>
+  </div>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://soc-2-compliance.vercel.app/#organization",
+      "name": "SOC2Starter",
+      "legalName": "Deepak Gandhi (trading as SOC2Starter)",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "logo": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "image": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "email": "deepakgandhi2007@gmail.com",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "founder": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "knowsAbout": [
+        "SOC 2",
+        "SOC 2 Type 2",
+        "Trust Services Criteria",
+        "Security compliance",
+        "Evidence collection",
+        "Access reviews",
+        "Information security policies"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "deepakgandhi2007@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": "English",
+        "url": "https://soc-2-compliance.vercel.app/contact"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://soc-2-compliance.vercel.app/#logo",
+      "url": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "contentUrl": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "SOC2Starter"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://soc-2-compliance.vercel.app/#deepak",
+      "name": "Deepak Gandhi",
+      "url": "https://soc-2-compliance.vercel.app/about",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "knowsAbout": [
+        "SOC 2 readiness",
+        "Security compliance for startups",
+        "Evidence management"
+      ],
+      "description": "Builds SOC2Starter, a SOC 2 readiness and evidence tool for small B2B SaaS teams."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://soc-2-compliance.vercel.app/#website",
+      "url": "https://soc-2-compliance.vercel.app/",
+      "name": "SOC2Starter",
+      "description": "SOC 2 readiness and evidence management for 5-50 person B2B SaaS startups.",
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-trust-services-criteria#webpage",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-trust-services-criteria",
+      "name": "The SOC 2 Trust Services Criteria in Plain English",
+      "description": "SOC 2's five Trust Services Criteria explained without the jargon: what Security actually covers, why the other four are optional, and which ones to leave out.",
+      "isPartOf": {
+        "@id": "https://soc-2-compliance.vercel.app/#website"
+      },
+      "inLanguage": "en",
+      "datePublished": "2026-09-19",
+      "dateModified": "2026-09-19",
+      "primaryImageOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/#logo"
+      },
+      "breadcrumb": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-trust-services-criteria#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-trust-services-criteria#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://soc-2-compliance.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://soc-2-compliance.vercel.app/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Trust criteria",
+          "item": "https://soc-2-compliance.vercel.app/blog/soc-2-trust-services-criteria"
+        }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-trust-services-criteria#post",
+      "headline": "The SOC 2 Trust Services Criteria in Plain English",
+      "description": "SOC 2's five Trust Services Criteria explained without the jargon: what Security actually covers, why the other four are optional, and which ones to leave out.",
+      "url": "https://soc-2-compliance.vercel.app/blog/soc-2-trust-services-criteria",
+      "datePublished": "2026-09-19",
+      "dateModified": "2026-09-19",
+      "author": {
+        "@id": "https://soc-2-compliance.vercel.app/#deepak"
+      },
+      "publisher": {
+        "@id": "https://soc-2-compliance.vercel.app/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-trust-services-criteria#webpage"
+      },
+      "image": "https://soc-2-compliance.vercel.app/assets/og-image.png",
+      "inLanguage": "en",
+      "articleSection": "Fundamentals",
+      "wordCount": 1232,
+      "timeRequired": "PT8M"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://soc-2-compliance.vercel.app/blog/soc-2-trust-services-criteria#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the five SOC 2 Trust Services Criteria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Security, Availability, Processing Integrity, Confidentiality and Privacy. Security is mandatory and appears in every SOC 2 report, where it is often called the common criteria. The other four are optional and are included only if you choose them, each adding controls, evidence and audit fee."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Security the only required Trust Services Criterion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every SOC 2 report includes Security; the remaining four are selected based on what you commit to customers. Almost every startup should do Security alone for a first report, because scope is the largest cost lever in the process and it is fixed before you have spent anything."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between the common criteria and the Trust Services Criteria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The common criteria are the Security criteria, numbered CC1 through CC9, which are common to every SOC 2 report regardless of what else you include. The Trust Services Criteria is the wider framework containing all five categories. People frequently use the terms interchangeably, which is usually harmless since Security is always in scope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should a startup include Availability in its SOC 2 scope?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually not for a first report. Availability requires evidence of uptime monitoring, capacity planning, and a recovery plan you have actually tested and recorded. It is the most commonly added second criterion and often added because it sounds reassuring rather than because a customer asked. If you cannot name the customer who requested it, leave it out."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SOC 2 Privacy mean we are GDPR compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The Privacy criterion assesses whether your handling of personal information matches your own published privacy notice. GDPR is a separate legal regime with its own obligations, and a SOC 2 Privacy opinion does not establish compliance with it. Customers asking about data protection generally want a data processing agreement and your GDPR position instead."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

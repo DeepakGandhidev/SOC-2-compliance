@@ -1,0 +1,85 @@
+{
+  "slug": "soc-2-trust-services-criteria",
+  "title": "The SOC 2 Trust Services Criteria in Plain English",
+  "h1": "The Trust Services Criteria, in plain English",
+  "description": "SOC 2's five Trust Services Criteria explained without the jargon: what Security actually covers, why the other four are optional, and which ones to leave out.",
+  "section": "Fundamentals",
+  "crumb": "Trust criteria",
+  "cardBlurb": "What the five criteria actually mean, why only one is mandatory, and why adding the others is the most expensive mistake in scoping.",
+  "readingTime": 8,
+  "shortAnswer": "<p>SOC 2 has five Trust Services Criteria: <strong>Security, Availability, Processing Integrity, Confidentiality and Privacy</strong>. Only <strong>Security is mandatory</strong> &mdash; it is included in every SOC 2 report and is often called the common criteria. The other four are optional, each adds controls, evidence and audit fee, and almost every startup should do Security alone for a first report.</p>",
+  "sections": [
+    {
+      "h2": "Why they are criteria and not rules",
+      "html": "<p>The most common misunderstanding about SOC 2 is that it is a checklist of required controls. It is not. The Trust Services Criteria describe <em>outcomes</em> your controls have to achieve, and you choose the controls that achieve them.</p>\n    <p>This is why two companies can both hold clean SOC 2 reports with completely different technology and process. One enforces access through Okta, another through Google Workspace; one reviews code in GitHub, another in GitLab. Both satisfy the same criterion because the criterion is about the outcome, not the mechanism.</p>\n    <p>It also explains why you will not find an official list of &ldquo;the 64 SOC 2 controls&rdquo; anywhere authoritative. Any such list is a vendor's interpretation &mdash; often a useful one, but an interpretation. The auditor's opinion is about whether <em>your</em> stated controls were suitably designed and operating, not whether you matched somebody's template.</p>"
+    },
+    {
+      "h2": "Security: the only one you must have",
+      "html": "<p>Security is present in every SOC 2 report. It is frequently called the <strong>common criteria</strong>, and it is organised into nine series, numbered CC1 through CC9. In plain terms they cover:</p>\n    <ul>\n      <li><strong>CC1 &mdash; Control environment.</strong> Does the organisation take this seriously? Governance, competence, accountability. For a startup this mostly means somebody is genuinely responsible and background checks happen.</li>\n      <li><strong>CC2 &mdash; Communication and information.</strong> Do people know the policies exist and what they say?</li>\n      <li><strong>CC3 &mdash; Risk assessment.</strong> Have you thought about what could go wrong, written it down, and acted on it?</li>\n      <li><strong>CC4 &mdash; Monitoring.</strong> Do you check that your own controls are working, rather than assuming?</li>\n      <li><strong>CC5 &mdash; Control activities.</strong> The controls themselves exist and are deployed.</li>\n      <li><strong>CC6 &mdash; Logical and physical access.</strong> The big one for most startups. Who can reach what, how access is granted and revoked, MFA, encryption.</li>\n      <li><strong>CC7 &mdash; System operations.</strong> Monitoring, vulnerability management, incident detection and response.</li>\n      <li><strong>CC8 &mdash; Change management.</strong> Changes are authorised, tested and reviewed before reaching production.</li>\n      <li><strong>CC9 &mdash; Risk mitigation.</strong> Vendor risk and business disruption.</li>\n    </ul>\n    <p>If you are wondering where your effort will actually go: CC6, CC7 and CC8 account for most of the practical work at a small company, and CC6 alone accounts for most of the findings.</p>"
+    },
+    {
+      "h2": "Where the work actually lands",
+      "html": "<p>Reading nine criteria series can make Security sound enormous. In practice, at a company of ten to fifty, the effort concentrates in a few places and the rest is documentation of things you already do.</p>\n    <p><strong>CC6 is roughly half the work.</strong> Access provisioning and revocation, quarterly access reviews, MFA enforcement, least privilege on production, encryption in transit and at rest. If you fix nothing else, fix CC6 &mdash; it is also where most findings come from.</p>\n    <p><strong>CC7 and CC8 are usually cheaper than expected</strong>, because engineering teams often already satisfy them. If you review pull requests before merging and your branch protection enforces it, your change management evidence generates itself. If you run dependency scanning and act on alerts, much of vulnerability management is already happening. The work is proving it, not building it.</p>\n    <p><strong>CC1 through CC4 are mostly writing.</strong> Governance, a risk assessment, evidence that people have seen the policies. Real work, but a focused week rather than a quarter, and best done close to the audit so it describes the company you actually are.</p>\n    <p>The implication for planning: start CC6's recurring controls immediately, because access reviews need calendar time to accumulate. Leave the documentation until later, because it does not."
+    },
+    {
+      "h2": "Availability",
+      "html": "<p><strong>What it covers:</strong> that the system is available for operation and use as committed. Uptime monitoring, capacity planning, backup and recovery, and disaster recovery testing.</p>\n    <p><strong>What it costs you:</strong> you now need evidence of monitoring, documented capacity management, and a tested recovery plan &mdash; tested meaning you actually ran a restore and recorded it.</p>\n    <p><strong>When it is worth it:</strong> when you have contractual uptime commitments, or customers genuinely asking about availability guarantees. It is the most commonly added second criterion, and frequently added for the wrong reason: it sounds reassuring in a sales conversation. If no customer has asked, adding it buys you work rather than deals.</p>"
+    },
+    {
+      "h2": "Confidentiality",
+      "html": "<p><strong>What it covers:</strong> that information designated as confidential is protected as committed. Classification, retention, and secure disposal.</p>\n    <p><strong>What it costs you:</strong> a data classification scheme that genuinely operates, documented retention periods, and evidence that data is actually destroyed when it should be.</p>\n    <p><strong>When it is worth it:</strong> when you handle material that is confidential in a specific, contractual sense beyond ordinary customer data &mdash; source code held on a customer's behalf, unreleased financials, legal material. Note that plenty of what people assume requires Confidentiality is already covered by Security: encryption and access control live in CC6.</p>"
+    },
+    {
+      "h2": "Processing Integrity",
+      "html": "<p><strong>What it covers:</strong> that system processing is complete, valid, accurate, timely and authorised. Not that the data is correct, but that your system does to it what it claims to do.</p>\n    <p><strong>What it costs you:</strong> evidence of input validation, processing accuracy checks, error handling and reconciliation.</p>\n    <p><strong>When it is worth it:</strong> when your product performs calculations customers rely on &mdash; payments, payroll, billing, analytics that feed financial decisions. It is the least commonly included criterion, and for good reason: for most SaaS products, no customer is asking.</p>"
+    },
+    {
+      "h2": "Privacy",
+      "html": "<p><strong>What it covers:</strong> how you collect, use, retain, disclose and dispose of <em>personal</em> information, measured against your own published privacy notice.</p>\n    <p><strong>What it costs you:</strong> the most of the four. Consent management, data subject rights handling, and demonstrating your actual practice matches your published notice.</p>\n    <p><strong>When it is worth it:</strong> less often than people assume. Privacy here is not GDPR compliance &mdash; that is a separate legal regime and a SOC 2 Privacy opinion does not establish it. If a customer is asking about data protection obligations, they usually want a DPA and your GDPR position, not this criterion.</p>"
+    },
+    {
+      "h2": "How to choose, in one question",
+      "html": "<p>Ask the customer who requested SOC 2 which criteria they need. Nine times out of ten the honest answer is that they asked for &ldquo;SOC 2&rdquo; and have not thought past that, which means Security alone satisfies them.</p>\n    <p>The reason this matters so much: scope is the single largest cost lever in the entire process, and it is set before you have spent anything. Each added criterion means more controls to design, more evidence to collect across the whole observation window, and a larger audit fee. Removing one later means a new report.</p>\n    <p>A useful test: <strong>can you name the customer who asked for this criterion?</strong> If not, leave it out. You can add criteria to next year's report once you have a real reason, and you will be doing it from a position where the recurring controls already run smoothly.</p>"
+    },
+    {
+      "h2": "What the criteria do not tell you",
+      "html": "<p>Two things worth knowing, because they cause repeated confusion.</p>\n    <p><strong>The criteria never name specific technologies or vendors.</strong> Nowhere do they require a particular tool, a SIEM, a compliance platform, or a penetration test. Any vendor telling you SOC 2 requires their category of product is describing a common implementation choice as if it were a rule.</p>\n    <p><strong>The criteria do not set thresholds.</strong> They do not say how long passwords must be, how often access must be reviewed, or how many days you have to patch. You set those in your own policies, and the audit then tests whether you did what you said. This is why an overambitious policy is actively harmful: committing to monthly access reviews and running them quarterly creates an exception that committing to quarterly would not have.</p>\n    <p>Write policies that describe what you will genuinely sustain. The criteria give you that latitude deliberately.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What are the five SOC 2 Trust Services Criteria?",
+      "a": "Security, Availability, Processing Integrity, Confidentiality and Privacy. Security is mandatory and appears in every SOC 2 report, where it is often called the common criteria. The other four are optional and are included only if you choose them, each adding controls, evidence and audit fee."
+    },
+    {
+      "q": "Is Security the only required Trust Services Criterion?",
+      "a": "Yes. Every SOC 2 report includes Security; the remaining four are selected based on what you commit to customers. Almost every startup should do Security alone for a first report, because scope is the largest cost lever in the process and it is fixed before you have spent anything."
+    },
+    {
+      "q": "What is the difference between the common criteria and the Trust Services Criteria?",
+      "a": "The common criteria are the Security criteria, numbered CC1 through CC9, which are common to every SOC 2 report regardless of what else you include. The Trust Services Criteria is the wider framework containing all five categories. People frequently use the terms interchangeably, which is usually harmless since Security is always in scope."
+    },
+    {
+      "q": "Should a startup include Availability in its SOC 2 scope?",
+      "a": "Usually not for a first report. Availability requires evidence of uptime monitoring, capacity planning, and a recovery plan you have actually tested and recorded. It is the most commonly added second criterion and often added because it sounds reassuring rather than because a customer asked. If you cannot name the customer who requested it, leave it out."
+    },
+    {
+      "q": "Does SOC 2 Privacy mean we are GDPR compliant?",
+      "a": "No. The Privacy criterion assesses whether your handling of personal information matches your own published privacy notice. GDPR is a separate legal regime with its own obligations, and a SOC 2 Privacy opinion does not establish compliance with it. Customers asking about data protection generally want a data processing agreement and your GDPR position instead."
+    }
+  ],
+  "readNext": [
+    [
+      "/blog/soc-2-readiness-checklist",
+      "A SOC 2 readiness checklist for a 10-person startup"
+    ],
+    [
+      "/blog/soc-2-type-1-vs-type-2",
+      "SOC 2 Type 1 vs Type 2: which one do you actually need?"
+    ],
+    [
+      "/blog/soc-2-policies-you-need",
+      "The SOC 2 policies you actually need"
+    ]
+  ]
+}
