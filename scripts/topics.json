@@ -1,0 +1,108 @@
+{
+  "_comment": [
+    "The guide backlog, in intent order. One topic per entry.",
+    "",
+    "Deliberately finite. There is not an unlimited supply of high-intent SOC 2",
+    "topics for a Security-only readiness product, and publishing past the end of",
+    "this list means publishing filler. Google's scaled content abuse policy",
+    "targets mass-produced pages regardless of who wrote them, so the backlog",
+    "running out is information, not a problem to route around.",
+    "",
+    "Re-order this from Search Console impressions whenever there is real data.",
+    "`soc-2-password-requirements` came from exactly that and is one of the",
+    "better pages on the site.",
+    "",
+    "Run ./scripts/next-topic.py to see what is next and generate a spec skeleton."
+  ],
+  "topics": [
+    {
+      "slug": "soc-2-risk-assessment",
+      "title": "How to Run a SOC 2 Risk Assessment",
+      "intent": "Required by CC3, and almost nobody knows what the artefact should look like at startup size.",
+      "angle": "A risk assessment is a documented exercise, not a continuous programme. Show the actual table.",
+      "sections": ["What CC3 actually asks for", "The table that satisfies it", "Identifying risks without a framework", "Scoring without pretending to precision", "What to do with the output", "How often to redo it", "What auditors reject"],
+      "faq": ["Does SOC 2 require a risk assessment?", "How often must a SOC 2 risk assessment be done?", "Who should perform it?", "What format does an auditor expect?", "Do we need a risk register as well?"]
+    },
+    {
+      "slug": "soc-2-incident-response-plan",
+      "title": "The SOC 2 Incident Response Plan, and Testing It",
+      "intent": "A required policy, and the testing requirement catches people who wrote the plan and stopped.",
+      "angle": "Having a plan is not the control; evidence you exercised it is. A tabletop takes an hour.",
+      "sections": ["Why the plan alone is not enough", "What the plan has to contain", "Notification windows become contractual", "Running a tabletop exercise", "The record the exercise has to leave", "What counts as an incident", "Common findings"],
+      "faq": ["Does SOC 2 require an incident response plan?", "Does the plan have to be tested?", "What is a tabletop exercise?", "What notification window should we commit to?", "Do we have to report incidents to customers?"]
+    },
+    {
+      "slug": "soc-2-vendor-management",
+      "title": "SOC 2 Vendor and Subprocessor Management",
+      "intent": "CC9, and the subprocessor list is the thing enterprise reviewers cross-check against your privacy policy.",
+      "angle": "The list must match your public privacy policy exactly. Reviewers do check.",
+      "sections": ["What counts as a vendor in scope", "Building the subprocessor list", "Why it must match your privacy policy", "Reviewing a vendor without a questionnaire", "Collecting their SOC 2 reports", "Annual review cadence", "What to do about vendors with no report"],
+      "faq": ["What vendors are in scope for SOC 2?", "Do we need our vendors' SOC 2 reports?", "How often must vendors be reviewed?", "What if a critical vendor has no SOC 2 report?", "Does the subprocessor list have to be public?"]
+    },
+    {
+      "slug": "soc-2-what-happens-during-fieldwork",
+      "title": "What Actually Happens During SOC 2 Fieldwork",
+      "intent": "High anxiety, almost no honest content. People want to know what the weeks look like.",
+      "angle": "Demystify it: sampling, evidence requests, walkthroughs, and how to not lose three weeks to it.",
+      "sections": ["The shape of the engagement", "How sampling works", "The walkthrough call", "Evidence requests and turnaround", "What slows fieldwork down most", "How exceptions get raised", "From end of window to issued report"],
+      "faq": ["How long does SOC 2 fieldwork take?", "What is a walkthrough?", "How does the auditor sample evidence?", "What happens if they find an exception?", "How long until we get the report?"]
+    },
+    {
+      "slug": "soc-2-exceptions-and-qualified-opinions",
+      "title": "SOC 2 Exceptions: What Happens If You Fail",
+      "intent": "The fear nobody addresses honestly. Very high intent, searched in a panic.",
+      "angle": "A qualified opinion is survivable and common. What customers actually do with one.",
+      "sections": ["You cannot fail SOC 2, exactly", "Exceptions versus a qualified opinion", "What lands in the report", "What customers do when they read one", "Management responses", "Remediating before the next period", "When to restart the window instead"],
+      "faq": ["Can you fail a SOC 2 audit?", "What is a qualified SOC 2 opinion?", "Will customers reject a report with exceptions?", "Can we add a management response?", "Should we restart the observation window?"]
+    },
+    {
+      "slug": "soc-2-year-two",
+      "title": "SOC 2 Year Two: Renewal Without the Panic",
+      "intent": "Everyone with a report faces it; almost nothing is written for them.",
+      "angle": "Continuous coverage, no calendar gap, and why year two is cheaper only if controls kept running.",
+      "sections": ["Why reports go stale", "Continuous coverage and why reviewers look for it", "What changes in year two", "What gets more expensive, not less", "Keeping the recurring controls alive", "Widening scope deliberately", "Changing auditors"],
+      "faq": ["How often do you need a SOC 2 report?", "Does a SOC 2 report expire?", "Is year two cheaper?", "Can we change auditors between years?", "Should we lengthen the observation window?"]
+    },
+    {
+      "slug": "soc-1-vs-soc-2-vs-soc-3",
+      "title": "SOC 1 vs SOC 2 vs SOC 3: Which Do You Need?",
+      "intent": "Recurring confusion, and customers sometimes ask for the wrong one.",
+      "angle": "SOC 1 is financial reporting. SOC 3 is the shareable summary. Most startups need SOC 2 Type 2.",
+      "sections": ["Three different reports, three audiences", "SOC 1 and when it applies", "SOC 2 and its two types", "SOC 3 as the public summary", "When a customer asks for the wrong one", "Can you have more than one"],
+      "faq": ["What is the difference between SOC 1 and SOC 2?", "What is a SOC 3 report?", "Which SOC report do SaaS companies need?", "Can we share a SOC 3 publicly?", "A customer asked for SOC 1 — what now?"]
+    },
+    {
+      "slug": "soc-2-logging-and-monitoring",
+      "title": "SOC 2 Logging and Monitoring Requirements",
+      "intent": "CC7, and teams overbuy tooling here because vendors imply a SIEM is mandatory.",
+      "angle": "No SIEM is required. What you actually need to retain, and for how long.",
+      "sections": ["What CC7 asks for", "You do not need a SIEM", "What to log and what to retain", "Retention periods and where to state them", "Alerting that somebody actually reads", "Evidence the control operated"],
+      "faq": ["Does SOC 2 require a SIEM?", "How long must logs be retained for SOC 2?", "What events need logging?", "Do we need 24/7 monitoring?", "What evidence proves monitoring happened?"]
+    },
+    {
+      "slug": "soc-2-encryption-requirements",
+      "title": "SOC 2 Encryption Requirements in Practice",
+      "intent": "Asked constantly on questionnaires; answers online are vague or wrong.",
+      "angle": "No algorithm is mandated. What managed cloud services already give you, and what they do not.",
+      "sections": ["What the criteria say about encryption", "In transit: what you already have", "At rest: what your cloud provider does by default", "Key management and who holds them", "What to write on a questionnaire", "Where teams genuinely fall short"],
+      "faq": ["Does SOC 2 require encryption?", "What encryption standard does SOC 2 require?", "Is cloud provider default encryption enough?", "Who should hold the encryption keys?", "Do we need field-level encryption?"]
+    },
+    {
+      "slug": "soc-2-scope-boundary",
+      "title": "Defining the System Boundary for SOC 2",
+      "intent": "Scope is the biggest cost lever and the decision people make least deliberately.",
+      "angle": "What is in and out, how to exclude things honestly, and what carve-outs cost you.",
+      "sections": ["What a system boundary is", "What belongs inside it", "Excluding things legitimately", "Carve-outs and inclusive method for subservice organisations", "How the boundary shows up in the report", "Getting the boundary wrong in both directions"],
+      "faq": ["What is the system boundary in SOC 2?", "Can we exclude part of our product?", "What is a carve-out?", "Does our marketing site need to be in scope?", "Can we add systems later?"]
+    },
+    {
+      "slug": "vanta-vs-drata-vs-diy",
+      "title": "Vanta vs Drata vs Doing It Yourself",
+      "intent": "Genuinely linkable because a fair version is rare. Deferred until there is traffic to convert.",
+      "angle": "An honest comparison including the case for a spreadsheet. Name who each is wrong for.",
+      "defer": "KEYWORDS.md: a comparison page from a site with no traffic and no reviews converts badly and invites a fight you cannot win yet. Write it once there is organic traffic.",
+      "sections": ["What these platforms actually sell", "Where the manual route genuinely works", "Where it stops working", "What all of them cannot do", "Price as the real differentiator", "Who each option is wrong for"],
+      "faq": ["Do I need Vanta or Drata for SOC 2?", "Can you get SOC 2 without a compliance platform?", "What is the cheapest way to get SOC 2?", "Do these platforms include the audit?", "Can we switch platforms mid-readiness?"]
+    }
+  ]
+}

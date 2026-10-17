@@ -1,0 +1,115 @@
+name: Guide cadence
+
+# Every 2 days, surface the next guide from the backlog as an issue with its
+# brief attached. It deliberately does NOT write or publish the guide.
+#
+# Writing is the part that cannot be automated: a cron job cannot produce 1,300
+# words of accurate audit advice, and auto-publishing unreviewed compliance
+# claims under a named byline is a liability, not a shortcut. Pages that advise
+# people on audit decisions get read by their auditors.
+#
+# It also stops when the backlog runs dry rather than inventing topics, because
+# publishing past the end of a real backlog is what Google's scaled content
+# abuse policy exists to catch.
+on:
+  schedule:
+    - cron: "0 8 */2 * *"   # 08:00 UTC, every other day
+  workflow_dispatch:
+
+concurrency:
+  group: guide-cadence
+  cancel-in-progress: false
+
+jobs:
+  next-guide:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read the backlog
+        id: backlog
+        run: |
+          chmod +x scripts/*.py
+          {
+            echo 'status<<EOF'
+            ./scripts/next-topic.py
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Open an issue for the next guide
+        uses: actions/github-script@v7
+        env:
+          BACKLOG: ${{ steps.backlog.outputs.status }}
+        with:
+          script: |
+            const fs = require("fs");
+            const topics = JSON.parse(fs.readFileSync("scripts/topics.json", "utf8")).topics;
+
+            const unwritten = topics.filter(t =>
+              !fs.existsSync(`blog/${t.slug}.html`) && !t.defer);
+
+            if (unwritten.length === 0) {
+              core.notice("Backlog is empty — no issue opened. Pull the next topic from Search Console.");
+              return;
+            }
+
+            // One open guide issue at a time. A queue of twenty is not a cadence.
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo,
+              state: "open", labels: "guide",
+            });
+            if (open.data.length > 0) {
+              core.notice(`Still open: #${open.data[0].number} — ${open.data[0].title}. Not opening another.`);
+              return;
+            }
+
+            const t = unwritten[0];
+            const body = [
+              `**Why this one:** ${t.intent}`,
+              "",
+              `**Angle:** ${t.angle}`,
+              "",
+              "### Scaffold it",
+              "```",
+              `./scripts/next-topic.py --slug ${t.slug}`,
+              "```",
+              "That writes a spec with the section headings and FAQ questions already in place.",
+              "Fill in every TODO, then:",
+              "```",
+              "./scripts/new-guide.py scripts/guides/<name>.json --dry-run",
+              "./scripts/new-guide.py scripts/guides/<name>.json",
+              "./scripts/bust-cache.sh && ./scripts/seo-check.sh",
+              "git add -A && git commit && git push",
+              `./scripts/indexnow.sh /blog/${t.slug}`,
+              "```",
+              "",
+              "### Planned structure",
+              ...(t.sections || []).map(s => `- ${s}`),
+              "",
+              "### FAQ targets",
+              ...(t.faq || []).map(q => `- ${q}`),
+              "",
+              "---",
+              "### House rules",
+              "- 1,200–1,850 words of body text",
+              "- Open with a short answer that stands alone, so it can be quoted",
+              "- Take a position — the pages that work say what the standard does **not** require",
+              "- No claim you would not defend to a real auditor. Read it before merging.",
+              "",
+              "<details><summary>Backlog at time of writing</summary>",
+              "",
+              "```",
+              process.env.BACKLOG || "(unavailable)",
+              "```",
+              "</details>",
+            ].join("\n");
+
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner, repo: context.repo.repo,
+              title: `Write: ${t.title}`,
+              body, labels: ["guide"],
+            });
+            core.notice(`Opened #${issue.data.number} — ${t.title}`);

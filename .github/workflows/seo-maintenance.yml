@@ -1,0 +1,112 @@
+name: SEO maintenance
+
+# Every 2 days. Does the mechanical half of SEO upkeep that genuinely benefits
+# from being automatic: verify nothing regressed, confirm the live site matches
+# the repo, and re-announce URLs to the engines that accept a push.
+on:
+  schedule:
+    - cron: "0 7 */2 * *"   # 07:00 UTC, every other day
+  workflow_dispatch:         # and on demand
+  push:
+    branches: [main]
+    paths:
+      - "**.html"
+      - "sitemap.xml"
+      - "robots.txt"
+      - "llms.txt"
+      - "assets/style.css"
+
+concurrency:
+  group: seo-maintenance
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: On-page audit
+        id: audit
+        run: |
+          chmod +x scripts/*.sh
+          ./scripts/seo-check.sh
+
+      - name: Stylesheet hash is stamped into every page
+        run: |
+          ./scripts/bust-cache.sh
+          if ! git diff --quiet; then
+            echo "::error::style.css changed without running bust-cache.sh — returning"
+            echo "visitors will keep the cached stylesheet for up to a week."
+            git --no-pager diff --stat
+            exit 1
+          fi
+          echo "Cache-busting hash is current."
+
+      - name: Every sitemap URL is live
+        run: |
+          HOST=$(grep -o '<loc>https\?://[^/<]*' sitemap.xml | head -1 | sed 's|.*://||')
+          FAIL=0
+          while IFS= read -r u; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$u" || echo 000)
+            if [ "$code" = "200" ]; then
+              echo "  $code  $u"
+            else
+              echo "::error::$code $u"
+              FAIL=$((FAIL+1))
+            fi
+          done < <(grep -o '<loc>[^<]*</loc>' sitemap.xml | sed -e 's|<loc>||g' -e 's|</loc>||g')
+          echo
+          if [ "$FAIL" -gt 0 ]; then
+            echo "::error::$FAIL sitemap URL(s) are not returning 200 on $HOST"
+            exit 1
+          fi
+          echo "All sitemap URLs live on $HOST."
+
+      - name: Live site matches the repo
+        run: |
+          HOST=$(grep -o '<loc>https\?://[^/<]*' sitemap.xml | head -1 | sed 's|.*://||')
+          for f in sitemap.xml robots.txt llms.txt assets/style.css; do
+            remote=$(curl -s --max-time 20 "https://$HOST/$f" | shasum -a 256 | cut -d' ' -f1)
+            local=$(shasum -a 256 "$f" | cut -d' ' -f1)
+            if [ "$remote" = "$local" ]; then
+              echo "  match     $f"
+            else
+              echo "::warning::$f differs between repo and live site (deploy may be mid-flight)"
+            fi
+          done
+
+      - name: Announce to IndexNow
+        if: github.event_name != 'pull_request'
+        run: ./scripts/indexnow.sh
+
+      - name: Open an issue if the audit failed
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = "SEO maintenance failed";
+            const body = [
+              "The scheduled SEO audit failed.",
+              "",
+              `Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              "",
+              "Common causes, in order of likelihood:",
+              "- a sitemap URL 404s because a page was added to sitemap.xml but not deployed",
+              "- `assets/style.css` changed without running `./scripts/bust-cache.sh`",
+              "- a title or meta description drifted outside the length the audit enforces",
+              "",
+              "Reproduce locally with `./scripts/seo-check.sh`.",
+            ].join("\n");
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo,
+              state: "open", labels: "seo",
+            });
+            if (existing.data.some(i => i.title === title)) {
+              core.info("An open issue already tracks this.");
+              return;
+            }
+            await github.rest.issues.create({
+              owner: context.repo.owner, repo: context.repo.repo,
+              title, body, labels: ["seo"],
+            });

@@ -89,6 +89,34 @@ will always be weaker than a domain you own. Buy one, move, and 301 the old URLs
 canonical tags already in place make that unambiguous. Do it before the links start
 arriving, not after.
 
+## What runs on its own
+
+Two GitHub Actions, both every two days, plus the scripts they call.
+
+| | |
+| --- | --- |
+| `.github/workflows/seo-maintenance.yml` | Runs the on-page audit, checks the stylesheet hash is stamped into every page, verifies every sitemap URL returns 200, compares the live `sitemap.xml`/`robots.txt`/`llms.txt`/`style.css` against the repo, and re-announces to IndexNow. Opens a labelled issue if anything fails |
+| `.github/workflows/guide-cadence.yml` | Surfaces the next backlog topic as an issue with its brief, section headings and FAQ targets. One open guide issue at a time, and it goes quiet when the backlog runs dry |
+| `scripts/seo-check.sh` | The audit. Exits non-zero on a regression |
+| `scripts/bust-cache.sh` | Stamps the stylesheet hash into every `<link>`. Run after any CSS edit |
+| `scripts/indexnow.sh` | Pushes URLs to Bing, Yandex, Seznam and Naver. Refuses to announce a URL that is not live |
+| `scripts/new-guide.py` | Generates a guide from a spec: full head, contents, anchored sections, FAQ markup, JSON-LD graph, sitemap entry, `/blog` card and index schema |
+| `scripts/next-topic.py` | Backlog status, and scaffolds the next spec with headings and FAQ in place |
+| `scripts/migrate-domain.sh` | Rewrites every reference when the domain moves. Dry-run first |
+
+**What is deliberately not automated: writing and publishing.** A cron job cannot
+produce 1,200 words of accurate audit advice, and auto-publishing unreviewed
+compliance claims under a named byline is a liability rather than a shortcut —
+these pages get read by the reader's own auditor. The cadence job scaffolds and
+reminds; a person writes it and merges it.
+
+The backlog in `scripts/topics.json` is also finite on purpose. There is not an
+unlimited supply of high-intent SOC 2 topics for a Security-only readiness
+product, and publishing past the end of a real backlog is precisely what
+Google's scaled content abuse policy exists to catch. When it empties, the next
+topics come from Search Console impressions — which is how
+`soc-2-password-requirements` got written, and it is one of the better pages here.
+
 ## Honest expectations
 
 A new site with no backlinks ranks for nothing for months. This is not a comment on the
