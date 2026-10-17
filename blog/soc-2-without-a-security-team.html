@@ -3,9 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1018" media="(prefers-color-scheme: dark)">
 <title>SOC 2 With No Dedicated Security Team</title>
 <meta name="description" content="Most companies that need SOC 2 have no security team. What one engineer can realistically own, what to defer, what you cannot defer, and where outside help pays.">
+<link rel="preload" href="/assets/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css?v=478da6c7">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/favicon.png">
@@ -19,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team">
 <meta property="og:site_name" content="SOC2Starter">
-<meta property="article:published_time" content="2026-09-14T00:00:00+00:00">
-<meta property="article:modified_time" content="2026-09-14T00:00:00+00:00">
+<meta property="article:published_time" content="2026-10-17T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-10-17T00:00:00+00:00">
 <meta property="article:author" content="Deepak Gandhi">
 <meta property="article:section" content="Readiness">
 <meta property="article:tag" content="SOC 2">
@@ -50,13 +53,28 @@
   <div class="wrap">
     <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/blog">Guides</a> &rsaquo; No security team</p>
     <h1>SOC 2 when nobody's job title says security</h1>
-    <p class="post-meta">Updated 2026-09-14 &middot; 8 min read &middot; by Deepak Gandhi, who builds
+    <p class="post-meta">Updated 2026-10-17 &middot; 8 min read &middot; by Deepak Gandhi, who builds
     <a href="/features">SOC2Starter</a></p>
 
     <div class="answer">
       <span class="label">The short answer</span>
       <p>Give it to <strong>one named owner</strong> with real calendar time, not to a committee. Scope the audit to <strong>Security only</strong>. Start the recurring controls &mdash; access reviews, offboarding records, change management &mdash; immediately, because those are the ones that need calendar time to accumulate and cannot be produced later. Almost everything else can wait until the month before fieldwork. A first SOC 2 is achievable for a company of ten with no security hire.</p>
     </div>
+
+    <nav class="toc" aria-label="On this page">
+      <p class="toc-title">On this page</p>
+      <ol>
+        <li><a href="#this-is-the-normal-case-not-the-exception">This is the normal case, not the exception</a></li>
+        <li><a href="#give-it-to-one-person-with-time">Give it to one person, with time</a></li>
+        <li><a href="#scope-is-the-biggest-lever-you-have">Scope is the biggest lever you have</a></li>
+        <li><a href="#start-the-things-that-need-calendar-time">Start the things that need calendar time</a></li>
+        <li><a href="#what-can-genuinely-wait">What can genuinely wait</a></li>
+        <li><a href="#the-technical-gaps-that-actually-come-up">The technical gaps that actually come up</a></li>
+        <li><a href="#where-outside-help-is-actually-worth-paying-for">Where outside help is actually worth paying for</a></li>
+        <li><a href="#a-workable-sequence-for-a-team-of-ten">A workable sequence for a team of ten</a></li>
+        <li><a href="#questions-people-ask">Questions people ask</a></li>
+      </ol>
+    </nav>
 
     <h2 id="this-is-the-normal-case-not-the-exception">This is the normal case, not the exception</h2>
     <p>The tooling and the advice in this market are largely written for companies with a compliance function. Most companies that need SOC 2 do not have one. They have a CTO who already has a full-time job, an enterprise customer waiting on an answer, and no obvious person to hand the work to.</p>
@@ -152,7 +170,8 @@
       <ul>
       <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
       <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
-      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>      <li><a href="/blog/soc-2-security-questionnaire">How to answer an enterprise security questionnaire</a></li>
+      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>      <li><a href="/blog/soc-2-penetration-test">Do you need a penetration test for SOC 2?</a></li>      <li><a href="/blog/soc-2-choosing-an-auditor">How to choose a SOC 2 auditor</a></li>
+
 
       </ul>
     </div>
@@ -202,6 +221,7 @@
       <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
       <li><a href="/blog/soc-2-access-review">How to run your first access review</a></li>
       <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>
+      <li><a href="/blog/soc-2-security-questionnaire">How to answer an enterprise security questionnaire</a></li>
       </ul>
     </div>
   </div>
@@ -336,8 +356,8 @@
         "@id": "https://soc-2-compliance.vercel.app/#website"
       },
       "inLanguage": "en",
-      "datePublished": "2026-09-14",
-      "dateModified": "2026-09-14",
+      "datePublished": "2026-10-17",
+      "dateModified": "2026-10-17",
       "primaryImageOfPage": {
         "@id": "https://soc-2-compliance.vercel.app/#logo"
       },
@@ -375,8 +395,8 @@
       "headline": "SOC 2 With No Dedicated Security Team",
       "description": "Most companies that need SOC 2 have no security team. What one engineer can realistically own, what to defer, what you cannot defer, and where outside help pays.",
       "url": "https://soc-2-compliance.vercel.app/blog/soc-2-without-a-security-team",
-      "datePublished": "2026-09-14",
-      "dateModified": "2026-09-14",
+      "datePublished": "2026-10-17",
+      "dateModified": "2026-10-17",
       "author": {
         "@id": "https://soc-2-compliance.vercel.app/#deepak"
       },

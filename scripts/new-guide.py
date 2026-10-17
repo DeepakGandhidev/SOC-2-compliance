@@ -119,9 +119,12 @@ def build_page(spec, h, ch, today):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1018" media="(prefers-color-scheme: dark)">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<link rel="preload" href="/assets/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/favicon.png">
@@ -161,6 +164,18 @@ def build_page(spec, h, ch, today):
       {spec['shortAnswer']}
     </div>
 ''']
+
+    # Contents. Gives Google sitelink jump-links, and lets an answer engine cite
+    # one heading rather than the whole page — the reason every section has a
+    # stable id in the first place.
+    toc = ['\n    <nav class="toc" aria-label="On this page">\n'
+           '      <p class="toc-title">On this page</p>\n      <ol>\n']
+    for s in spec["sections"]:
+        anchor = s.get("id") or slugify(s["h2"])
+        toc.append(f'        <li><a href="#{anchor}">{s["h2"]}</a></li>\n')
+    toc.append('        <li><a href="#questions-people-ask">Questions people ask</a></li>\n')
+    toc.append("      </ol>\n    </nav>\n")
+    body.append("".join(toc))
 
     for s in spec["sections"]:
         anchor = s.get("id") or slugify(s["h2"])

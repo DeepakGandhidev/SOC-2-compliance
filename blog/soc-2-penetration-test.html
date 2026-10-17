@@ -3,9 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1018" media="(prefers-color-scheme: dark)">
 <title>Do You Need a Penetration Test for SOC 2?</title>
 <meta name="description" content="SOC 2 never names a penetration test, yet most auditors expect one. What that contradiction means in practice, what scope to buy, when to run it, and what it costs.">
+<link rel="preload" href="/assets/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css?v=478da6c7">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/favicon.png">
@@ -19,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test">
 <meta property="og:site_name" content="SOC2Starter">
-<meta property="article:published_time" content="2026-09-14T00:00:00+00:00">
-<meta property="article:modified_time" content="2026-09-14T00:00:00+00:00">
+<meta property="article:published_time" content="2026-10-17T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-10-17T00:00:00+00:00">
 <meta property="article:author" content="Deepak Gandhi">
 <meta property="article:section" content="Evidence">
 <meta property="article:tag" content="SOC 2">
@@ -50,13 +53,29 @@
   <div class="wrap">
     <p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/blog">Guides</a> &rsaquo; Penetration test</p>
     <h1>Do you need a penetration test for SOC 2?</h1>
-    <p class="post-meta">Updated 2026-09-14 &middot; 8 min read &middot; by Deepak Gandhi, who builds
+    <p class="post-meta">Updated 2026-10-17 &middot; 8 min read &middot; by Deepak Gandhi, who builds
     <a href="/features">SOC2Starter</a></p>
 
     <div class="answer">
       <span class="label">The short answer</span>
       <p><strong>Strictly, no.</strong> The Trust Services Criteria never use the words &ldquo;penetration test&rdquo;, so no rule obliges you to buy one. <strong>Practically, usually yes.</strong> Most auditors read the criteria on vulnerability management and change detection as expecting independent testing, and most enterprise customers ask for the report separately during security review. Budget for one annually unless your auditor tells you otherwise in writing.</p>
     </div>
+
+    <nav class="toc" aria-label="On this page">
+      <p class="toc-title">On this page</p>
+      <ol>
+        <li><a href="#why-the-answer-is-not-simply-written-down">Why the answer is not simply written down</a></li>
+        <li><a href="#why-most-auditors-expect-one-anyway">Why most auditors expect one anyway</a></li>
+        <li><a href="#the-customer-is-often-the-real-reason">The customer is often the real reason</a></li>
+        <li><a href="#a-vulnerability-scan-is-not-a-penetration-test">A vulnerability scan is not a penetration test</a></li>
+        <li><a href="#what-scope-to-actually-buy">What scope to actually buy</a></li>
+        <li><a href="#when-to-run-it">When to run it</a></li>
+        <li><a href="#what-the-auditor-wants-in-the-file">What the auditor wants in the file</a></li>
+        <li><a href="#how-to-choose-the-firm">How to choose the firm</a></li>
+        <li><a href="#what-it-costs-honestly">What it costs, honestly</a></li>
+        <li><a href="#questions-people-ask">Questions people ask</a></li>
+      </ol>
+    </nav>
 
     <h2 id="why-the-answer-is-not-simply-written-down">Why the answer is not simply written down</h2>
     <p>SOC 2 is not a checklist standard. It is a set of criteria you meet with controls of your own design, and an independent CPA firm forms an opinion on whether those controls were suitably designed and operating. Nowhere in the Trust Services Criteria is a penetration test named as a required control.</p>
@@ -148,7 +167,9 @@
       <ul>
       <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
       <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
-      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>
+      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>      <li><a href="/blog/soc-2-penetration-test">Do you need a penetration test for SOC 2?</a></li>      <li><a href="/blog/soc-2-choosing-an-auditor">How to choose a SOC 2 auditor</a></li>
+
+
       </ul>
     </div>
   </div>
@@ -331,8 +352,8 @@
         "@id": "https://soc-2-compliance.vercel.app/#website"
       },
       "inLanguage": "en",
-      "datePublished": "2026-09-14",
-      "dateModified": "2026-09-14",
+      "datePublished": "2026-10-17",
+      "dateModified": "2026-10-17",
       "primaryImageOfPage": {
         "@id": "https://soc-2-compliance.vercel.app/#logo"
       },
@@ -370,8 +391,8 @@
       "headline": "Do You Need a Penetration Test for SOC 2?",
       "description": "SOC 2 never names a penetration test, yet most auditors expect one. What that contradiction means in practice, what scope to buy, when to run it, and what it costs.",
       "url": "https://soc-2-compliance.vercel.app/blog/soc-2-penetration-test",
-      "datePublished": "2026-09-14",
-      "dateModified": "2026-09-14",
+      "datePublished": "2026-10-17",
+      "dateModified": "2026-10-17",
       "author": {
         "@id": "https://soc-2-compliance.vercel.app/#deepak"
       },

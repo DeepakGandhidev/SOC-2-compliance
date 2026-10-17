@@ -3,9 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1018" media="(prefers-color-scheme: dark)">
 <title>The SOC 2 Offboarding Checklist Auditors Check</title>
 <meta name="description" content="Offboarding is where SOC 2 findings and real breaches overlap. What to revoke, the timeframe to commit to, and the dated record an auditor expects per departure.">
+<link rel="preload" href="/assets/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css?v=478da6c7">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/favicon.png">
@@ -57,6 +60,21 @@
       <span class="label">The short answer</span>
       <p>Revoke access from your identity provider first, then work through every system that sits outside it, and <strong>leave a dated record per departure</strong> showing what was revoked and when. Commit to a timeframe you can actually hit &mdash; one business day is realistic for most startups &mdash; and put it in your policy. Auditors sample individual leavers, so one missed account in one departure is a finding regardless of how good the process is on paper.</p>
     </div>
+
+    <nav class="toc" aria-label="On this page">
+      <p class="toc-title">On this page</p>
+      <ol>
+        <li><a href="#why-this-control-gets-tested-hardest">Why this control gets tested hardest</a></li>
+        <li><a href="#start-with-the-identity-provider-then-assume-it-missed-things">Start with the identity provider, then assume it missed things</a></li>
+        <li><a href="#the-credentials-a-suspended-account-does-not-touch">The credentials a suspended account does not touch</a></li>
+        <li><a href="#the-checklist-in-order">The checklist, in order</a></li>
+        <li><a href="#pick-a-timeframe-you-will-actually-hit">Pick a timeframe you will actually hit</a></li>
+        <li><a href="#what-the-record-has-to-show">What the record has to show</a></li>
+        <li><a href="#contractors-are-where-this-usually-fails">Contractors are where this usually fails</a></li>
+        <li><a href="#automating-the-parts-worth-automating">Automating the parts worth automating</a></li>
+        <li><a href="#questions-people-ask">Questions people ask</a></li>
+      </ol>
+    </nav>
 
     <h2 id="why-this-control-gets-tested-hardest">Why this control gets tested hardest</h2>
     <p>Offboarding is unusual among SOC 2 controls in that the audit finding and the real-world risk are the same thing. A former employee with live access is not a documentation problem; it is the most common way small companies actually get breached.</p>
@@ -166,7 +184,8 @@
       <ul>
       <li><a href="/blog/soc-2-readiness-checklist">A SOC 2 readiness checklist for a 10-person startup</a></li>
       <li><a href="/blog/soc-2-type-1-vs-type-2">SOC 2 Type 1 vs Type 2: which one do you actually need?</a></li>
-      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>      <li><a href="/blog/soc-2-penetration-test">Do you need a penetration test for SOC 2?</a></li>
+      <li><a href="/blog/soc-2-cost-for-startups">What SOC 2 really costs a startup</a></li>      <li><a href="/blog/soc-2-penetration-test">Do you need a penetration test for SOC 2?</a></li>      <li><a href="/blog/soc-2-choosing-an-auditor">How to choose a SOC 2 auditor</a></li>
+
 
       </ul>
     </div>
@@ -216,6 +235,7 @@
       <li><a href="/blog/soc-2-access-review">How to run your first access review</a></li>
       <li><a href="/blog/soc-2-evidence-checklist">What evidence a SOC 2 auditor actually asks for</a></li>
       <li><a href="/blog/soc-2-policies-you-need">The SOC 2 policies you actually need</a></li>
+      <li><a href="/blog/soc-2-choosing-an-auditor">How to choose a SOC 2 auditor</a></li>
       </ul>
     </div>
   </div>
