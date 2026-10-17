@@ -1,0 +1,81 @@
+{
+  "slug": "soc-2-bridge-letter",
+  "title": "SOC 2 Bridge Letter: What It Is and When to Send One",
+  "h1": "SOC 2 bridge letters, explained",
+  "description": "A bridge letter covers the gap between your SOC 2 report period and today. What it must say, who writes it, how long it can cover, and what it is not.",
+  "section": "Audit",
+  "crumb": "Bridge letter",
+  "cardBlurb": "What covers the gap between your report period and today, who signs it, and why no auditor will write one for you.",
+  "readingTime": 7,
+  "shortAnswer": "<p>A bridge letter &mdash; also called a gap letter &mdash; is a short statement <strong>you</strong> write, signed by management, confirming that nothing material about your controls has changed between the end of your SOC 2 report period and today. <strong>Your auditor does not write it and does not attest to it.</strong> It typically covers up to three months, and it is what customers accept when your most recent report ends before the date they are asking about.</p>",
+  "sections": [
+    {
+      "h2": "The gap it exists to cover",
+      "html": "<p>A SOC 2 Type 2 report covers a defined period &mdash; say 1 January to 30 June. It says nothing whatsoever about 1 July onwards, because the auditor did not examine that time.</p>\n    <p>So when a prospective customer asks for your SOC 2 report in October, you hand them a document that ends in June. Their security reviewer notices immediately, because noticing that is the job. What about July, August and September?</p>\n    <p>The bridge letter answers exactly that question. It is a short management statement saying: our controls continued to operate as described in that report, nothing material changed, and here is our next report period. It bridges the gap between the examined period and the present.</p>\n    <p>This is completely routine. Every company with a SOC 2 report faces it, because reports are always retrospective and sales conversations are always current.</p>"
+    },
+    {
+      "h2": "Who writes it, and who does not",
+      "html": "<p>This is the part people get wrong, sometimes in a way that costs them a deal.</p>\n    <p><strong>You write it.</strong> It is a representation by your management, on your letterhead, signed by someone with authority &mdash; typically the CEO or CTO at a startup.</p>\n    <p><strong>Your auditor does not write it, sign it, or attest to it.</strong> They cannot. Attesting to a period they did not examine would be the opposite of what an attestation is. Some firms will provide a template as a courtesy, and some will review your wording, but the statement is yours and the responsibility is yours.</p>\n    <p>This means a bridge letter carries materially less weight than the report itself, and a sophisticated reviewer knows that. It is an unaudited assertion. That is fine &mdash; it is the accepted instrument for this purpose &mdash; but do not present it as though the auditor stood behind it, because that misrepresentation is the thing that actually damages trust.</p>"
+    },
+    {
+      "h2": "What it has to contain",
+      "html": "<p>Short is correct. A bridge letter that runs to three pages is doing something wrong. It needs:</p>\n    <ul>\n      <li><strong>Identification of the report</strong> it bridges &mdash; the auditor's name, the report type, and the exact period covered.</li>\n      <li><strong>The gap period</strong> the letter covers, with explicit dates.</li>\n      <li><strong>A statement that controls continued to operate</strong> as described in that report, with no material changes.</li>\n      <li><strong>Disclosure of any material changes</strong> that did occur. See below &mdash; this is the clause that matters.</li>\n      <li><strong>Your next report period</strong> and expected issue date, so the reviewer knows when the gap closes properly.</li>\n      <li><strong>An explicit statement that no auditor has examined the gap period.</strong></li>\n      <li><strong>Signature, title and date.</strong></li>\n    </ul>\n    <p>That last-but-one point is counter-intuitive and worth keeping. Saying plainly that the gap period is unaudited reads as candour to a security reviewer, and it protects you. Leaving it out invites the reviewer to assume more than you meant to claim.</p>"
+    },
+    {
+      "h2": "The disclosure clause is the whole point",
+      "html": "<p>A bridge letter asserting that nothing changed, when something did, is a false representation in a document a customer will rely on when deciding to trust you. That is a materially worse problem than the change ever was.</p>\n    <p>Things that usually count as material and should be disclosed:</p>\n    <ul>\n      <li><strong>A security incident</strong> affecting customer data.</li>\n      <li><strong>Changing your cloud provider</strong> or a major architectural migration.</li>\n      <li><strong>Adding or removing a significant subprocessor.</strong></li>\n      <li><strong>Losing the person who operated key controls</strong>, if nobody has taken over.</li>\n      <li><strong>Stopping a control described in the report</strong> &mdash; for example, letting quarterly access reviews lapse.</li>\n      <li><strong>An acquisition or a substantial change in the business.</strong></li>\n    </ul>\n    <p>Disclosing a change does not usually lose the deal. Reviewers deal with change constantly; what they need is to assess it. Describe what changed, what you did about it, and why the control objective is still met. A disclosed and explained migration is a non-event. An undisclosed one that surfaces during your next audit is a credibility problem that extends to everything else you told them.</p>"
+    },
+    {
+      "h2": "What reviewers actually do with it",
+      "html": "<p>Worth knowing, because it tells you what to put effort into.</p>\n    <p>A security reviewer receiving your report and bridge letter checks three things in roughly this order. <strong>Do the dates line up?</strong> The letter must start where the report period ended, with no unexplained gap of its own &mdash; a letter covering August to October against a report ending in June leaves July uncovered, and that gets noticed. <strong>Is anything disclosed?</strong> They read the disclosure paragraph first, because that is the only part carrying new information. <strong>Is there a date the gap closes?</strong> A named next report period turns an open question into a scheduled one.</p>\n    <p>What they do not do is scrutinise your prose. Nobody is grading the writing. A one-page letter that gets those three things right is better received than a carefully worded two-pager that leaves the next report period vague.</p>\n    <p>One consequence: if your dates do not line up because your observation windows have a genuine gap, say so explicitly rather than quietly starting the letter later. An acknowledged gap with an explanation is a conversation. A silent one found by a reviewer comparing dates is a trust problem.</p>"
+    },
+    {
+      "h2": "How long a bridge can stretch",
+      "html": "<p><strong>Three months is the normal maximum.</strong> Some reviewers accept a little more; many stop at three, and a letter stretching to six months tends to prompt a different question &mdash; why has it been so long, and are you actually still doing this?</p>\n    <p>The practical implication is about report cadence. If your reports run on a twelve-month cycle with a three-month bridge, you have a window each year where you have neither a current report nor a bridgeable gap. Companies selling continuously to enterprises usually solve this by moving to continuous coverage: consecutive observation periods with no calendar gap between them, so each new report picks up where the last ended.</p>\n    <p>That continuity is itself something reviewers look for. A company with back-to-back report periods is demonstrating an ongoing programme. A company with a gap year is demonstrating a project it did once.</p>"
+    },
+    {
+      "h2": "When a bridge letter will not do",
+      "html": "<p>Three situations where it is the wrong instrument and offering it anyway wastes time.</p>\n    <p><strong>You have never had a report.</strong> There is nothing to bridge from. What you need instead is a dated readiness statement: your scope, your observation window, and your expected report date. &ldquo;Security-only scope, three-month window starting in March, Type 2 expected in July&rdquo; is something a procurement team can plan around. What stalls deals is not the absence of a report but the absence of a date.</p>\n    <p><strong>Something material did change and has not been remediated.</strong> A bridge letter is not a way to paper over a control that stopped operating. Fix it, then describe both the lapse and the fix.</p>\n    <p><strong>The customer explicitly requires an audited opinion covering the period.</strong> Some regulated buyers do. No letter satisfies that; only a report covering those dates does. Ask what would unblock the deal in the meantime &mdash; a completed security questionnaire, your policy set, a recent penetration test, and a committed report date often will.</p>"
+    },
+    {
+      "h2": "Making it a two-minute job",
+      "html": "<p>Bridge letter requests arrive mid-deal, usually with sales waiting. Prepare once and it stops being an interruption.</p>\n    <ul>\n      <li><strong>Keep a template</strong> with the report details already filled in, so only the gap dates and the disclosure paragraph change.</li>\n      <li><strong>Decide who signs</strong> and make sure they are not the bottleneck.</li>\n      <li><strong>Keep a running note of material changes</strong> as they happen. Reconstructing nine months of changes under deal pressure is how an inaccurate letter gets signed.</li>\n      <li><strong>Log every letter you issue</strong> &mdash; who received it, what period, what you disclosed. You will be asked to reconcile these against your next report, and consistency between what you told customers and what the report says is itself a thing reviewers check.</li>\n    </ul>\n    <p>Ask your auditor for their template when you receive your report, rather than when a customer is waiting. Most will provide one, and starting from their wording avoids the two common drafting errors: implying the auditor attested to the gap, and omitting the unaudited disclaimer.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a SOC 2 bridge letter?",
+      "a": "A short statement written by your own management confirming that your controls continued to operate as described in your most recent SOC 2 report, covering the period between the end of that report and today. It is also called a gap letter. It exists because reports are always retrospective while sales conversations are current."
+    },
+    {
+      "q": "Does my auditor write the bridge letter?",
+      "a": "No. It is a management representation on your letterhead, signed by someone with authority such as the CEO or CTO. Your auditor cannot attest to a period they did not examine, so they neither sign it nor stand behind it. Many firms provide a template as a courtesy, but the statement and the responsibility are yours."
+    },
+    {
+      "q": "How long can a SOC 2 bridge letter cover?",
+      "a": "Three months is the normal maximum. Some reviewers accept slightly longer, but a letter stretching to six months usually prompts questions about whether the programme is still running. Companies selling continuously to enterprises generally move to consecutive observation periods so there is no calendar gap between reports."
+    },
+    {
+      "q": "What if something changed during the bridge period?",
+      "a": "Disclose it. Describe what changed, what you did about it, and why the control objective is still met. Reviewers deal with change constantly and a disclosed, explained migration is usually a non-event. Asserting that nothing changed when something did is a false representation in a document the customer relies on, which is far worse than the change itself."
+    },
+    {
+      "q": "Can I use a bridge letter if I have never had a SOC 2 report?",
+      "a": "No, there is nothing to bridge from. What works instead is a dated readiness statement giving your scope, your observation window and your expected report date. Most enterprise buyers can plan around a specific date; what stalls a deal is the absence of one rather than the absence of a report."
+    }
+  ],
+  "readNext": [
+    [
+      "/blog/soc-2-type-1-vs-type-2",
+      "SOC 2 Type 1 vs Type 2: which one do you actually need?"
+    ],
+    [
+      "/blog/soc-2-security-questionnaire",
+      "How to answer an enterprise security questionnaire"
+    ],
+    [
+      "/blog/soc-2-timeline",
+      "How long does SOC 2 take?"
+    ]
+  ]
+}

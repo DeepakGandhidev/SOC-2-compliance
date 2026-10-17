@@ -1,0 +1,81 @@
+{
+  "slug": "soc-2-choosing-an-auditor",
+  "title": "How to Choose a SOC 2 Auditor and What to Ask",
+  "h1": "How to choose a SOC 2 auditor",
+  "description": "Quotes for an identical SOC 2 report vary by multiples. How to shortlist firms, the nine questions to ask before signing, and the answers worth walking away from.",
+  "section": "Audit",
+  "crumb": "Choosing an auditor",
+  "cardBlurb": "Quotes for the same report vary by multiples. The nine questions to ask before signing, and the three answers that should end the conversation.",
+  "readingTime": 9,
+  "shortAnswer": "<p>Get <strong>three quotes with an identical scope statement</strong>, from small or mid-size CPA firms that routinely audit startups. Ask what they expect on penetration testing and evidence format <em>before</em> signing, and get it in writing. Prices for the same report vary by multiples, so the cheapest quote is often the narrowest scope rather than the better deal. Talk to auditors early &mdash; the conversation is free and shapes your whole readiness plan.</p>",
+  "sections": [
+    {
+      "h2": "Talk to them before you are ready",
+      "html": "<p>The instinct is to get organised first and approach an auditor once you look respectable. That is backwards, and it costs people months.</p>\n    <p>An auditor who regularly works with startups will tell you, in half an hour and for free, what they expect to see for a company your size. That list is worth more than any generic checklist, because it is the list you will actually be measured against. It frequently includes things you would not have prioritised, and excludes things you were about to spend a month on.</p>\n    <p>It also settles the questions that otherwise cost real money. Whether they expect an independent penetration test. Whether your scope should be Security only. Whether a three-month observation window is acceptable for a first Type 2. Each of those answers changes your plan and your budget.</p>\n    <p>Have this conversation with two or three firms before you commit to any of them.</p>"
+    },
+    {
+      "h2": "Only a CPA firm can issue the report",
+      "html": "<p>SOC 2 is an attestation engagement under AICPA standards, which means the examination must be performed by a licensed CPA firm. This matters because a lot of companies in this market are not one.</p>\n    <p>Compliance platforms, readiness tools and consultancies can prepare you, organise your evidence, and in some cases introduce you to auditors. None of them can issue the opinion. If a vendor's marketing implies they will make you SOC 2 compliant or certified, they are describing readiness work in language that misrepresents what happens.</p>\n    <p>So the first filter is simple: is this a licensed CPA firm, and will the report carry their name? Ask directly. Some platforms partner with an audit firm and the engagement is legitimate &mdash; but you should know who is actually signing.</p>"
+    },
+    {
+      "h2": "Size the firm to your company",
+      "html": "<p>Three tiers, and the middle one is where most startups should look.</p>\n    <ul>\n      <li><strong>The large national and Big Four firms.</strong> Their name carries weight with the most conservative enterprise buyers. They are also substantially more expensive, slower, and generally uninterested in a twelve-person company. Rarely the right answer for a first report.</li>\n      <li><strong>Small and mid-size CPA firms with a technology practice.</strong> The usual fit. They understand startups, they will talk to you directly rather than through an account manager, and the partner reviewing your file may be the person you spoke to. This is where you want your three quotes from.</li>\n      <li><strong>Very small or newly formed audit practices.</strong> Sometimes excellent value, sometimes a problem. The risk is not competence so much as recognition &mdash; if your enterprise buyer has never heard of them and cannot verify them, you may be asked to audit again.</li>\n    </ul>\n    <p>One check worth doing regardless of tier: confirm the firm is peer reviewed, which is a requirement for CPA firms performing attestation work. Any legitimate firm will answer this without hesitation.</p>"
+    },
+    {
+      "h2": "Write the scope statement once, then send it to everyone",
+      "html": "<p>This is the single thing that makes quotes comparable, and almost nobody does it.</p>\n    <p>Write one short document and send the identical version to every firm. It should state:</p>\n    <ul>\n      <li><strong>Which criteria.</strong> Security only, for most startups.</li>\n      <li><strong>Type 1 or Type 2</strong>, and for Type 2 the observation window length you want.</li>\n      <li><strong>What system is in scope</strong> &mdash; the product, and which environments.</li>\n      <li><strong>Headcount</strong> and roughly how many systems hold customer data.</li>\n      <li><strong>Your cloud provider</strong> and identity provider.</li>\n      <li><strong>Target report date</strong>, if a customer has given you one.</li>\n    </ul>\n    <p>Without this, the cheapest quote will usually be the one that assumed the narrowest scope, and you will not discover the difference until fieldwork. With it, price differences reflect the firm rather than the assumptions.</p>"
+    },
+    {
+      "h2": "The nine questions to ask before signing",
+      "html": "<ol>\n      <li><strong>Do you expect an independent penetration test for our scope, or will you accept documented vulnerability scanning with a remediation process?</strong> The single most expensive question, and answers genuinely differ between firms. Get it in writing.</li>\n      <li><strong>How do you want evidence delivered?</strong> A shared drive, your portal, a compliance platform you integrate with. This determines how much of your time fieldwork consumes.</li>\n      <li><strong>Who will we actually work with, and will the partner review our file?</strong></li>\n      <li><strong>How long from the end of the observation window to the issued report?</strong> Four to six weeks is common. Ask, because a customer deadline depends on it.</li>\n      <li><strong>What is your current capacity, and when could we start?</strong> Audit firms have seasonal crunches, and a firm that cannot start for four months may not suit your timeline.</li>\n      <li><strong>What does the fee include, and what is billed separately?</strong> Readiness assessment, bridge letters, a second year, and re-testing after exceptions are the usual extras.</li>\n      <li><strong>How many companies of our size and type have you audited?</strong> You want specifics, not reassurance.</li>\n      <li><strong>If you find an exception, what happens?</strong> A good firm explains how exceptions are described in the report and whether remediation can be noted. A firm that says exceptions never happen is selling something.</li>\n      <li><strong>Can we speak to a client of similar size?</strong> Some will arrange it. Those that do are usually confident for good reason.</li>\n    </ol>"
+    },
+    {
+      "h2": "What should end the conversation",
+      "html": "<p>Three answers that are worth walking away from, regardless of price.</p>\n    <p><strong>&ldquo;We guarantee a clean report.&rdquo;</strong> No auditor can promise the outcome of their own examination. An independence problem is the kindest interpretation; the alternative is that the opinion is not worth much, which defeats the purpose of buying it.</p>\n    <p><strong>&ldquo;We will also fix the gaps for you.&rdquo;</strong> A firm cannot audit controls it designed and implemented. Some firms offer readiness through a separate practice with proper separation, which can be fine &mdash; but the same team doing both is an independence failure, and a sophisticated customer reading your report may notice.</p>\n    <p><strong>&ldquo;We can issue in two weeks.&rdquo;</strong> For a Type 2, the observation window alone is months of calendar time. Anyone compressing that is either describing a Type 1 without saying so, or is not doing the work.</p>\n    <p>A softer warning sign: a firm that will not answer the penetration test question until you have signed. That is the answer most likely to change your budget, and a reluctance to commit to it in writing tells you how the rest of the engagement will go.</p>"
+    },
+    {
+      "h2": "How to read the price difference",
+      "html": "<p>Once you have three comparable quotes, the spread is usually explained by a few things rather than by quality.</p>\n    <ul>\n      <li><strong>Scope assumptions</strong>, which your scope statement should now have eliminated.</li>\n      <li><strong>How much of the work is partner time</strong> versus junior staff.</li>\n      <li><strong>Whether a readiness assessment is bundled.</strong> Useful for a first audit, and worth separating out so you can compare the examination itself.</li>\n      <li><strong>Whether year two is priced.</strong> SOC 2 is annual. A cheap first year followed by an unquoted second year is a worse deal than a flat price across both, and asking for both up front is normal.</li>\n    </ul>\n    <p>Do not simply take the lowest number. Take the firm whose answers to the nine questions were specific, whose evidence process costs you the least time, and whose price you understand. The fee is rarely the largest cost of your audit &mdash; your own engineering time is &mdash; and a firm that wastes less of it is cheaper even at a higher quote.</p>"
+    },
+    {
+      "h2": "Where to find candidates",
+      "html": "<p>In rough order of usefulness:</p>\n    <ul>\n      <li><strong>Ask other founders selling to similar customers.</strong> The best source by a distance, because you get an unvarnished account of what fieldwork was actually like.</li>\n      <li><strong>Your compliance tooling vendor's partner list</strong>, if you use one. Treat it as a shortlist rather than a recommendation, and remember the relationship may be commercial.</li>\n      <li><strong>Search for small CPA firms with a technology or SaaS practice.</strong> Firms publishing substantive material about SOC 2 for startups are usually the ones that do it regularly.</li>\n      <li><strong>Your own accountant</strong>, who may not perform attestation work but often knows who does.</li>\n    </ul>\n    <p>One practical note: start this earlier than feels necessary. Between the initial conversations, the scope statement, three quotes, and the firm's own availability, choosing an auditor reliably takes longer than founders plan for &mdash; and nothing else in your readiness timeline can be finalised until it is done.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Who can perform a SOC 2 audit?",
+      "a": "Only a licensed CPA firm. SOC 2 is an attestation engagement under AICPA standards, so compliance platforms, readiness tools and consultancies cannot issue the report regardless of how their marketing is worded. Ask directly whether the firm is a licensed CPA firm, whether it is peer reviewed, and whose name will appear on the opinion."
+    },
+    {
+      "q": "How much does a SOC 2 auditor cost?",
+      "a": "Quotes for a nominally identical report vary by multiples, which is why comparing numbers without a shared scope statement is meaningless. Write one scope statement covering criteria, report type, observation window, system boundary and headcount, send the identical version to three firms, and the differences then reflect the firm rather than its assumptions."
+    },
+    {
+      "q": "Can the same firm do readiness and the audit?",
+      "a": "Not the same team. An auditor cannot examine controls it designed and implemented, because that destroys independence. Some firms offer readiness through a separately staffed practice, which can be acceptable, but one team doing both is an independence failure that an informed customer reading your report may question."
+    },
+    {
+      "q": "When should I start talking to SOC 2 auditors?",
+      "a": "Before you feel ready. The initial conversation is usually free and tells you what the firm expects for a company your size, which shapes your entire readiness plan, including whether you need a penetration test and what observation window is acceptable. Nothing in your timeline can be finalised until an auditor is chosen, and the process takes longer than most founders expect."
+    },
+    {
+      "q": "What are the warning signs of a bad SOC 2 auditor?",
+      "a": "Three answers should end the conversation: guaranteeing a clean report, which no auditor can promise about their own examination; offering to fix the gaps and then audit them with the same team; and claiming they can issue a Type 2 in weeks, when the observation window alone is months of calendar time. A reluctance to answer the penetration test question in writing before signing is a softer but real warning."
+    }
+  ],
+  "readNext": [
+    [
+      "/blog/soc-2-cost-for-startups",
+      "What SOC 2 really costs a startup"
+    ],
+    [
+      "/blog/soc-2-penetration-test",
+      "Do you need a penetration test for SOC 2?"
+    ],
+    [
+      "/blog/soc-2-timeline",
+      "How long does SOC 2 take?"
+    ]
+  ]
+}
